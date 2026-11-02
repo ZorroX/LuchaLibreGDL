@@ -1,0 +1,17 @@
+---
+const { texto, as: Tag = 'div', class: clase = '' } = Astro.props;
+const W = 900;
+const H = 188;
+const paso = 3.4;
+const fs = Math.min(128, (W * 0.94) / (texto.length * 0.56));
+const comun = { x: W / 2, y: 132, 'text-anchor': 'middle', 'font-family': 'Rye, Georgia, serif', 'font-size': fs };
+---
+<Tag class={`rotulo ${clase}`} aria-label={texto}>
+  <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
+    {[6, 5, 4, 3, 2, 1].map((i) => (
+      <text {...comun} transform={`translate(${i * paso} ${i * paso})`} fill="#0f97a3" stroke="#0f97a3" stroke-width="7">{texto}</text>
+    ))}
+    <text {...comun} fill="none" stroke="#08080a" stroke-width="9" stroke-linejoin="round">{texto}</text>
+    <text {...comun} fill="url(#franja)">{texto}</text>
+  </svg>
+</Tag>

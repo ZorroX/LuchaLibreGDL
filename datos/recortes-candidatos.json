@@ -1,0 +1,650 @@
+[
+{
+"id": "tromba-1",
+"luchador": "tromba",
+"ancho": 421,
+"alto": 563
+},
+{
+"id": "tromba-2",
+"luchador": "tromba",
+"ancho": 634,
+"alto": 715
+},
+{
+"id": "prism-x-1",
+"luchador": "prism-x",
+"ancho": 650,
+"alto": 883
+},
+{
+"id": "prism-x-2",
+"luchador": "prism-x",
+"ancho": 762,
+"alto": 699
+},
+{
+"id": "yokai-1",
+"luchador": "yokai",
+"ancho": 372,
+"alto": 751
+},
+{
+"id": "yokai-2",
+"luchador": "yokai",
+"ancho": 561,
+"alto": 774
+},
+{
+"id": "paymon-vera-1",
+"luchador": "paymon-vera",
+"ancho": 429,
+"alto": 872
+},
+{
+"id": "paymon-vera-2",
+"luchador": "paymon-vera",
+"ancho": 398,
+"alto": 639
+},
+{
+"id": "leviatham-homicida-1",
+"luchador": "leviatham-homicida",
+"ancho": 585,
+"alto": 948
+},
+{
+"id": "leviatham-homicida-2",
+"luchador": "leviatham-homicida",
+"ancho": 805,
+"alto": 881
+},
+{
+"id": "sunboy-santi-1",
+"luchador": "sunboy-santi",
+"ancho": 630,
+"alto": 932
+},
+{
+"id": "sunboy-santi-2",
+"luchador": "sunboy-santi",
+"ancho": 744,
+"alto": 791
+},
+{
+"id": "gravity-1",
+"luchador": "gravity",
+"ancho": 740,
+"alto": 948
+},
+{
+"id": "gravity-2",
+"luchador": "gravity",
+"ancho": 297,
+"alto": 588
+},
+{
+"id": "zigma-1",
+"luchador": "zigma",
+"ancho": 636,
+"alto": 828
+},
+{
+"id": "zigma-2",
+"luchador": "zigma",
+"ancho": 333,
+"alto": 378
+},
+{
+"id": "albatros-jr-1",
+"luchador": "albatros-jr",
+"ancho": 389,
+"alto": 527
+},
+{
+"id": "albatros-jr-2",
+"luchador": "albatros-jr",
+"ancho": 583,
+"alto": 768
+},
+{
+"id": "mack-1",
+"luchador": "mack",
+"ancho": 484,
+"alto": 521
+},
+{
+"id": "mack-2",
+"luchador": "mack",
+"ancho": 591,
+"alto": 624
+},
+{
+"id": "noisy-boy-1",
+"luchador": "noisy-boy",
+"ancho": 539,
+"alto": 504
+},
+{
+"id": "noisy-boy-2",
+"luchador": "noisy-boy",
+"ancho": 803,
+"alto": 993
+},
+{
+"id": "tiger-trueno-1",
+"luchador": "tiger-trueno",
+"ancho": 421,
+"alto": 508
+},
+{
+"id": "tiger-trueno-2",
+"luchador": "tiger-trueno",
+"ancho": 280,
+"alto": 813
+},
+{
+"id": "demencia-1",
+"luchador": "demencia",
+"ancho": 546,
+"alto": 439
+},
+{
+"id": "demencia-2",
+"luchador": "demencia",
+"ancho": 614,
+"alto": 678
+},
+{
+"id": "el-mago-1",
+"luchador": "el-mago",
+"ancho": 507,
+"alto": 632
+},
+{
+"id": "el-mago-2",
+"luchador": "el-mago",
+"ancho": 980,
+"alto": 681
+},
+{
+"id": "makabre-blasphemy-1",
+"luchador": "makabre-blasphemy",
+"ancho": 816,
+"alto": 626
+},
+{
+"id": "makabre-blasphemy-2",
+"luchador": "makabre-blasphemy",
+"ancho": 443,
+"alto": 572
+},
+{
+"id": "visionario-1",
+"luchador": "visionario",
+"ancho": 437,
+"alto": 316
+},
+{
+"id": "visionario-2",
+"luchador": "visionario",
+"ancho": 838,
+"alto": 707
+},
+{
+"id": "aquiles-1",
+"luchador": "aquiles",
+"ancho": 618,
+"alto": 849
+},
+{
+"id": "aquiles-2",
+"luchador": "aquiles",
+"ancho": 736,
+"alto": 823
+},
+{
+"id": "bomba-villa-1",
+"luchador": "bomba-villa",
+"ancho": 414,
+"alto": 535
+},
+{
+"id": "bomba-villa-2",
+"luchador": "bomba-villa",
+"ancho": 636,
+"alto": 570
+},
+{
+"id": "daimo-1",
+"luchador": "daimo",
+"ancho": 765,
+"alto": 627
+},
+{
+"id": "daimo-2",
+"luchador": "daimo",
+"ancho": 514,
+"alto": 392
+},
+{
+"id": "diosa-del-caos-1",
+"luchador": "diosa-del-caos",
+"ancho": 745,
+"alto": 981
+},
+{
+"id": "diosa-del-caos-2",
+"luchador": "diosa-del-caos",
+"ancho": 555,
+"alto": 952
+},
+{
+"id": "hijo-de-fishman-1",
+"luchador": "hijo-de-fishman",
+"ancho": 591,
+"alto": 953
+},
+{
+"id": "hijo-de-fishman-2",
+"luchador": "hijo-de-fishman",
+"ancho": 427,
+"alto": 539
+},
+{
+"id": "kumonga-1",
+"luchador": "kumonga",
+"ancho": 764,
+"alto": 802
+},
+{
+"id": "kumonga-2",
+"luchador": "kumonga",
+"ancho": 799,
+"alto": 746
+},
+{
+"id": "mafioso-1",
+"luchador": "mafioso",
+"ancho": 890,
+"alto": 800
+},
+{
+"id": "mafioso-2",
+"luchador": "mafioso",
+"ancho": 669,
+"alto": 803
+},
+{
+"id": "mosco-x-fly-jr-1",
+"luchador": "mosco-x-fly-jr",
+"ancho": 515,
+"alto": 540
+},
+{
+"id": "mosco-x-fly-jr-2",
+"luchador": "mosco-x-fly-jr",
+"ancho": 459,
+"alto": 492
+},
+{
+"id": "skayler-1",
+"luchador": "skayler",
+"ancho": 418,
+"alto": 557
+},
+{
+"id": "skayler-2",
+"luchador": "skayler",
+"ancho": 630,
+"alto": 927
+},
+{
+"id": "amnesia-lokote-1",
+"luchador": "amnesia-lokote",
+"ancho": 772,
+"alto": 877
+},
+{
+"id": "amnesia-lokote-2",
+"luchador": "amnesia-lokote",
+"ancho": 633,
+"alto": 359
+},
+{
+"id": "antisocial-187-1",
+"luchador": "antisocial-187",
+"ancho": 539,
+"alto": 945
+},
+{
+"id": "antisocial-187-2",
+"luchador": "antisocial-187",
+"ancho": 380,
+"alto": 651
+},
+{
+"id": "belcegor-1",
+"luchador": "belcegor",
+"ancho": 552,
+"alto": 894
+},
+{
+"id": "belcegor-2",
+"luchador": "belcegor",
+"ancho": 683,
+"alto": 904
+},
+{
+"id": "centella-1",
+"luchador": "centella",
+"ancho": 831,
+"alto": 597
+},
+{
+"id": "centella-2",
+"luchador": "centella",
+"ancho": 593,
+"alto": 516
+},
+{
+"id": "chris-carter-1",
+"luchador": "chris-carter",
+"ancho": 546,
+"alto": 940
+},
+{
+"id": "chris-carter-2",
+"luchador": "chris-carter",
+"ancho": 578,
+"alto": 544
+},
+{
+"id": "crazy-king-1",
+"luchador": "crazy-king",
+"ancho": 564,
+"alto": 843
+},
+{
+"id": "crazy-king-2",
+"luchador": "crazy-king",
+"ancho": 697,
+"alto": 630
+},
+{
+"id": "el-catrin-1",
+"luchador": "el-catrin",
+"ancho": 252,
+"alto": 380
+},
+{
+"id": "imperial-guerrero-1",
+"luchador": "imperial-guerrero",
+"ancho": 684,
+"alto": 894
+},
+{
+"id": "imperial-guerrero-2",
+"luchador": "imperial-guerrero",
+"ancho": 475,
+"alto": 514
+},
+{
+"id": "kal-el-1",
+"luchador": "kal-el",
+"ancho": 576,
+"alto": 765
+},
+{
+"id": "kal-el-2",
+"luchador": "kal-el",
+"ancho": 752,
+"alto": 872
+},
+{
+"id": "king-charro-1",
+"luchador": "king-charro",
+"ancho": 835,
+"alto": 395
+},
+{
+"id": "king-charro-2",
+"luchador": "king-charro",
+"ancho": 961,
+"alto": 554
+},
+{
+"id": "koda-1",
+"luchador": "koda",
+"ancho": 541,
+"alto": 900
+},
+{
+"id": "koda-2",
+"luchador": "koda",
+"ancho": 718,
+"alto": 884
+},
+{
+"id": "resplandor-1",
+"luchador": "resplandor",
+"ancho": 488,
+"alto": 662
+},
+{
+"id": "resplandor-2",
+"luchador": "resplandor",
+"ancho": 1000,
+"alto": 530
+},
+{
+"id": "reyna-zahori-1",
+"luchador": "reyna-zahori",
+"ancho": 318,
+"alto": 580
+},
+{
+"id": "reyna-zahori-2",
+"luchador": "reyna-zahori",
+"ancho": 710,
+"alto": 865
+},
+{
+"id": "simbolo-1",
+"luchador": "simbolo",
+"ancho": 343,
+"alto": 499
+},
+{
+"id": "alacran-galactico-1",
+"luchador": "alacran-galactico",
+"ancho": 473,
+"alto": 295
+},
+{
+"id": "alish-1",
+"luchador": "alish",
+"ancho": 712,
+"alto": 966
+},
+{
+"id": "andy-blake-1",
+"luchador": "andy-blake",
+"ancho": 265,
+"alto": 566
+},
+{
+"id": "azur-1",
+"luchador": "azur",
+"ancho": 480,
+"alto": 689
+},
+{
+"id": "billie-infierno-1",
+"luchador": "billie-infierno",
+"ancho": 408,
+"alto": 543
+},
+{
+"id": "caos-1",
+"luchador": "caos",
+"ancho": 851,
+"alto": 634
+},
+{
+"id": "cosmico-1",
+"luchador": "cosmico",
+"ancho": 717,
+"alto": 985
+},
+{
+"id": "demonio-infernal-1",
+"luchador": "demonio-infernal",
+"ancho": 502,
+"alto": 536
+},
+{
+"id": "diamante-negro-jr-1",
+"luchador": "diamante-negro-jr",
+"ancho": 1000,
+"alto": 286
+},
+{
+"id": "galaxy-boy-1",
+"luchador": "galaxy-boy",
+"ancho": 645,
+"alto": 563
+},
+{
+"id": "halcon-furia-1",
+"luchador": "halcon-furia",
+"ancho": 569,
+"alto": 602
+},
+{
+"id": "kid-marciano-1",
+"luchador": "kid-marciano",
+"ancho": 649,
+"alto": 863
+},
+{
+"id": "king-charrito-1",
+"luchador": "king-charrito",
+"ancho": 747,
+"alto": 399
+},
+{
+"id": "krampus-1",
+"luchador": "krampus",
+"ancho": 567,
+"alto": 891
+},
+{
+"id": "lucifer-1",
+"luchador": "lucifer",
+"ancho": 754,
+"alto": 503
+},
+{
+"id": "mago-misterio-1",
+"luchador": "mago-misterio",
+"ancho": 726,
+"alto": 974
+},
+{
+"id": "master-crazy-1",
+"luchador": "master-crazy",
+"ancho": 667,
+"alto": 961
+},
+{
+"id": "master-terror-1",
+"luchador": "master-terror",
+"ancho": 991,
+"alto": 680
+},
+{
+"id": "metalik-1",
+"luchador": "metalik",
+"ancho": 444,
+"alto": 550
+},
+{
+"id": "miedo-extremo-1",
+"luchador": "miedo-extremo",
+"ancho": 471,
+"alto": 507
+},
+{
+"id": "mimo-1",
+"luchador": "mimo",
+"ancho": 665,
+"alto": 507
+},
+{
+"id": "miztli-lion-1",
+"luchador": "miztli-lion",
+"ancho": 450,
+"alto": 563
+},
+{
+"id": "murder-1",
+"luchador": "murder",
+"ancho": 1000,
+"alto": 624
+},
+{
+"id": "nortenito-lomeli-1",
+"luchador": "nortenito-lomeli",
+"ancho": 575,
+"alto": 678
+},
+{
+"id": "osiris-1",
+"luchador": "osiris",
+"ancho": 328,
+"alto": 577
+},
+{
+"id": "polar-1",
+"luchador": "polar",
+"ancho": 439,
+"alto": 449
+},
+{
+"id": "principe-black-1",
+"luchador": "principe-black",
+"ancho": 395,
+"alto": 563
+},
+{
+"id": "principe-centauro-1",
+"luchador": "principe-centauro",
+"ancho": 602,
+"alto": 640
+},
+{
+"id": "rey-eclipse-1",
+"luchador": "rey-eclipse",
+"ancho": 750,
+"alto": 900
+},
+{
+"id": "saturno-suicida-1",
+"luchador": "saturno-suicida",
+"ancho": 802,
+"alto": 658
+},
+{
+"id": "sussy-love-1",
+"luchador": "sussy-love",
+"ancho": 950,
+"alto": 606
+},
+{
+"id": "the-action-man-1",
+"luchador": "the-action-man",
+"ancho": 620,
+"alto": 824
+}
+]

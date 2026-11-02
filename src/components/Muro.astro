@@ -1,0 +1,22 @@
+---
+import { chica, grande, foto, luchador } from '../lib/acervo.js';
+const { ids, conFiltro = false } = Astro.props;
+const items = ids.map(foto).filter(Boolean).map((f) => ({
+  ...f,
+  nombres: f.luchadores.map((s) => luchador(s)?.nombre).filter(Boolean).join(', '),
+}));
+---
+<div class="muro">
+  {items.map((f) => (
+    <button
+      class="muro-foto"
+      type="button"
+      data-grande={grande(f.id)}
+      data-pie={[f.nombres, f.titulo].filter(Boolean).join(' · ')}
+      data-funcion={conFiltro ? f.funcion ?? 'otras' : undefined}
+      aria-label={`Ampliar fotografía${f.nombres ? ` de ${f.nombres}` : ''}`}
+    >
+      <img src={chica(f.id)} alt={f.nombres ? `Fotografía de ${f.nombres}` : 'Fotografía de lucha libre'} loading="lazy" width={f.ancho} height={f.alto} />
+    </button>
+  ))}
+</div>

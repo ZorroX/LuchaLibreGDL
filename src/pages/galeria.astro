@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Muro from '../components/Muro.astro';
+import { fotos, pasadas } from '../lib/acervo.js';
+---
+<Base titulo="Galería" descripcion="Fotografías de lucha libre de Benigno Mata.">
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Fotografía de Benigno Mata</p>
+    <h1>Galería</h1>
+    <div class="filtros" aria-label="Filtrar por función">
+      <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+      {pasadas.map((f) => <button type="button" data-filtro={f.slug} aria-pressed="false">{f.nombre}</button>)}
+    </div>
+    <Muro ids={fotos.map((f) => f.id)} conFiltro />
+  </div></section>
+</Base>

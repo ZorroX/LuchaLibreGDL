@@ -1,0 +1,35 @@
+---
+import Rotulo from './Rotulo.astro';
+import { chica, FOTOS_CLAVE as F } from '../lib/acervo.js';
+
+const { titulo = 'LA TAPATÍA' } = Astro.props;
+let semilla = 11;
+const azar = () => (semilla = (semilla * 9301 + 49297) % 233280) / 233280;
+function rasgado() {
+  const p = [];
+  const pasos = 26;
+  const j = 2.2;
+  for (let i = 0; i <= pasos; i++) p.push([(i / pasos) * 100, azar() * j]);
+  for (let i = 0; i <= pasos; i++) p.push([100 - azar() * j, (i / pasos) * 100]);
+  for (let i = pasos; i >= 0; i--) p.push([(i / pasos) * 100, 100 - azar() * j]);
+  for (let i = pasos; i >= 0; i--) p.push([azar() * j, (i / pasos) * 100]);
+  return `polygon(${p.map((q) => `${q[0].toFixed(1)}% ${q[1].toFixed(1)}%`).join(',')})`;
+}
+const capas = [
+  { id: F.plata, s: 'left:6%;top:11%;width:50%;height:44%;z-index:2', c: '#0d0d10', p: '50% 15%' },
+  { id: F.monstruo, s: 'right:12%;top:13%;width:38%;height:25%;z-index:3', c: '#0f97a3', p: '50% 40%' },
+  { id: F.grito, s: 'right:7%;top:39%;width:38%;height:25%;z-index:4', c: '#fbc913', p: '58% 30%' },
+  { id: F.cuernos, s: 'left:3%;top:50%;width:52%;height:36%;z-index:5', c: '#a63c7e', p: '50% 25%' },
+  { id: F.charro, s: 'right:2%;top:62%;width:47%;height:27%;z-index:4', c: '#7c9bd8', p: '50% 20%' },
+].map((c) => ({ ...c, clip: rasgado(), giro: ((azar() - 0.5) * 3.4).toFixed(2) }));
+---
+<div class="collage" role="img" aria-label="Collage con fotos de luchadores enmascarados sobre papel de colores y hoja de oro">
+  <div class="collage-oro"></div>
+  {capas.map((c) => (
+    <div class="rasgo" style={`${c.s};clip-path:${c.clip};rotate:${c.giro}deg`}>
+      <i style={`--c:${c.c};clip-path:${c.clip}`}><img src={chica(c.id)} alt="" loading="lazy" style={`object-position:${c.p}`} /></i>
+    </div>
+  ))}
+  <p class="collage-etq">De Guadalajara<br />para el mundo</p>
+  <Rotulo texto={titulo} class="collage-titulo" />
+</div>

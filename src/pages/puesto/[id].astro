@@ -1,0 +1,22 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import { productos, grande } from '../../lib/acervo.js';
+
+export function getStaticPaths() {
+  return productos.map((p) => ({ params: { id: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+---
+<Base titulo={p.nombre} descripcion={p.texto}>
+  <section class="bloque"><div class="ancho dos">
+    <div class="producto-foto"><img src={grande(p.foto)} alt="" /><span class="etiqueta">{p.tipo}</span></div>
+    <div>
+      <p class="acto"><a href={url('/puesto/')}>El Puesto</a></p>
+      <h1>{p.nombre}</h1>
+      <p>{p.texto}</p>
+      <p class="precio" style="margin-block:14px 18px">Precio por definir. Foto de muestra: el producto final depende del acuerdo con cada luchador.</p>
+      <button class="boton" type="button" data-apartar={p.id}>Agregar al apartado</button>
+    </div>
+  </div></section>
+</Base>

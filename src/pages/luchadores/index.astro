@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import TarjetaLuchador from '../../components/TarjetaLuchador.astro';
+import { luchadores } from '../../lib/acervo.js';
+---
+<Base titulo="Los Nuestros" descripcion="Luchadores de la escena independiente de Guadalajara.">
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Los Nuestros</p>
+    <h1>Quienes suben al ring</h1>
+    <p style="margin-bottom:24px">{luchadores.length} luchadores retratados por El Lente Enmascarado. Sus perfiles irán creciendo con la información que cada uno comparta.</p>
+    <label class="nota" for="buscar-luchador" style="display:block;margin-bottom:6px">Buscar por nombre</label>
+    <input class="campo" id="buscar-luchador" type="search" autocomplete="off" placeholder="Por ejemplo: Yokai" />
+    <p data-sin-resultados hidden style="margin-top:24px">No encontramos ese nombre. Revisa cómo se escribe o prueba con su apodo.</p>
+    <div class="rejilla" style="margin-top:28px">
+      {luchadores.map((l) => <TarjetaLuchador l={l} />)}
+    </div>
+  </div></section>
+</Base>

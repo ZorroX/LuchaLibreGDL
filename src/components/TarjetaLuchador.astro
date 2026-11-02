@@ -1,0 +1,10 @@
+---
+import { url } from '../lib/rutas.js';
+import { chica, foto } from '../lib/acervo.js';
+const { l } = Astro.props;
+const f = foto(l.fotos[0]);
+---
+<a class="tarjeta" href={url(`/luchadores/${l.slug}/`)} data-nombre={`${l.nombre} ${l.apodo}`.toLowerCase()}>
+  <img src={chica(f.id)} alt={`Fotografía de ${l.nombre}`} loading="lazy" width={f.ancho} height={f.alto} />
+  <span class="tarjeta-pie"><b>{l.nombre}</b>{l.apodo && <small>{l.apodo}</small>}</span>
+</a>

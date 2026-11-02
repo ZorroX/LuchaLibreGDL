@@ -1,0 +1,19 @@
+{
+  "name": "la-tapatia",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "importar": "python scripts/importar.py",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "publicar": "node scripts/publicar.mjs"
+  },
+  "dependencies": {
+    "@fontsource/anton": "5.3.0",
+    "@fontsource/archivo": "5.3.0",
+    "@fontsource/rye": "5.3.0",
+    "astro": "7.4.5"
+  }
+}

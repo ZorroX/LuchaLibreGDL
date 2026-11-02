@@ -1,0 +1,14 @@
+---
+const { n = 16, class: clase = '' } = Astro.props;
+const colores = ['#e0291e', '#f3701c', '#fbc913', '#e0291e', '#f3701c'];
+const punto = (a, r) => `${(Math.cos(a) * r).toFixed(1)},${(Math.sin(a) * r).toFixed(1)}`;
+const rayos = Array.from({ length: n }, (_, i) => {
+  const a = (Math.PI * 2 * i) / n;
+  const w = (Math.PI * 2 * 0.3) / n;
+  const R = 98 * (0.86 + 0.14 * Math.abs(Math.sin(i * 2.3)));
+  return { color: colores[i % 5], puntos: `${punto(a - w * 0.4, 20)} ${punto(a - w, R)} ${punto(a + w, R * 0.97)} ${punto(a + w * 0.4, 20)}` };
+});
+---
+<svg class={`rayos ${clase}`} viewBox="-100 -100 200 200" aria-hidden="true">
+  {rayos.map((r) => <polygon fill={r.color} points={r.puntos} />)}
+</svg>

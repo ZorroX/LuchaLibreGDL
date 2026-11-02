@@ -1,0 +1,56 @@
+---
+import { url } from '../lib/rutas.js';
+import { grande, FOTOS_CLAVE as F } from '../lib/acervo.js';
+---
+<section class="escenario" id="escenario" aria-label="Collage animado de lucha libre y Guadalajara">
+  <img class="escenario-respaldo" src={grande(F.apertura)} alt="" fetchpriority="high" />
+  <canvas id="collage" aria-hidden="true"></canvas>
+  <div class="escenario-pie">
+    <h1 class="oculto">La Tapatía</h1>
+    <p class="escenario-lema">La casa de la lucha libre independiente de Guadalajara</p>
+    <div class="acciones">
+      <a class="boton" href={url('/cartelera/')}>Ver cartelera</a>
+      <a class="boton oscuro" href={url('/luchadores/')}>Los Nuestros</a>
+    </div>
+  </div>
+  <div class="escenario-control">
+    <span>Toca el collage para rasgarlo</span>
+    <button type="button" id="collage-pausa" aria-pressed="false">Pausar</button>
+  </div>
+</section>
+
+<script>
+  import { iniciarCollage } from '../lib/collage-vivo.js';
+  import material from '../data/collage.json';
+  import { url } from '../lib/rutas.js';
+
+  let motor = null;
+
+  function montar() {
+    const canvas = document.querySelector('#collage');
+    if (!canvas) return;
+    motor = iniciarCollage(canvas, {
+      ...material,
+      oro: url(material.oro),
+      grano: url(material.grano),
+      imagenes: material.imagenes.map((m) => ({ ...m, src: url(m.src) })),
+    });
+    canvas.addEventListener('click', (e) => motor.rasgar(e.clientX, e.clientY));
+    const pausa = document.querySelector('#collage-pausa');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      pausa.parentElement.hidden = true;
+      return;
+    }
+    pausa.addEventListener('click', () => {
+      const detenido = motor.pausar();
+      pausa.textContent = detenido ? 'Reanudar' : 'Pausar';
+      pausa.setAttribute('aria-pressed', detenido);
+    });
+  }
+
+  document.addEventListener('astro:page-load', montar);
+  document.addEventListener('astro:before-swap', () => {
+    motor?.destruir();
+    motor = null;
+  });
+</script>

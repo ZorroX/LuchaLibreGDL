@@ -1,0 +1,22 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import { productos, chica } from '../../lib/acervo.js';
+---
+<Base titulo="El Puesto" descripcion="Merch y arte de la lucha libre tapatía.">
+  <section class="bloque"><div class="ancho">
+    <p class="acto">El Puesto</p>
+    <h1>Llévate la arena</h1>
+    <p style="margin-bottom:12px">Cada compra deja comisión a quienes participan en la pieza.</p>
+    <p class="nota" style="margin-bottom:34px">Vista de prototipo: los productos y precios están por definir y todavía no hay ventas.</p>
+    <div class="productos">
+      {productos.map((p) => (
+        <a class="producto" href={url(`/puesto/${p.id}/`)}>
+          <span class="producto-foto"><img src={chica(p.foto)} alt="" loading="lazy" /><span class="etiqueta">{p.tipo}</span></span>
+          <h3>{p.nombre}</h3>
+          <span class="precio">Precio por definir</span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+</Base>

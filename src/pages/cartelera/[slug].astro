@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Muro from '../../components/Muro.astro';
+import TarjetaLuchador from '../../components/TarjetaLuchador.astro';
+import { funciones, foto, luchador, grande } from '../../lib/acervo.js';
+
+export function getStaticPaths() {
+  return funciones.filter((f) => f.fotos.length).map((f) => ({ params: { slug: f.slug }, props: { f } }));
+}
+const { f } = Astro.props;
+const participantes = [...new Set(f.fotos.flatMap((id) => foto(id).luchadores))].map(luchador).filter(Boolean);
+---
+<Base titulo={f.nombre} descripcion={`${f.nombre}, ${f.promotora}. Fotografías de Benigno Mata.`}>
+  <section class="portada" style="min-height:min(70vh,640px)">
+    <img src={grande(f.fotos[0])} alt={`Fotografía de la función ${f.nombre}`} />
+    <div class="ancho">
+      <p class="acto">{f.promotora}</p>
+      <h1>{f.nombre}</h1>
+      <p>{f.fechaTexto} · {f.arena}</p>
+    </div>
+  </section>
+
+  {participantes.length > 0 && (
+    <section class="bloque lona"><div class="ancho">
+      <h2>En el ring</h2>
+      <div class="tira">{participantes.map((l) => <TarjetaLuchador l={l} />)}</div>
+    </div></section>
+  )}
+
+  <section class="bloque"><div class="ancho">
+    <h2>La función en fotos</h2>
+    <Muro ids={f.fotos} />
+  </div></section>
+</Base>

@@ -1,0 +1,4595 @@
+{
+ "fotos": [
+  {
+   "id": "2026-10-06_14-54-54-1",
+   "ancho": 4096,
+   "alto": 2925,
+   "fecha": "2026-10-06",
+   "likes": 402,
+   "titulo": "",
+   "luchadores": [
+    "daimo"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-06_14-54-54-2",
+   "ancho": 4095,
+   "alto": 2925,
+   "fecha": "2026-10-06",
+   "likes": 402,
+   "titulo": "",
+   "luchadores": [
+    "daimo"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-06_14-54-54-3",
+   "ancho": 2227,
+   "alto": 1590,
+   "fecha": "2026-10-06",
+   "likes": 402,
+   "titulo": "",
+   "luchadores": [
+    "daimo"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-02_14-02-33-1",
+   "ancho": 1031,
+   "alto": 1374,
+   "fecha": "2026-09-02",
+   "likes": 373,
+   "titulo": "",
+   "luchadores": [
+    "cuatrero"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-02_14-02-33-2",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-09-02",
+   "likes": 373,
+   "titulo": "",
+   "luchadores": [
+    "cuatrero"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-10-09_01-55-03-1",
+   "ancho": 4096,
+   "alto": 2926,
+   "fecha": "2026-10-09",
+   "likes": 346,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-abismo-negro"
+   ],
+   "funcion": null,
+   "lugar": "Fiestas de Octubre"
+  },
+  {
+   "id": "2026-10-02_04-36-06-1",
+   "ancho": 1430,
+   "alto": 1787,
+   "fecha": "2026-10-02",
+   "likes": 267,
+   "titulo": "",
+   "luchadores": [
+    "skayler"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_04-36-06-2",
+   "ancho": 1241,
+   "alto": 1551,
+   "fecha": "2026-10-02",
+   "likes": 267,
+   "titulo": "",
+   "luchadores": [
+    "skayler"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_04-36-06-3",
+   "ancho": 2655,
+   "alto": 3303,
+   "fecha": "2026-10-02",
+   "likes": 267,
+   "titulo": "",
+   "luchadores": [
+    "skayler"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-07_18-27-15-1",
+   "ancho": 4096,
+   "alto": 2926,
+   "fecha": "2026-10-07",
+   "likes": 243,
+   "titulo": "",
+   "luchadores": [
+    "aero-star"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-06_22-32-09-1",
+   "ancho": 4096,
+   "alto": 2949,
+   "fecha": "2026-10-06",
+   "likes": 238,
+   "titulo": "",
+   "luchadores": [
+    "centella"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-06_22-32-09-2",
+   "ancho": 4095,
+   "alto": 2949,
+   "fecha": "2026-10-06",
+   "likes": 238,
+   "titulo": "",
+   "luchadores": [
+    "centella"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-05_20-24-10-1",
+   "ancho": 2095,
+   "alto": 2621,
+   "fecha": "2026-10-05",
+   "likes": 229,
+   "titulo": "",
+   "luchadores": [
+    "reyna-zahori"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-05_20-24-10-2",
+   "ancho": 2196,
+   "alto": 2745,
+   "fecha": "2026-10-05",
+   "likes": 229,
+   "titulo": "",
+   "luchadores": [
+    "reyna-zahori"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_06-44-16-1",
+   "ancho": 3274,
+   "alto": 4096,
+   "fecha": "2026-10-02",
+   "likes": 210,
+   "titulo": "",
+   "luchadores": [
+    "alish"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-09_17-37-39-1",
+   "ancho": 2117,
+   "alto": 1511,
+   "fecha": "2026-10-09",
+   "likes": 208,
+   "titulo": "",
+   "luchadores": [
+    "murder"
+   ],
+   "funcion": null,
+   "lugar": "Fiestas de Octubre"
+  },
+  {
+   "id": "2026-10-02_04-38-00-1",
+   "ancho": 3042,
+   "alto": 2452,
+   "fecha": "2026-10-02",
+   "likes": 195,
+   "titulo": "",
+   "luchadores": [
+    "visionario"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_04-38-00-2",
+   "ancho": 4096,
+   "alto": 3301,
+   "fecha": "2026-10-02",
+   "likes": 195,
+   "titulo": "",
+   "luchadores": [
+    "visionario"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_04-38-00-3",
+   "ancho": 4096,
+   "alto": 3301,
+   "fecha": "2026-10-02",
+   "likes": 195,
+   "titulo": "",
+   "luchadores": [
+    "visionario"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_04-38-00-4",
+   "ancho": 3200,
+   "alto": 2586,
+   "fecha": "2026-10-02",
+   "likes": 195,
+   "titulo": "",
+   "luchadores": [
+    "visionario"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_20-44-29-1",
+   "ancho": 1810,
+   "alto": 2262,
+   "fecha": "2026-10-04",
+   "likes": 174,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-abismo-negro"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-06-14_02-57-37-1",
+   "ancho": 1600,
+   "alto": 900,
+   "fecha": "2026-06-14",
+   "likes": 153,
+   "titulo": "Flow",
+   "luchadores": [
+    "miztli-lion"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-17_16-15-28-1",
+   "ancho": 3274,
+   "alto": 4096,
+   "fecha": "2026-10-17",
+   "likes": 144,
+   "titulo": "",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-07_21-56-57-1",
+   "ancho": 3107,
+   "alto": 4021,
+   "fecha": "2026-06-07",
+   "likes": 126,
+   "titulo": "",
+   "luchadores": [
+    "cosmico"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-22_15-53-19-1",
+   "ancho": 1700,
+   "alto": 2200,
+   "fecha": "2026-06-22",
+   "likes": 119,
+   "titulo": "Flow",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-22_15-53-19-3",
+   "ancho": 2400,
+   "alto": 3106,
+   "fecha": "2026-06-22",
+   "likes": 119,
+   "titulo": "Flow",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-22_15-53-19-4",
+   "ancho": 2400,
+   "alto": 3106,
+   "fecha": "2026-06-22",
+   "likes": 119,
+   "titulo": "Flow",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-02_15-44-39-1",
+   "ancho": 2305,
+   "alto": 1296,
+   "fecha": "2026-07-02",
+   "likes": 118,
+   "titulo": "Flow",
+   "luchadores": [
+    "mack"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-02_15-44-39-2",
+   "ancho": 2730,
+   "alto": 1820,
+   "fecha": "2026-07-02",
+   "likes": 118,
+   "titulo": "Flow",
+   "luchadores": [
+    "mack"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-02_15-44-39-3",
+   "ancho": 2305,
+   "alto": 1296,
+   "fecha": "2026-07-02",
+   "likes": 118,
+   "titulo": "Flow",
+   "luchadores": [
+    "mack"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-02_15-44-39-4",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-07-02",
+   "likes": 118,
+   "titulo": "Flow",
+   "luchadores": [
+    "mack"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-28_15-10-55-1",
+   "ancho": 3107,
+   "alto": 4021,
+   "fecha": "2026-05-28",
+   "likes": 114,
+   "titulo": "",
+   "luchadores": [
+    "nortenito-lomeli"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-16_23-57-56-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-06-16",
+   "likes": 104,
+   "titulo": "Flow",
+   "luchadores": [
+    "metalik"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-33-28-1",
+   "ancho": 1673,
+   "alto": 2230,
+   "fecha": "2026-08-18",
+   "likes": 102,
+   "titulo": "El Baso",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-33-28-2",
+   "ancho": 2125,
+   "alto": 2833,
+   "fecha": "2026-08-18",
+   "likes": 102,
+   "titulo": "El Baso",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-33-28-3",
+   "ancho": 733,
+   "alto": 977,
+   "fecha": "2026-08-18",
+   "likes": 102,
+   "titulo": "El Baso",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-33-28-4",
+   "ancho": 1253,
+   "alto": 1670,
+   "fecha": "2026-08-18",
+   "likes": 102,
+   "titulo": "El Baso",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-13_20-00-40-1",
+   "ancho": 3200,
+   "alto": 4000,
+   "fecha": "2026-10-13",
+   "likes": 101,
+   "titulo": "",
+   "luchadores": [
+    "belcegor"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-13_20-00-40-2",
+   "ancho": 3200,
+   "alto": 4000,
+   "fecha": "2026-10-13",
+   "likes": 101,
+   "titulo": "",
+   "luchadores": [
+    "belcegor"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-31_00-55-50-1",
+   "ancho": 3028,
+   "alto": 3919,
+   "fecha": "2026-10-31",
+   "likes": 99,
+   "titulo": "",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-30_03-28-00-1",
+   "ancho": 3107,
+   "alto": 4021,
+   "fecha": "2026-05-30",
+   "likes": 98,
+   "titulo": "",
+   "luchadores": [
+    "crazy-king"
+   ],
+   "funcion": "sin-lucha-no-hay-victoria-2",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-21_19-28-28-1",
+   "ancho": 1859,
+   "alto": 2406,
+   "fecha": "2026-06-21",
+   "likes": 97,
+   "titulo": "Flow",
+   "luchadores": [
+    "hijo-de-fishman"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-08_02-11-37-1",
+   "ancho": 4096,
+   "alto": 2219,
+   "fecha": "2026-07-08",
+   "likes": 97,
+   "titulo": "El Duelo",
+   "luchadores": [
+    "makabre-blasphemy",
+    "aeroboy"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-10_12-38-53-1",
+   "ancho": 3518,
+   "alto": 1979,
+   "fecha": "2026-06-10",
+   "likes": 94,
+   "titulo": "Flow",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-27_02-26-14-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-05-27",
+   "likes": 87,
+   "titulo": "",
+   "luchadores": [
+    "mimo"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-08_23-54-52-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-06-08",
+   "likes": 83,
+   "titulo": "",
+   "luchadores": [
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-16_03-00-11-1",
+   "ancho": 4096,
+   "alto": 2303,
+   "fecha": "2026-06-16",
+   "likes": 83,
+   "titulo": "Flow",
+   "luchadores": [
+    "hijo-de-fishman"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_21-03-52-1",
+   "ancho": 1872,
+   "alto": 2341,
+   "fecha": "2026-10-04",
+   "likes": 83,
+   "titulo": "",
+   "luchadores": [
+    "drago"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-06-02_15-22-29-1",
+   "ancho": 2400,
+   "alto": 3106,
+   "fecha": "2026-06-02",
+   "likes": 79,
+   "titulo": "",
+   "luchadores": [
+    "koda"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-02_15-22-29-2",
+   "ancho": 2400,
+   "alto": 3106,
+   "fecha": "2026-06-02",
+   "likes": 79,
+   "titulo": "",
+   "luchadores": [
+    "koda"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_03-13-58-1",
+   "ancho": 1984,
+   "alto": 1120,
+   "fecha": "2026-09-18",
+   "likes": 79,
+   "titulo": "",
+   "luchadores": [
+    "bomba-villa"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_03-13-58-2",
+   "ancho": 1600,
+   "alto": 912,
+   "fecha": "2026-09-18",
+   "likes": 79,
+   "titulo": "",
+   "luchadores": [
+    "bomba-villa"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_22-10-33-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-08-18",
+   "likes": 77,
+   "titulo": " El Niño Extremo",
+   "luchadores": [
+    "zigma"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-09_03-36-30-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-07-09",
+   "likes": 76,
+   "titulo": "",
+   "luchadores": [
+    "diosa-del-caos"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-09_03-36-30-2",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-07-09",
+   "likes": 76,
+   "titulo": "",
+   "luchadores": [
+    "diosa-del-caos"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-09_03-36-30-3",
+   "ancho": 2255,
+   "alto": 3006,
+   "fecha": "2026-07-09",
+   "likes": 76,
+   "titulo": "",
+   "luchadores": [
+    "diosa-del-caos"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-21_15-19-07-1",
+   "ancho": 3000,
+   "alto": 3750,
+   "fecha": "2026-05-21",
+   "likes": 75,
+   "titulo": "",
+   "luchadores": [
+    "kumonga"
+   ],
+   "funcion": "sin-lucha-no-hay-victoria-2",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-13_16-36-39-1",
+   "ancho": 2542,
+   "alto": 3291,
+   "fecha": "2026-06-13",
+   "likes": 72,
+   "titulo": "Flow",
+   "luchadores": [
+    "oni-el-bendito"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-1",
+   "ancho": 1696,
+   "alto": 2128,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-2",
+   "ancho": 1120,
+   "alto": 1392,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-3",
+   "ancho": 1248,
+   "alto": 1552,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-4",
+   "ancho": 1968,
+   "alto": 2464,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-5",
+   "ancho": 2448,
+   "alto": 3072,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-48-52-6",
+   "ancho": 912,
+   "alto": 1136,
+   "fecha": "2026-09-18",
+   "likes": 71,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-14_02-13-15-1",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-10",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-12",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-13",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-14",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-15",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-2",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-3",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-4",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-5",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-6",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-7",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-8",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-04-14_02-13-15-9",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-04-14",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "hahastary",
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Marte"
+  },
+  {
+   "id": "2026-06-09_06-10-00-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-06-09",
+   "likes": 70,
+   "titulo": "Flow",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-25-45-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-08-18",
+   "likes": 70,
+   "titulo": "",
+   "luchadores": [
+    "paymon-vera"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-15_20-54-53-1",
+   "ancho": 4096,
+   "alto": 3277,
+   "fecha": "2026-10-15",
+   "likes": 69,
+   "titulo": "",
+   "luchadores": [
+    "principe-black"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-01_06-23-19-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-09-01",
+   "likes": 67,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-29_05-32-09-1",
+   "ancho": 4096,
+   "alto": 3274,
+   "fecha": "2026-09-29",
+   "likes": 67,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-10_14-45-01-1",
+   "ancho": 4096,
+   "alto": 3280,
+   "fecha": "2026-10-10",
+   "likes": 66,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Zapopan"
+  },
+  {
+   "id": "2026-10-04_03-39-17-1",
+   "ancho": 3276,
+   "alto": 4096,
+   "fecha": "2026-10-04",
+   "likes": 65,
+   "titulo": "",
+   "luchadores": [
+    "noisy-boy"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_03-39-17-2",
+   "ancho": 3214,
+   "alto": 4000,
+   "fecha": "2026-10-04",
+   "likes": 65,
+   "titulo": "",
+   "luchadores": [
+    "noisy-boy"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_03-39-17-3",
+   "ancho": 3276,
+   "alto": 4096,
+   "fecha": "2026-10-04",
+   "likes": 65,
+   "titulo": "",
+   "luchadores": [
+    "noisy-boy"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_03-39-17-4",
+   "ancho": 2690,
+   "alto": 3347,
+   "fecha": "2026-10-04",
+   "likes": 65,
+   "titulo": "",
+   "luchadores": [
+    "noisy-boy"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-04_03-39-17-5",
+   "ancho": 3276,
+   "alto": 4096,
+   "fecha": "2026-10-04",
+   "likes": 65,
+   "titulo": "",
+   "luchadores": [
+    "noisy-boy"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-01_20-08-24-1",
+   "ancho": 4096,
+   "alto": 3072,
+   "fecha": "2026-09-01",
+   "likes": 63,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-mascara-2000"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-10_14-54-48-1",
+   "ancho": 4096,
+   "alto": 3276,
+   "fecha": "2026-09-10",
+   "likes": 60,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-10_14-54-48-2",
+   "ancho": 1031,
+   "alto": 828,
+   "fecha": "2026-09-10",
+   "likes": 60,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-10_14-54-48-3",
+   "ancho": 1335,
+   "alto": 1072,
+   "fecha": "2026-09-10",
+   "likes": 60,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-10_14-54-48-4",
+   "ancho": 1726,
+   "alto": 1387,
+   "fecha": "2026-09-10",
+   "likes": 60,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-07_23-26-56-1",
+   "ancho": 2252,
+   "alto": 1267,
+   "fecha": "2026-07-07",
+   "likes": 58,
+   "titulo": "Yokai",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-07_17-23-44-1",
+   "ancho": 1534,
+   "alto": 2045,
+   "fecha": "2026-07-07",
+   "likes": 57,
+   "titulo": "Yokai",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-07_17-23-44-2",
+   "ancho": 3000,
+   "alto": 4000,
+   "fecha": "2026-07-07",
+   "likes": 57,
+   "titulo": "Yokai",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-15_15-49-37-1",
+   "ancho": 2257,
+   "alto": 3009,
+   "fecha": "2026-09-15",
+   "likes": 57,
+   "titulo": "",
+   "luchadores": [
+    "kal-el"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-15_15-49-37-2",
+   "ancho": 1061,
+   "alto": 1411,
+   "fecha": "2026-09-15",
+   "likes": 57,
+   "titulo": "",
+   "luchadores": [
+    "kal-el"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-26_15-29-09-1",
+   "ancho": 2113,
+   "alto": 2641,
+   "fecha": "2026-10-26",
+   "likes": 56,
+   "titulo": "",
+   "luchadores": [
+    "aquiles"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-14_18-29-54-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-05-14",
+   "likes": 55,
+   "titulo": "",
+   "luchadores": [
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-08-25_07-38-35-1",
+   "ancho": 1088,
+   "alto": 1456,
+   "fecha": "2026-08-25",
+   "likes": 55,
+   "titulo": "",
+   "luchadores": [
+    "zigma"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-15_23-58-58-1",
+   "ancho": 957,
+   "alto": 1239,
+   "fecha": "2026-06-15",
+   "likes": 53,
+   "titulo": "Flow",
+   "luchadores": [
+    "hijo-de-fishman"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-22_00-59-02-1",
+   "ancho": 1261,
+   "alto": 901,
+   "fecha": "2026-06-22",
+   "likes": 53,
+   "titulo": "Flow",
+   "luchadores": [
+    "principe-centauro"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-18_16-42-26-1",
+   "ancho": 4096,
+   "alto": 3277,
+   "fecha": "2026-09-18",
+   "likes": 53,
+   "titulo": "",
+   "luchadores": [
+    "leviatham-homicida",
+    "zigma"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-25_15-49-28-1",
+   "ancho": 3072,
+   "alto": 2304,
+   "fecha": "2026-07-25",
+   "likes": 52,
+   "titulo": "",
+   "luchadores": [
+    "el-mago"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-25_15-49-28-2",
+   "ancho": 3981,
+   "alto": 2986,
+   "fecha": "2026-07-25",
+   "likes": 52,
+   "titulo": "",
+   "luchadores": [
+    "el-mago"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-28_17-40-48-1",
+   "ancho": 2615,
+   "alto": 3486,
+   "fecha": "2026-07-28",
+   "likes": 52,
+   "titulo": "El Mago 🧙‍♂️",
+   "luchadores": [
+    "el-mago"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-28_17-40-48-2",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-07-28",
+   "likes": 52,
+   "titulo": "El Mago 🧙‍♂️",
+   "luchadores": [
+    "el-mago"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-10_21-04-03-1",
+   "ancho": 1255,
+   "alto": 1569,
+   "fecha": "2026-09-10",
+   "likes": 51,
+   "titulo": "",
+   "luchadores": [
+    "azur"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-16_00-16-20-1",
+   "ancho": 2200,
+   "alto": 2750,
+   "fecha": "2026-09-16",
+   "likes": 51,
+   "titulo": "",
+   "luchadores": [
+    "kid-marciano"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-13_03-15-25-1",
+   "ancho": 2230,
+   "alto": 1592,
+   "fecha": "2026-10-13",
+   "likes": 51,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-abismo-negro"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-10-13_03-15-25-2",
+   "ancho": 4095,
+   "alto": 2925,
+   "fecha": "2026-10-13",
+   "likes": 51,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-abismo-negro"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-10-13_03-15-25-3",
+   "ancho": 1420,
+   "alto": 1015,
+   "fecha": "2026-10-13",
+   "likes": 51,
+   "titulo": "",
+   "luchadores": [
+    "hijo-de-abismo-negro"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-07-09_14-27-00-1",
+   "ancho": 1241,
+   "alto": 1654,
+   "fecha": "2026-07-09",
+   "likes": 50,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-09_14-27-00-2",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-07-09",
+   "likes": 50,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-09_14-27-00-3",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-07-09",
+   "likes": 50,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-29_16-38-16-1",
+   "ancho": 4096,
+   "alto": 2926,
+   "fecha": "2026-10-29",
+   "likes": 50,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-02_23-27-12-1",
+   "ancho": 4096,
+   "alto": 3069,
+   "fecha": "2026-09-02",
+   "likes": 49,
+   "titulo": "",
+   "luchadores": [
+    "andy-blake"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-17_04-47-07-1",
+   "ancho": 3929,
+   "alto": 2209,
+   "fecha": "2026-09-17",
+   "likes": 49,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-29_17-02-30-1",
+   "ancho": 2830,
+   "alto": 3538,
+   "fecha": "2026-09-29",
+   "likes": 49,
+   "titulo": "",
+   "luchadores": [
+    "imperial-guerrero"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-26_17-04-41-1",
+   "ancho": 3107,
+   "alto": 4021,
+   "fecha": "2026-05-26",
+   "likes": 48,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-07_19-53-46-1",
+   "ancho": 3072,
+   "alto": 2304,
+   "fecha": "2026-07-07",
+   "likes": 48,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": ""
+  },
+  {
+   "id": "2026-07-07_19-53-46-2",
+   "ancho": 3000,
+   "alto": 2257,
+   "fecha": "2026-07-07",
+   "likes": 48,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": ""
+  },
+  {
+   "id": "2026-09-01_23-13-50-1",
+   "ancho": 2236,
+   "alto": 2978,
+   "fecha": "2026-09-01",
+   "likes": 47,
+   "titulo": "",
+   "luchadores": [
+    "infernus-z",
+    "infernus"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-01_23-13-50-2",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-09-01",
+   "likes": 47,
+   "titulo": "",
+   "luchadores": [
+    "infernus-z",
+    "infernus"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-01_23-13-50-3",
+   "ancho": 1095,
+   "alto": 1458,
+   "fecha": "2026-09-01",
+   "likes": 47,
+   "titulo": "",
+   "luchadores": [
+    "infernus-z",
+    "infernus"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-06-16_22-38-45-1",
+   "ancho": 4096,
+   "alto": 2303,
+   "fecha": "2026-06-16",
+   "likes": 46,
+   "titulo": "Flow",
+   "luchadores": [
+    "mack"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_23-20-32-1",
+   "ancho": 1536,
+   "alto": 2048,
+   "fecha": "2026-08-18",
+   "likes": 46,
+   "titulo": "Galaxy Boy",
+   "luchadores": [
+    "galaxy-boy"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-20_18-02-11-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-08-20",
+   "likes": 46,
+   "titulo": "",
+   "luchadores": [
+    "cien-caras-jr"
+   ],
+   "funcion": "promociones-chaman",
+   "lugar": ""
+  },
+  {
+   "id": "2026-08-20_18-02-11-2",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-08-20",
+   "likes": 46,
+   "titulo": "",
+   "luchadores": [
+    "cien-caras-jr"
+   ],
+   "funcion": "promociones-chaman",
+   "lugar": ""
+  },
+  {
+   "id": "2026-08-20_18-02-11-3",
+   "ancho": 1409,
+   "alto": 1878,
+   "fecha": "2026-08-20",
+   "likes": 46,
+   "titulo": "",
+   "luchadores": [
+    "cien-caras-jr"
+   ],
+   "funcion": "promociones-chaman",
+   "lugar": ""
+  },
+  {
+   "id": "2026-09-09_03-29-31-1",
+   "ancho": 4096,
+   "alto": 3274,
+   "fecha": "2026-09-09",
+   "likes": 46,
+   "titulo": "",
+   "luchadores": [
+    "paymon-vera"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-22_00-40-51-1",
+   "ancho": 1080,
+   "alto": 798,
+   "fecha": "2026-10-22",
+   "likes": 46,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-09-06_22-12-31-1",
+   "ancho": 1579,
+   "alto": 2105,
+   "fecha": "2026-09-06",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "cibernetico"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-06_22-12-31-2",
+   "ancho": 3082,
+   "alto": 4096,
+   "fecha": "2026-09-06",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "cibernetico"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-07_02-54-58-1",
+   "ancho": 1200,
+   "alto": 1600,
+   "fecha": "2026-09-07",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "la-park"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-02_19-35-30-1",
+   "ancho": 4096,
+   "alto": 3276,
+   "fecha": "2026-10-02",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_19-35-30-2",
+   "ancho": 3965,
+   "alto": 3172,
+   "fecha": "2026-10-02",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "gravity"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-16_20-17-50-1",
+   "ancho": 2537,
+   "alto": 3383,
+   "fecha": "2026-10-16",
+   "likes": 44,
+   "titulo": "",
+   "luchadores": [
+    "la-park"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-18_15-39-23-1",
+   "ancho": 1440,
+   "alto": 960,
+   "fecha": "2026-03-18",
+   "likes": 43,
+   "titulo": "",
+   "luchadores": [
+    "pimpinela-escarlata"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-18_15-39-23-2",
+   "ancho": 1440,
+   "alto": 962,
+   "fecha": "2026-03-18",
+   "likes": 43,
+   "titulo": "",
+   "luchadores": [
+    "pimpinela-escarlata"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-18_15-39-23-3",
+   "ancho": 1440,
+   "alto": 962,
+   "fecha": "2026-03-18",
+   "likes": 43,
+   "titulo": "",
+   "luchadores": [
+    "pimpinela-escarlata"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-20_00-38-53-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-08-20",
+   "likes": 41,
+   "titulo": "El Mofles",
+   "luchadores": [
+    "j-gomez"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-29_17-01-02-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-09-29",
+   "likes": 41,
+   "titulo": "",
+   "luchadores": [
+    "imperial-guerrero"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-16_16-47-34-1",
+   "ancho": 1936,
+   "alto": 1089,
+   "fecha": "2026-06-16",
+   "likes": 40,
+   "titulo": "Flow",
+   "luchadores": [
+    "tiger-trueno"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-03_15-21-29-1",
+   "ancho": 4096,
+   "alto": 3276,
+   "fecha": "2026-10-03",
+   "likes": 40,
+   "titulo": "",
+   "luchadores": [
+    "mafioso"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-03_15-21-29-2",
+   "ancho": 3577,
+   "alto": 2874,
+   "fecha": "2026-10-03",
+   "likes": 40,
+   "titulo": "",
+   "luchadores": [
+    "mafioso"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-03_15-39-48-1",
+   "ancho": 4096,
+   "alto": 3276,
+   "fecha": "2026-10-03",
+   "likes": 40,
+   "titulo": "",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-03_15-39-48-2",
+   "ancho": 4096,
+   "alto": 3276,
+   "fecha": "2026-10-03",
+   "likes": 40,
+   "titulo": "",
+   "luchadores": [
+    "prism-x",
+    "paymon-vera"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-21_21-58-24-1",
+   "ancho": 1536,
+   "alto": 1024,
+   "fecha": "2026-10-21",
+   "likes": 40,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-31_15-36-47-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-03-31",
+   "likes": 39,
+   "titulo": "",
+   "luchadores": [
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_18-28-29-1",
+   "ancho": 3312,
+   "alto": 1872,
+   "fecha": "2026-08-18",
+   "likes": 39,
+   "titulo": " Diamante JR",
+   "luchadores": [
+    "diamante-negro-jr"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-10_20-01-49-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-02-10",
+   "likes": 38,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-26_15-32-49-1",
+   "ancho": 1365,
+   "alto": 1820,
+   "fecha": "2026-02-26",
+   "likes": 38,
+   "titulo": "",
+   "luchadores": [
+    "the-action-man"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-07-10_16-19-30-1",
+   "ancho": 4096,
+   "alto": 2303,
+   "fecha": "2026-07-10",
+   "likes": 38,
+   "titulo": "Here Comes The Pain",
+   "luchadores": [
+    "makabre-blasphemy",
+    "aeroboy"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-02_19-24-37-1",
+   "ancho": 1374,
+   "alto": 738,
+   "fecha": "2026-10-02",
+   "likes": 38,
+   "titulo": "",
+   "luchadores": [
+    "demencia"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-20_21-15-57-2",
+   "ancho": 1560,
+   "alto": 1950,
+   "fecha": "2026-06-20",
+   "likes": 37,
+   "titulo": "Flow",
+   "luchadores": [
+    "albatros-jr"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-13_16-59-14-1",
+   "ancho": 1994,
+   "alto": 2658,
+   "fecha": "2026-07-13",
+   "likes": 37,
+   "titulo": "Entre Cadenas",
+   "luchadores": [
+    "antisocial-187"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-13_16-59-14-2",
+   "ancho": 2365,
+   "alto": 3143,
+   "fecha": "2026-07-13",
+   "likes": 37,
+   "titulo": "Entre Cadenas",
+   "luchadores": [
+    "antisocial-187"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-28_01-32-30-1",
+   "ancho": 2564,
+   "alto": 3419,
+   "fecha": "2026-07-28",
+   "likes": 37,
+   "titulo": "",
+   "luchadores": [
+    "billie-infierno"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-22_00-34-47-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-05-22",
+   "likes": 36,
+   "titulo": "",
+   "luchadores": [
+    "mosco-x-fly-jr"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-27_00-42-05-1",
+   "ancho": 2400,
+   "alto": 1854,
+   "fecha": "2026-05-27",
+   "likes": 36,
+   "titulo": "",
+   "luchadores": [
+    "kumonga"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-18_23-17-04-1",
+   "ancho": 2336,
+   "alto": 3120,
+   "fecha": "2026-08-18",
+   "likes": 35,
+   "titulo": "",
+   "luchadores": [
+    "master-crazy"
+   ],
+   "funcion": "bautizo-extremo",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-15_04-42-20-1",
+   "ancho": 4096,
+   "alto": 2926,
+   "fecha": "2026-10-15",
+   "likes": 35,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-06-10_14-34-07-1",
+   "ancho": 3164,
+   "alto": 4096,
+   "fecha": "2026-06-10",
+   "likes": 34,
+   "titulo": "Flow",
+   "luchadores": [
+    "chris-carter"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-27_03-00-26-1",
+   "ancho": 4096,
+   "alto": 3164,
+   "fecha": "2026-06-27",
+   "likes": 34,
+   "titulo": "Flow",
+   "luchadores": [
+    "mafioso"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-19_15-49-16-1",
+   "ancho": 1072,
+   "alto": 1440,
+   "fecha": "2026-08-19",
+   "likes": 34,
+   "titulo": "",
+   "luchadores": [
+    "halcon-furia"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-09-01_14-33-20-1",
+   "ancho": 2932,
+   "alto": 3803,
+   "fecha": "2026-09-01",
+   "likes": 34,
+   "titulo": "",
+   "luchadores": [
+    "el-mesias"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-10-28_18-29-21-1",
+   "ancho": 2157,
+   "alto": 2876,
+   "fecha": "2026-10-28",
+   "likes": 34,
+   "titulo": "",
+   "luchadores": [
+    "demencia"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-06-30_03-51-43-1",
+   "ancho": 1401,
+   "alto": 1813,
+   "fecha": "2026-06-30",
+   "likes": 33,
+   "titulo": "Flow",
+   "luchadores": [
+    "albatros-jr"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-30_03-51-43-2",
+   "ancho": 1560,
+   "alto": 2019,
+   "fecha": "2026-06-30",
+   "likes": 33,
+   "titulo": "Flow",
+   "luchadores": [
+    "albatros-jr"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-04_04-45-18-1",
+   "ancho": 2109,
+   "alto": 2730,
+   "fecha": "2026-09-04",
+   "likes": 33,
+   "titulo": "",
+   "luchadores": [
+    "el-mesias"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-27_19-31-58-1",
+   "ancho": 3694,
+   "alto": 2956,
+   "fecha": "2026-09-27",
+   "likes": 33,
+   "titulo": "",
+   "luchadores": [
+    "bomba-villa"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-12_03-42-44-1",
+   "ancho": 3886,
+   "alto": 2779,
+   "fecha": "2026-10-12",
+   "likes": 33,
+   "titulo": "",
+   "luchadores": [
+    "mini-psycho-clown"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-23_20-01-15-1",
+   "ancho": 3277,
+   "alto": 4096,
+   "fecha": "2026-10-23",
+   "likes": 33,
+   "titulo": "",
+   "luchadores": [
+    "demencia"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-07_01-32-23-1",
+   "ancho": 1440,
+   "alto": 1902,
+   "fecha": "2026-04-07",
+   "likes": 32,
+   "titulo": "",
+   "luchadores": [
+    "aero-star"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-11_16-57-48-1",
+   "ancho": 3863,
+   "alto": 2840,
+   "fecha": "2026-05-11",
+   "likes": 32,
+   "titulo": "",
+   "luchadores": [
+    "mosco-x-fly-jr"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-12_23-58-45-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-10-12",
+   "likes": 32,
+   "titulo": "",
+   "luchadores": [
+    "aero-star"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-06-03_00-33-25-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-06-03",
+   "likes": 31,
+   "titulo": "",
+   "luchadores": [
+    "mosco-x-fly-jr"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-14_04-50-32-1",
+   "ancho": 4096,
+   "alto": 2923,
+   "fecha": "2026-10-14",
+   "likes": 31,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-10-20_21-26-43-1",
+   "ancho": 3036,
+   "alto": 3795,
+   "fecha": "2026-10-20",
+   "likes": 31,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-08-19_15-47-15-1",
+   "ancho": 1088,
+   "alto": 1456,
+   "fecha": "2026-08-19",
+   "likes": 30,
+   "titulo": "",
+   "luchadores": [
+    "mago-misterio"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-09-08_03-03-36-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-09-08",
+   "likes": 30,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-24_02-02-08-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-09-24",
+   "likes": 30,
+   "titulo": "",
+   "luchadores": [
+    "el-catrin"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-01_02-55-21-1",
+   "ancho": 1440,
+   "alto": 1920,
+   "fecha": "2026-03-01",
+   "likes": 29,
+   "titulo": "",
+   "luchadores": [
+    "tiger-trueno"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-01_02-55-21-2",
+   "ancho": 1440,
+   "alto": 1920,
+   "fecha": "2026-03-01",
+   "likes": 29,
+   "titulo": "",
+   "luchadores": [
+    "tiger-trueno"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-05-29_16-35-46-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-05-29",
+   "likes": 29,
+   "titulo": "",
+   "luchadores": [
+    "dark-power",
+    "sobek",
+    "j-gomez"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-24_03-06-35-1",
+   "ancho": 4096,
+   "alto": 2716,
+   "fecha": "2026-06-24",
+   "likes": 28,
+   "titulo": "Flow",
+   "luchadores": [
+    "tiger-trueno",
+    "balam"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-16_04-24-44-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-02-16",
+   "likes": 27,
+   "titulo": "",
+   "luchadores": [
+    "saturno-suicida"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-07-10_00-57-13-1",
+   "ancho": 3970,
+   "alto": 2978,
+   "fecha": "2026-07-10",
+   "likes": 27,
+   "titulo": "",
+   "luchadores": [
+    "makabre-blasphemy"
+   ],
+   "funcion": "drong-brothers",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-07_23-47-05-1",
+   "ancho": 2827,
+   "alto": 3769,
+   "fecha": "2026-09-07",
+   "likes": 27,
+   "titulo": "",
+   "luchadores": [
+    "la-park"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-14_14-52-23-1",
+   "ancho": 4096,
+   "alto": 3277,
+   "fecha": "2026-09-14",
+   "likes": 27,
+   "titulo": "",
+   "luchadores": [
+    "master-terror"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-07_00-13-50-1",
+   "ancho": 1260,
+   "alto": 900,
+   "fecha": "2026-10-07",
+   "likes": 27,
+   "titulo": "",
+   "luchadores": [
+    "sussy-love"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-06-15_01-54-59-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-06-15",
+   "likes": 26,
+   "titulo": "Flow",
+   "luchadores": [
+    "chris-carter"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-10-27_15-09-24-1",
+   "ancho": 1717,
+   "alto": 966,
+   "fecha": "2026-10-27",
+   "likes": 26,
+   "titulo": "",
+   "luchadores": [
+    "la-park",
+    "cibernetico"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-03-28_00-45-07-1",
+   "ancho": 1440,
+   "alto": 1018,
+   "fecha": "2026-03-28",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "flamita",
+    "aeroboy"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-28_00-45-07-2",
+   "ancho": 1440,
+   "alto": 1018,
+   "fecha": "2026-03-28",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "flamita",
+    "aeroboy"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-31_16-21-28-1",
+   "ancho": 1440,
+   "alto": 1800,
+   "fecha": "2026-03-31",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-17_15-49-51-1",
+   "ancho": 1440,
+   "alto": 1112,
+   "fecha": "2026-04-17",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "tromba"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-02_20-12-31-1",
+   "ancho": 1167,
+   "alto": 1556,
+   "fecha": "2026-09-02",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "monster-clown"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-02_20-12-31-2",
+   "ancho": 1167,
+   "alto": 1556,
+   "fecha": "2026-09-02",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [
+    "monster-clown"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-10-28_04-30-40-1",
+   "ancho": 1350,
+   "alto": 900,
+   "fecha": "2026-10-28",
+   "likes": 25,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-04-01_16-14-44-1",
+   "ancho": 1440,
+   "alto": 1920,
+   "fecha": "2026-04-01",
+   "likes": 23,
+   "titulo": "",
+   "luchadores": [
+    "polar"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-01_06-27-16-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-09-01",
+   "likes": 23,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-09-17_01-30-31-1",
+   "ancho": 3047,
+   "alto": 4062,
+   "fecha": "2026-09-17",
+   "likes": 23,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-04-29_17-07-47-1",
+   "ancho": 2048,
+   "alto": 1463,
+   "fecha": "2026-04-29",
+   "likes": 22,
+   "titulo": "",
+   "luchadores": [
+    "caos"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-07_15-25-40-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-09-07",
+   "likes": 22,
+   "titulo": "",
+   "luchadores": [
+    "demonio-infernal"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-02-06_01-34-23-1",
+   "ancho": 1080,
+   "alto": 834,
+   "fecha": "2026-02-06",
+   "likes": 21,
+   "titulo": "",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-04-28_16-13-53-1",
+   "ancho": 1219,
+   "alto": 1566,
+   "fecha": "2026-04-28",
+   "likes": 21,
+   "titulo": "",
+   "luchadores": [
+    "albatros-jr"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-09_22-20-18-1",
+   "ancho": 1440,
+   "alto": 1920,
+   "fecha": "2026-01-09",
+   "likes": 20,
+   "titulo": "",
+   "luchadores": [
+    "krampus"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-14_16-00-31-1",
+   "ancho": 1440,
+   "alto": 1799,
+   "fecha": "2026-01-14",
+   "likes": 20,
+   "titulo": "",
+   "luchadores": [
+    "zigma"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-11-02_05-09-00-1",
+   "ancho": 2604,
+   "alto": 3472,
+   "fecha": "2026-11-02",
+   "likes": 20,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-24_05-28-35-1",
+   "ancho": 1200,
+   "alto": 1600,
+   "fecha": "2026-01-24",
+   "likes": 19,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-01-20_17-36-22-1",
+   "ancho": 1344,
+   "alto": 1792,
+   "fecha": "2026-01-20",
+   "likes": 18,
+   "titulo": "",
+   "luchadores": [
+    "rey-eclipse"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-01-21_23-27-05-1",
+   "ancho": 1346,
+   "alto": 1790,
+   "fecha": "2026-01-21",
+   "likes": 18,
+   "titulo": "",
+   "luchadores": [
+    "el-grande-americano"
+   ],
+   "funcion": null,
+   "lugar": "Arena CDMX"
+  },
+  {
+   "id": "2026-02-12_02-45-20-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-02-12",
+   "likes": 18,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-26_05-42-47-1",
+   "ancho": 1440,
+   "alto": 1030,
+   "fecha": "2026-03-26",
+   "likes": 18,
+   "titulo": "",
+   "luchadores": [
+    "king-charrito"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-06-08_19-06-11-1",
+   "ancho": 2400,
+   "alto": 1350,
+   "fecha": "2026-06-08",
+   "likes": 18,
+   "titulo": "",
+   "luchadores": [
+    "kumonga"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-24_22-01-30-1",
+   "ancho": 1440,
+   "alto": 1870,
+   "fecha": "2026-02-24",
+   "likes": 17,
+   "titulo": "",
+   "luchadores": [
+    "flamita"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-07_20-32-51-1",
+   "ancho": 1440,
+   "alto": 810,
+   "fecha": "2026-04-07",
+   "likes": 17,
+   "titulo": "",
+   "luchadores": [
+    "prism-x"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-29_22-27-28-1",
+   "ancho": 2048,
+   "alto": 1462,
+   "fecha": "2026-04-29",
+   "likes": 17,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-15_02-10-22-1",
+   "ancho": 4096,
+   "alto": 2304,
+   "fecha": "2026-06-15",
+   "likes": 17,
+   "titulo": "Flow",
+   "luchadores": [
+    "oni-el-bendito"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-08_14-20-23-1",
+   "ancho": 3072,
+   "alto": 4096,
+   "fecha": "2026-09-08",
+   "likes": 17,
+   "titulo": "",
+   "luchadores": [
+    "laredo-kid"
+   ],
+   "funcion": null,
+   "lugar": "Zapopan Jal,"
+  },
+  {
+   "id": "2026-09-09_05-46-12-1",
+   "ancho": 1665,
+   "alto": 2220,
+   "fecha": "2026-09-09",
+   "likes": 17,
+   "titulo": "",
+   "luchadores": [
+    "el-catrin"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-13_02-13-17-1",
+   "ancho": 1440,
+   "alto": 1799,
+   "fecha": "2026-01-13",
+   "likes": 16,
+   "titulo": "",
+   "luchadores": [
+    "yokai"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-01-16_04-46-44-1",
+   "ancho": 1440,
+   "alto": 1799,
+   "fecha": "2026-01-16",
+   "likes": 16,
+   "titulo": "",
+   "luchadores": [
+    "amnesia-lokote"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-17_18-45-33-1",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-02-17",
+   "likes": 16,
+   "titulo": "",
+   "luchadores": [
+    "lucifer"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-13_03-16-48-1",
+   "ancho": 1159,
+   "alto": 1545,
+   "fecha": "2026-02-13",
+   "likes": 15,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-25_00-45-32-1",
+   "ancho": 1365,
+   "alto": 1820,
+   "fecha": "2026-02-25",
+   "likes": 15,
+   "titulo": "",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": null,
+   "lugar": "Tokyo, Japan"
+  },
+  {
+   "id": "2026-03-24_14-53-13-1",
+   "ancho": 1440,
+   "alto": 1055,
+   "fecha": "2026-03-24",
+   "likes": 15,
+   "titulo": "",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-04-08_03-58-24-1",
+   "ancho": 1440,
+   "alto": 1840,
+   "fecha": "2026-04-08",
+   "likes": 15,
+   "titulo": "",
+   "luchadores": [
+    "sunboy-santi"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-09_14-55-43-1",
+   "ancho": 1440,
+   "alto": 975,
+   "fecha": "2026-03-09",
+   "likes": 14,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-12_15-10-35-1",
+   "ancho": 1440,
+   "alto": 1646,
+   "fecha": "2026-03-12",
+   "likes": 14,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-04-27_01-57-00-1",
+   "ancho": 1584,
+   "alto": 2048,
+   "fecha": "2026-04-27",
+   "likes": 14,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-19_16-15-29-1",
+   "ancho": 1339,
+   "alto": 1785,
+   "fecha": "2026-01-19",
+   "likes": 13,
+   "titulo": "",
+   "luchadores": [
+    "demencia"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-03_14-43-16-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-03-03",
+   "likes": 13,
+   "titulo": "",
+   "luchadores": [
+    "simbolo"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-27_03-25-17-1",
+   "ancho": 1440,
+   "alto": 960,
+   "fecha": "2026-03-27",
+   "likes": 13,
+   "titulo": "",
+   "luchadores": [
+    "albatros-jr"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-06-17_23-52-41-1",
+   "ancho": 2925,
+   "alto": 2089,
+   "fecha": "2026-06-17",
+   "likes": 13,
+   "titulo": "Flow",
+   "luchadores": [
+    "resplandor"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-06-17_23-52-41-2",
+   "ancho": 2928,
+   "alto": 2091,
+   "fecha": "2026-06-17",
+   "likes": 13,
+   "titulo": "Flow",
+   "luchadores": [
+    "resplandor"
+   ],
+   "funcion": "flow",
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-10_01-30-35-1",
+   "ancho": 1440,
+   "alto": 1151,
+   "fecha": "2026-01-10",
+   "likes": 12,
+   "titulo": "El Rey del Raquetaso",
+   "luchadores": [
+    "amnesia-lokote"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-04_19-09-34-1",
+   "ancho": 1080,
+   "alto": 713,
+   "fecha": "2026-02-04",
+   "likes": 12,
+   "titulo": "",
+   "luchadores": [
+    "osiris"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-09_13-15-46-1",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-02-09",
+   "likes": 12,
+   "titulo": "",
+   "luchadores": [
+    "crazy-king"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-27_12-57-19-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-02-27",
+   "likes": 12,
+   "titulo": "",
+   "luchadores": [
+    "tiger-trueno"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-13_23-56-23-1",
+   "ancho": 1440,
+   "alto": 1075,
+   "fecha": "2026-03-13",
+   "likes": 12,
+   "titulo": "",
+   "luchadores": [
+    "oni-el-bendito"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-06_05-55-45-1",
+   "ancho": 1080,
+   "alto": 720,
+   "fecha": "2026-01-06",
+   "likes": 11,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-13_01-52-41-1",
+   "ancho": 1440,
+   "alto": 933,
+   "fecha": "2026-03-13",
+   "likes": 11,
+   "titulo": "",
+   "luchadores": [
+    "makabre-blasphemy"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-04-01_16-09-00-1",
+   "ancho": 1440,
+   "alto": 810,
+   "fecha": "2026-04-01",
+   "likes": 11,
+   "titulo": "",
+   "luchadores": [
+    "miedo-extremo"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-02-20_17-05-29-1",
+   "ancho": 1348,
+   "alto": 1642,
+   "fecha": "2026-02-20",
+   "likes": 10,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-02-25_03-25-01-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-02-25",
+   "likes": 10,
+   "titulo": "",
+   "luchadores": [
+    "king-charro"
+   ],
+   "funcion": null,
+   "lugar": "Guadalajara, Jalisco"
+  },
+  {
+   "id": "2026-01-13_18-28-07-1",
+   "ancho": 1347,
+   "alto": 1732,
+   "fecha": "2026-01-13",
+   "likes": 9,
+   "titulo": "",
+   "luchadores": [
+    "aquiles"
+   ],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-01-19_03-46-11-1",
+   "ancho": 1440,
+   "alto": 1028,
+   "fecha": "2026-01-19",
+   "likes": 9,
+   "titulo": "",
+   "luchadores": [
+    "alacran-galactico"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-13_13-27-45-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-03-13",
+   "likes": 9,
+   "titulo": "",
+   "luchadores": [
+    "king-charro"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-03-16_19-08-33-1",
+   "ancho": 1440,
+   "alto": 1053,
+   "fecha": "2026-03-16",
+   "likes": 8,
+   "titulo": "",
+   "luchadores": [
+    "aquiles"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-01-06_19-35-06-1",
+   "ancho": 1188,
+   "alto": 1568,
+   "fecha": "2026-01-06",
+   "likes": 7,
+   "titulo": "",
+   "luchadores": [],
+   "funcion": null,
+   "lugar": ""
+  },
+  {
+   "id": "2026-03-05_14-22-01-1",
+   "ancho": 1440,
+   "alto": 1029,
+   "fecha": "2026-03-05",
+   "likes": 5,
+   "titulo": "",
+   "luchadores": [
+    "simbolo"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-17_17-39-23-1",
+   "ancho": 1024,
+   "alto": 576,
+   "fecha": "2026-09-17",
+   "likes": 3,
+   "titulo": "",
+   "luchadores": [
+    "zigma"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  },
+  {
+   "id": "2026-09-17_17-39-23-2",
+   "ancho": 3408,
+   "alto": 1920,
+   "fecha": "2026-09-17",
+   "likes": 3,
+   "titulo": "",
+   "luchadores": [
+    "zigma"
+   ],
+   "funcion": null,
+   "lugar": "NWG - ARENA ROBERTO PAZ"
+  }
+ ],
+ "luchadores": [
+  {
+   "handle": "tualienigenafavorito",
+   "nombre": "Tromba",
+   "apodo": "Tu alienígena favorito",
+   "slug": "tromba",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-08_23-54-52-1",
+    "2026-05-14_18-29-54-1",
+    "2026-03-31_15-36-47-1",
+    "2026-04-17_15-49-51-1",
+    "2026-04-14_02-13-15-1",
+    "2026-04-14_02-13-15-10",
+    "2026-04-14_02-13-15-12",
+    "2026-04-14_02-13-15-13",
+    "2026-04-14_02-13-15-14",
+    "2026-04-14_02-13-15-15",
+    "2026-04-14_02-13-15-2",
+    "2026-04-14_02-13-15-3",
+    "2026-04-14_02-13-15-4",
+    "2026-04-14_02-13-15-5",
+    "2026-04-14_02-13-15-6",
+    "2026-04-14_02-13-15-7",
+    "2026-04-14_02-13-15-8",
+    "2026-04-14_02-13-15-9"
+   ]
+  },
+  {
+   "handle": "hadeshahastary",
+   "nombre": "Hahastary",
+   "apodo": "",
+   "slug": "hahastary",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-04-14_02-13-15-1",
+    "2026-04-14_02-13-15-10",
+    "2026-04-14_02-13-15-12",
+    "2026-04-14_02-13-15-13",
+    "2026-04-14_02-13-15-14",
+    "2026-04-14_02-13-15-15",
+    "2026-04-14_02-13-15-2",
+    "2026-04-14_02-13-15-3",
+    "2026-04-14_02-13-15-4",
+    "2026-04-14_02-13-15-5",
+    "2026-04-14_02-13-15-6",
+    "2026-04-14_02-13-15-7",
+    "2026-04-14_02-13-15-8",
+    "2026-04-14_02-13-15-9"
+   ]
+  },
+  {
+   "handle": "prismx.lucha",
+   "nombre": "Prism X",
+   "apodo": "Tu único amor",
+   "slug": "prism-x",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-26_17-04-41-1",
+    "2026-07-07_19-53-46-1",
+    "2026-07-07_19-53-46-2",
+    "2026-02-10_20-01-49-1",
+    "2026-03-31_16-21-28-1",
+    "2026-04-07_20-32-51-1",
+    "2026-08-18_18-33-28-1",
+    "2026-08-18_18-33-28-2",
+    "2026-08-18_18-33-28-3",
+    "2026-08-18_18-33-28-4",
+    "2026-10-03_15-39-48-1",
+    "2026-10-03_15-39-48-2"
+   ]
+  },
+  {
+   "handle": "yokai_nwg",
+   "nombre": "Yokai",
+   "apodo": "",
+   "slug": "yokai",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-10_14-54-48-1",
+    "2026-09-10_14-54-48-2",
+    "2026-09-10_14-54-48-3",
+    "2026-09-10_14-54-48-4",
+    "2026-07-07_23-26-56-1",
+    "2026-07-07_17-23-44-1",
+    "2026-07-07_17-23-44-2",
+    "2026-07-09_14-27-00-1",
+    "2026-07-09_14-27-00-2",
+    "2026-07-09_14-27-00-3",
+    "2026-10-21_21-58-24-1",
+    "2026-01-13_02-13-17-1"
+   ]
+  },
+  {
+   "handle": "paymonvera",
+   "nombre": "Paymon Vera",
+   "apodo": "El Más Extremo",
+   "slug": "paymon-vera",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-18_18-25-45-1",
+    "2026-09-09_03-29-31-1",
+    "2026-08-18_18-33-28-1",
+    "2026-08-18_18-33-28-2",
+    "2026-08-18_18-33-28-3",
+    "2026-08-18_18-33-28-4",
+    "2026-10-03_15-39-48-1",
+    "2026-10-03_15-39-48-2"
+   ]
+  },
+  {
+   "handle": "leviathamhomicida",
+   "nombre": "Leviatham Homicida",
+   "apodo": "La Bestia Marina",
+   "slug": "leviatham-homicida",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-18_16-48-52-1",
+    "2026-09-18_16-48-52-2",
+    "2026-09-18_16-48-52-3",
+    "2026-09-18_16-48-52-4",
+    "2026-09-18_16-48-52-5",
+    "2026-09-18_16-48-52-6",
+    "2026-09-18_16-42-26-1"
+   ]
+  },
+  {
+   "handle": "sunboy_santi",
+   "nombre": "Sunboy Santi",
+   "apodo": "El Rey",
+   "slug": "sunboy-santi",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-22_15-53-19-1",
+    "2026-06-22_15-53-19-3",
+    "2026-06-22_15-53-19-4",
+    "2026-02-06_01-34-23-1",
+    "2026-02-25_00-45-32-1",
+    "2026-03-24_14-53-13-1",
+    "2026-04-08_03-58-24-1"
+   ]
+  },
+  {
+   "handle": "gravity_luchador",
+   "nombre": "Gravity",
+   "apodo": "El Astronauta de la Lucha Libre",
+   "slug": "gravity",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-17_16-15-28-1",
+    "2026-10-31_00-55-50-1",
+    "2026-06-10_12-38-53-1",
+    "2026-06-09_06-10-00-1",
+    "2026-10-02_19-35-30-1",
+    "2026-10-02_19-35-30-2"
+   ]
+  },
+  {
+   "handle": "the_zigma",
+   "nombre": "Zigma",
+   "apodo": "El Niño Más Extremo",
+   "slug": "zigma",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-18_22-10-33-1",
+    "2026-08-25_07-38-35-1",
+    "2026-01-14_16-00-31-1",
+    "2026-09-17_17-39-23-1",
+    "2026-09-17_17-39-23-2",
+    "2026-09-18_16-42-26-1"
+   ]
+  },
+  {
+   "handle": "albatros.jr",
+   "nombre": "Albatros Jr.",
+   "apodo": "El Demonio Rojinegro",
+   "slug": "albatros-jr",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-20_21-15-57-2",
+    "2026-06-30_03-51-43-1",
+    "2026-06-30_03-51-43-2",
+    "2026-04-28_16-13-53-1",
+    "2026-03-27_03-25-17-1"
+   ]
+  },
+  {
+   "handle": "hijodeabismonegro__fiscal",
+   "nombre": "Hijo de Abismo Negro",
+   "apodo": "",
+   "slug": "hijo-de-abismo-negro",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-10-09_01-55-03-1",
+    "2026-10-04_20-44-29-1",
+    "2026-10-13_03-15-25-1",
+    "2026-10-13_03-15-25-2",
+    "2026-10-13_03-15-25-3"
+   ]
+  },
+  {
+   "handle": "mackwrestler",
+   "nombre": "Mack",
+   "apodo": "Ninja Mack",
+   "slug": "mack",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-02_15-44-39-1",
+    "2026-07-02_15-44-39-2",
+    "2026-07-02_15-44-39-3",
+    "2026-07-02_15-44-39-4",
+    "2026-06-16_22-38-45-1"
+   ]
+  },
+  {
+   "handle": "noisy_boy_ind",
+   "nombre": "Noisy Boy",
+   "apodo": "",
+   "slug": "noisy-boy",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-04_03-39-17-1",
+    "2026-10-04_03-39-17-2",
+    "2026-10-04_03-39-17-3",
+    "2026-10-04_03-39-17-4",
+    "2026-10-04_03-39-17-5"
+   ]
+  },
+  {
+   "handle": "tiger_trueno_oficial6",
+   "nombre": "Tiger Trueno",
+   "apodo": "",
+   "slug": "tiger-trueno",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-16_16-47-34-1",
+    "2026-03-01_02-55-21-1",
+    "2026-03-01_02-55-21-2",
+    "2026-02-27_12-57-19-1",
+    "2026-06-24_03-06-35-1"
+   ]
+  },
+  {
+   "handle": "aeroboy_indy",
+   "nombre": "Aeroboy",
+   "apodo": "",
+   "slug": "aeroboy",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-08_02-11-37-1",
+    "2026-07-10_16-19-30-1",
+    "2026-03-28_00-45-07-1",
+    "2026-03-28_00-45-07-2"
+   ]
+  },
+  {
+   "handle": "demencia_nwg",
+   "nombre": "Demencia",
+   "apodo": "",
+   "slug": "demencia",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-02_19-24-37-1",
+    "2026-10-28_18-29-21-1",
+    "2026-10-23_20-01-15-1",
+    "2026-01-19_16-15-29-1"
+   ]
+  },
+  {
+   "handle": "elmago_luchador",
+   "nombre": "El Mago",
+   "apodo": "",
+   "slug": "el-mago",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-25_15-49-28-1",
+    "2026-07-25_15-49-28-2",
+    "2026-07-28_17-40-48-1",
+    "2026-07-28_17-40-48-2"
+   ]
+  },
+  {
+   "handle": "adolfotapiaibarra",
+   "nombre": "La Park",
+   "apodo": "",
+   "slug": "la-park",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-07_02-54-58-1",
+    "2026-10-16_20-17-50-1",
+    "2026-09-07_23-47-05-1",
+    "2026-10-27_15-09-24-1"
+   ]
+  },
+  {
+   "handle": "makabre_blasphemy",
+   "nombre": "Makabre Blasphemy",
+   "apodo": "",
+   "slug": "makabre-blasphemy",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-10_00-57-13-1",
+    "2026-03-13_01-52-41-1",
+    "2026-07-08_02-11-37-1",
+    "2026-07-10_16-19-30-1"
+   ]
+  },
+  {
+   "handle": "_visionario_wt",
+   "nombre": "Visionario",
+   "apodo": "",
+   "slug": "visionario",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-02_04-38-00-1",
+    "2026-10-02_04-38-00-2",
+    "2026-10-02_04-38-00-3",
+    "2026-10-02_04-38-00-4"
+   ]
+  },
+  {
+   "handle": "aero_star1",
+   "nombre": "Aero Star",
+   "apodo": "",
+   "slug": "aero-star",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-10-07_18-27-15-1",
+    "2026-04-07_01-32-23-1",
+    "2026-10-12_23-58-45-1"
+   ]
+  },
+  {
+   "handle": "aquiles91720",
+   "nombre": "Aquiles",
+   "apodo": "",
+   "slug": "aquiles",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-26_15-29-09-1",
+    "2026-01-13_18-28-07-1",
+    "2026-03-16_19-08-33-1"
+   ]
+  },
+  {
+   "handle": "bombavilla33",
+   "nombre": "Bomba Villa",
+   "apodo": "Perro de Cadena Gruesa",
+   "slug": "bomba-villa",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-18_03-13-58-1",
+    "2026-09-18_03-13-58-2",
+    "2026-09-27_19-31-58-1"
+   ]
+  },
+  {
+   "handle": "ciber_oficial",
+   "nombre": "Cibernético",
+   "apodo": "",
+   "slug": "cibernetico",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-06_22-12-31-1",
+    "2026-09-06_22-12-31-2",
+    "2026-10-27_15-09-24-1"
+   ]
+  },
+  {
+   "handle": "jr.ciencaras",
+   "nombre": "Cien Caras Jr.",
+   "apodo": "",
+   "slug": "cien-caras-jr",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-08-20_18-02-11-1",
+    "2026-08-20_18-02-11-2",
+    "2026-08-20_18-02-11-3"
+   ]
+  },
+  {
+   "handle": "_daimo",
+   "nombre": "Daimo",
+   "apodo": "",
+   "slug": "daimo",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-06_14-54-54-1",
+    "2026-10-06_14-54-54-2",
+    "2026-10-06_14-54-54-3"
+   ]
+  },
+  {
+   "handle": "diosa_del.caos",
+   "nombre": "Diosa del Caos",
+   "apodo": "",
+   "slug": "diosa-del-caos",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-09_03-36-30-1",
+    "2026-07-09_03-36-30-2",
+    "2026-07-09_03-36-30-3"
+   ]
+  },
+  {
+   "handle": "flamitadg",
+   "nombre": "Flamita",
+   "apodo": "",
+   "slug": "flamita",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-02-24_22-01-30-1",
+    "2026-03-28_00-45-07-1",
+    "2026-03-28_00-45-07-2"
+   ]
+  },
+  {
+   "handle": "hijodefishman",
+   "nombre": "Hijo de Fishman",
+   "apodo": "El Veneno Verde",
+   "slug": "hijo-de-fishman",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-21_19-28-28-1",
+    "2026-06-16_03-00-11-1",
+    "2026-06-15_23-58-58-1"
+   ]
+  },
+  {
+   "handle": "infernuskmi1",
+   "nombre": "Infernus",
+   "apodo": "",
+   "slug": "infernus",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-01_23-13-50-1",
+    "2026-09-01_23-13-50-2",
+    "2026-09-01_23-13-50-3"
+   ]
+  },
+  {
+   "handle": "infernusz1",
+   "nombre": "Infernus Z",
+   "apodo": "",
+   "slug": "infernus-z",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-01_23-13-50-1",
+    "2026-09-01_23-13-50-2",
+    "2026-09-01_23-13-50-3"
+   ]
+  },
+  {
+   "handle": "kumonga.wrestling",
+   "nombre": "Kumonga",
+   "apodo": "",
+   "slug": "kumonga",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-21_15-19-07-1",
+    "2026-05-27_00-42-05-1",
+    "2026-06-08_19-06-11-1"
+   ]
+  },
+  {
+   "handle": "mafioso_ellider",
+   "nombre": "Mafioso",
+   "apodo": "",
+   "slug": "mafioso",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-03_15-21-29-1",
+    "2026-10-03_15-21-29-2",
+    "2026-06-27_03-00-26-1"
+   ]
+  },
+  {
+   "handle": "moscoxflyjunior",
+   "nombre": "Mosco X-Fly Jr.",
+   "apodo": "",
+   "slug": "mosco-x-fly-jr",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-22_00-34-47-1",
+    "2026-05-11_16-57-48-1",
+    "2026-06-03_00-33-25-1"
+   ]
+  },
+  {
+   "handle": "onielbenditodg",
+   "nombre": "Oni El Bendito",
+   "apodo": "",
+   "slug": "oni-el-bendito",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-06-13_16-36-39-1",
+    "2026-06-15_02-10-22-1",
+    "2026-03-13_23-56-23-1"
+   ]
+  },
+  {
+   "handle": "escarlata.pimpi",
+   "nombre": "Pimpinela Escarlata",
+   "apodo": "",
+   "slug": "pimpinela-escarlata",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-03-18_15-39-23-1",
+    "2026-03-18_15-39-23-2",
+    "2026-03-18_15-39-23-3"
+   ]
+  },
+  {
+   "handle": "skayler_gc",
+   "nombre": "Skayler",
+   "apodo": "",
+   "slug": "skayler",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-02_04-36-06-1",
+    "2026-10-02_04-36-06-2",
+    "2026-10-02_04-36-06-3"
+   ]
+  },
+  {
+   "handle": "amnesia_lokote",
+   "nombre": "Amnesia Lokote",
+   "apodo": "",
+   "slug": "amnesia-lokote",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-01-16_04-46-44-1",
+    "2026-01-10_01-30-35-1"
+   ]
+  },
+  {
+   "handle": "187_antisocial",
+   "nombre": "Antisocial 187",
+   "apodo": "",
+   "slug": "antisocial-187",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-13_16-59-14-1",
+    "2026-07-13_16-59-14-2"
+   ]
+  },
+  {
+   "handle": "belcegor.wrestler",
+   "nombre": "Belcegor",
+   "apodo": "",
+   "slug": "belcegor",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-13_20-00-40-1",
+    "2026-10-13_20-00-40-2"
+   ]
+  },
+  {
+   "handle": "centellaaa_lucha",
+   "nombre": "Centella",
+   "apodo": "",
+   "slug": "centella",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-06_22-32-09-1",
+    "2026-10-06_22-32-09-2"
+   ]
+  },
+  {
+   "handle": "chriscarterprow",
+   "nombre": "Chris Carter",
+   "apodo": "",
+   "slug": "chris-carter",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-10_14-34-07-1",
+    "2026-06-15_01-54-59-1"
+   ]
+  },
+  {
+   "handle": "crazy_king_wrestler",
+   "nombre": "Crazy King",
+   "apodo": "",
+   "slug": "crazy-king",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-30_03-28-00-1",
+    "2026-02-09_13-15-46-1"
+   ]
+  },
+  {
+   "handle": "cuatrero_reyes",
+   "nombre": "Cuatrero",
+   "apodo": "",
+   "slug": "cuatrero",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-02_14-02-33-1",
+    "2026-09-02_14-02-33-2"
+   ]
+  },
+  {
+   "handle": "elcatrinwrestler",
+   "nombre": "El Catrín",
+   "apodo": "",
+   "slug": "el-catrin",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-24_02-02-08-1",
+    "2026-09-09_05-46-12-1"
+   ]
+  },
+  {
+   "handle": "elmesias_rickybanderas",
+   "nombre": "El Mesías",
+   "apodo": "",
+   "slug": "el-mesias",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-01_14-33-20-1",
+    "2026-09-04_04-45-18-1"
+   ]
+  },
+  {
+   "handle": "imperalguerrero",
+   "nombre": "Imperial Guerrero",
+   "apodo": "",
+   "slug": "imperial-guerrero",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-29_17-02-30-1",
+    "2026-09-29_17-01-02-1"
+   ]
+  },
+  {
+   "handle": "j.gomez156",
+   "nombre": "J. Gómez",
+   "apodo": "El Mofles",
+   "slug": "j-gomez",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-20_00-38-53-1",
+    "2026-05-29_16-35-46-1"
+   ]
+  },
+  {
+   "handle": "kalelnwg",
+   "nombre": "Kal-El",
+   "apodo": "",
+   "slug": "kal-el",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-15_15-49-37-1",
+    "2026-09-15_15-49-37-2"
+   ]
+  },
+  {
+   "handle": "king.charro",
+   "nombre": "King Charro",
+   "apodo": "",
+   "slug": "king-charro",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-02-25_03-25-01-1",
+    "2026-03-13_13-27-45-1"
+   ]
+  },
+  {
+   "handle": "koda_wrestler",
+   "nombre": "Koda",
+   "apodo": "King Koda",
+   "slug": "koda",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-02_15-22-29-1",
+    "2026-06-02_15-22-29-2"
+   ]
+  },
+  {
+   "handle": "monsterclownaaa",
+   "nombre": "Monster Clown",
+   "apodo": "",
+   "slug": "monster-clown",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-02_20-12-31-1",
+    "2026-09-02_20-12-31-2"
+   ]
+  },
+  {
+   "handle": "resplandorluchador",
+   "nombre": "Resplandor",
+   "apodo": "",
+   "slug": "resplandor",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-17_23-52-41-1",
+    "2026-06-17_23-52-41-2"
+   ]
+  },
+  {
+   "handle": "reyna_zahori",
+   "nombre": "Reyna Zahori",
+   "apodo": "",
+   "slug": "reyna-zahori",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-05_20-24-10-1",
+    "2026-10-05_20-24-10-2"
+   ]
+  },
+  {
+   "handle": "simbolooo",
+   "nombre": "Símbolo",
+   "apodo": "",
+   "slug": "simbolo",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-03-03_14-43-16-1",
+    "2026-03-05_14-22-01-1"
+   ]
+  },
+  {
+   "handle": "alacrangalactico",
+   "nombre": "Alacrán Galáctico",
+   "apodo": "",
+   "slug": "alacran-galactico",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-01-19_03-46-11-1"
+   ]
+  },
+  {
+   "handle": "alish_p.w",
+   "nombre": "Alish",
+   "apodo": "",
+   "slug": "alish",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-02_06-44-16-1"
+   ]
+  },
+  {
+   "handle": "andy.blake4",
+   "nombre": "Andy Blake",
+   "apodo": "El Volador",
+   "slug": "andy-blake",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-02_23-27-12-1"
+   ]
+  },
+  {
+   "handle": "_azur_luchadornwg",
+   "nombre": "Azur",
+   "apodo": "",
+   "slug": "azur",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-10_21-04-03-1"
+   ]
+  },
+  {
+   "handle": "balamarenajalisco",
+   "nombre": "Balam",
+   "apodo": "",
+   "slug": "balam",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-24_03-06-35-1"
+   ]
+  },
+  {
+   "handle": "billie_infierno_89",
+   "nombre": "Billie Infierno",
+   "apodo": "",
+   "slug": "billie-infierno",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-07-28_01-32-30-1"
+   ]
+  },
+  {
+   "handle": "caosluchador",
+   "nombre": "Caos",
+   "apodo": "",
+   "slug": "caos",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-04-29_17-07-47-1"
+   ]
+  },
+  {
+   "handle": "cosmico_unc",
+   "nombre": "Cósmico",
+   "apodo": "",
+   "slug": "cosmico",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-07_21-56-57-1"
+   ]
+  },
+  {
+   "handle": "darkkpower",
+   "nombre": "Dark Power",
+   "apodo": "",
+   "slug": "dark-power",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-29_16-35-46-1"
+   ]
+  },
+  {
+   "handle": "demonioinfernal",
+   "nombre": "Demonio Infernal",
+   "apodo": "",
+   "slug": "demonio-infernal",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-07_15-25-40-1"
+   ]
+  },
+  {
+   "handle": "diama_ntenegrojr3",
+   "nombre": "Diamante Negro Jr.",
+   "apodo": "",
+   "slug": "diamante-negro-jr",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-18_18-28-29-1"
+   ]
+  },
+  {
+   "handle": "drago_aaa.wwe",
+   "nombre": "Drago",
+   "apodo": "",
+   "slug": "drago",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-10-04_21-03-52-1"
+   ]
+  },
+  {
+   "handle": "elgrandeamericanowwe",
+   "nombre": "El Grande Americano",
+   "apodo": "",
+   "slug": "el-grande-americano",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-01-21_23-27-05-1"
+   ]
+  },
+  {
+   "handle": "iam_galaxy14",
+   "nombre": "Galaxy Boy",
+   "apodo": "",
+   "slug": "galaxy-boy",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-18_23-20-32-1"
+   ]
+  },
+  {
+   "handle": "halcon_furia_",
+   "nombre": "Halcón Furia",
+   "apodo": "",
+   "slug": "halcon-furia",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-19_15-49-16-1"
+   ]
+  },
+  {
+   "handle": "hijodemascara2000",
+   "nombre": "Hijo de Máscara 2000",
+   "apodo": "",
+   "slug": "hijo-de-mascara-2000",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-01_20-08-24-1"
+   ]
+  },
+  {
+   "handle": "kid.marciano",
+   "nombre": "Kid Marciano",
+   "apodo": "",
+   "slug": "kid-marciano",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-16_00-16-20-1"
+   ]
+  },
+  {
+   "handle": "kingcharrito",
+   "nombre": "King Charrito",
+   "apodo": "",
+   "slug": "king-charrito",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-03-26_05-42-47-1"
+   ]
+  },
+  {
+   "handle": "krampus_lu",
+   "nombre": "Krampus",
+   "apodo": "",
+   "slug": "krampus",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-01-09_22-20-18-1"
+   ]
+  },
+  {
+   "handle": "laredokidpro",
+   "nombre": "Laredo Kid",
+   "apodo": "",
+   "slug": "laredo-kid",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-09-08_14-20-23-1"
+   ]
+  },
+  {
+   "handle": "lucifernwg",
+   "nombre": "Lucifer",
+   "apodo": "",
+   "slug": "lucifer",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-02-17_18-45-33-1"
+   ]
+  },
+  {
+   "handle": "magomisteriogdl",
+   "nombre": "Mago Misterio",
+   "apodo": "",
+   "slug": "mago-misterio",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-19_15-47-15-1"
+   ]
+  },
+  {
+   "handle": "masterrcrazy",
+   "nombre": "Master Crazy",
+   "apodo": "",
+   "slug": "master-crazy",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-08-18_23-17-04-1"
+   ]
+  },
+  {
+   "handle": "masterterror69",
+   "nombre": "Master Terror",
+   "apodo": "",
+   "slug": "master-terror",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-09-14_14-52-23-1"
+   ]
+  },
+  {
+   "handle": "metalikoriginal",
+   "nombre": "Metalik",
+   "apodo": "",
+   "slug": "metalik",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-16_23-57-56-1"
+   ]
+  },
+  {
+   "handle": "miedo_xtremo771",
+   "nombre": "Miedo Extremo",
+   "apodo": "",
+   "slug": "miedo-extremo",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-04-01_16-09-00-1"
+   ]
+  },
+  {
+   "handle": "mimoluchador",
+   "nombre": "Mimo",
+   "apodo": "",
+   "slug": "mimo",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-27_02-26-14-1"
+   ]
+  },
+  {
+   "handle": "mini_psychoclown_aaa",
+   "nombre": "Mini Psycho Clown",
+   "apodo": "",
+   "slug": "mini-psycho-clown",
+   "marcaExterna": true,
+   "fotos": [
+    "2026-10-12_03-42-44-1"
+   ]
+  },
+  {
+   "handle": "miztli_lion_oficial",
+   "nombre": "Miztli Lion",
+   "apodo": "",
+   "slug": "miztli-lion",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-14_02-57-37-1"
+   ]
+  },
+  {
+   "handle": "murder_grande",
+   "nombre": "Murder",
+   "apodo": "",
+   "slug": "murder",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-09_17-37-39-1"
+   ]
+  },
+  {
+   "handle": "nortenito_lomeli",
+   "nombre": "Norteñito Lomelí",
+   "apodo": "El Norteño",
+   "slug": "nortenito-lomeli",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-28_15-10-55-1"
+   ]
+  },
+  {
+   "handle": "osiris_oficial97",
+   "nombre": "Osiris",
+   "apodo": "",
+   "slug": "osiris",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-02-04_19-09-34-1"
+   ]
+  },
+  {
+   "handle": "polarnwg",
+   "nombre": "Polar",
+   "apodo": "",
+   "slug": "polar",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-04-01_16-14-44-1"
+   ]
+  },
+  {
+   "handle": "principeblack12",
+   "nombre": "Príncipe Black",
+   "apodo": "",
+   "slug": "principe-black",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-15_20-54-53-1"
+   ]
+  },
+  {
+   "handle": "principe_centauro1",
+   "nombre": "Príncipe Centauro",
+   "apodo": "",
+   "slug": "principe-centauro",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-06-22_00-59-02-1"
+   ]
+  },
+  {
+   "handle": "mzt_reyeclipse",
+   "nombre": "Rey Eclipse",
+   "apodo": "",
+   "slug": "rey-eclipse",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-01-20_17-36-22-1"
+   ]
+  },
+  {
+   "handle": "saturnosuicida",
+   "nombre": "Saturno Suicida",
+   "apodo": "",
+   "slug": "saturno-suicida",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-02-16_04-24-44-1"
+   ]
+  },
+  {
+   "handle": "sobeknwg",
+   "nombre": "Sobek",
+   "apodo": "",
+   "slug": "sobek",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-05-29_16-35-46-1"
+   ]
+  },
+  {
+   "handle": "sussylove__",
+   "nombre": "Sussy Love",
+   "apodo": "",
+   "slug": "sussy-love",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-10-07_00-13-50-1"
+   ]
+  },
+  {
+   "handle": "theactionman_",
+   "nombre": "The Action Man",
+   "apodo": "",
+   "slug": "the-action-man",
+   "marcaExterna": false,
+   "fotos": [
+    "2026-02-26_15-32-49-1"
+   ]
+  }
+ ],
+ "funciones": [
+  {
+   "slug": "promociones-chaman",
+   "nombre": "Función Promociones Chamán",
+   "promotora": "Promociones Chamán",
+   "fecha": "2026-08-22",
+   "fechaTexto": "22 de agosto de 2026",
+   "arena": "Por confirmar",
+   "reconocer": [
+    "promocioneschaman"
+   ],
+   "fotos": [
+    "2026-08-20_18-02-11-1",
+    "2026-08-20_18-02-11-2",
+    "2026-08-20_18-02-11-3"
+   ]
+  },
+  {
+   "slug": "bautizo-extremo",
+   "nombre": "Bautizo Extremo",
+   "promotora": "Por confirmar",
+   "fecha": "2026-08-01",
+   "fechaTexto": "Fecha por confirmar",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "bautizo extremo"
+   ],
+   "fotos": [
+    "2026-08-18_18-33-28-1",
+    "2026-08-18_18-33-28-2",
+    "2026-08-18_18-33-28-3",
+    "2026-08-18_18-33-28-4",
+    "2026-08-18_22-10-33-1",
+    "2026-08-25_07-38-35-1",
+    "2026-08-18_23-20-32-1",
+    "2026-08-20_00-38-53-1",
+    "2026-08-18_18-28-29-1",
+    "2026-08-18_23-17-04-1"
+   ]
+  },
+  {
+   "slug": "drong-brothers",
+   "nombre": "Función Drong Brothers",
+   "promotora": "Drong Brothers",
+   "fecha": "2026-07-01",
+   "fechaTexto": "Fecha por confirmar",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "drongbrothers"
+   ],
+   "fotos": [
+    "2026-07-08_02-11-37-1",
+    "2026-07-09_03-36-30-1",
+    "2026-07-09_03-36-30-2",
+    "2026-07-09_03-36-30-3",
+    "2026-07-07_23-26-56-1",
+    "2026-07-07_17-23-44-1",
+    "2026-07-07_17-23-44-2",
+    "2026-07-28_17-40-48-1",
+    "2026-07-28_17-40-48-2",
+    "2026-07-09_14-27-00-1",
+    "2026-07-09_14-27-00-2",
+    "2026-07-09_14-27-00-3",
+    "2026-07-07_19-53-46-1",
+    "2026-07-07_19-53-46-2",
+    "2026-07-10_16-19-30-1",
+    "2026-07-13_16-59-14-1",
+    "2026-07-13_16-59-14-2",
+    "2026-07-28_01-32-30-1",
+    "2026-07-10_00-57-13-1"
+   ]
+  },
+  {
+   "slug": "flow",
+   "nombre": "Flow",
+   "promotora": "Promociones Impacto",
+   "fecha": "2026-06-05",
+   "fechaTexto": "5 de junio de 2026",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "promocionesimpacto"
+   ],
+   "fotos": [
+    "2026-06-14_02-57-37-1",
+    "2026-06-22_15-53-19-1",
+    "2026-06-22_15-53-19-3",
+    "2026-06-22_15-53-19-4",
+    "2026-07-02_15-44-39-1",
+    "2026-07-02_15-44-39-2",
+    "2026-07-02_15-44-39-3",
+    "2026-07-02_15-44-39-4",
+    "2026-06-16_23-57-56-1",
+    "2026-06-21_19-28-28-1",
+    "2026-06-10_12-38-53-1",
+    "2026-06-16_03-00-11-1",
+    "2026-06-13_16-36-39-1",
+    "2026-06-09_06-10-00-1",
+    "2026-06-15_23-58-58-1",
+    "2026-06-22_00-59-02-1",
+    "2026-06-16_22-38-45-1",
+    "2026-06-16_16-47-34-1",
+    "2026-06-20_21-15-57-2",
+    "2026-06-10_14-34-07-1",
+    "2026-06-27_03-00-26-1",
+    "2026-06-30_03-51-43-1",
+    "2026-06-30_03-51-43-2",
+    "2026-06-24_03-06-35-1",
+    "2026-06-15_01-54-59-1",
+    "2026-06-15_02-10-22-1",
+    "2026-06-17_23-52-41-1",
+    "2026-06-17_23-52-41-2"
+   ]
+  },
+  {
+   "slug": "sin-lucha-no-hay-victoria-2",
+   "nombre": "Sin Lucha No Hay Victoria 2",
+   "promotora": "Sin Lucha",
+   "fecha": "2026-05-16",
+   "fechaTexto": "16 de mayo de 2026",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "sinluchamx"
+   ],
+   "fotos_sin_evento": true,
+   "fotos": [
+    "2026-05-30_03-28-00-1",
+    "2026-05-21_15-19-07-1"
+   ]
+  }
+ ]
+}

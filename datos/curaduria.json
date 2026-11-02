@@ -1,0 +1,704 @@
+{
+ "excluir_posts": [
+  "2026-04-15_21-04-17",
+  "2026-04-25_20-13-03",
+  "2026-04-28_21-02-28",
+  "2026-05-04_23-41-24",
+  "2026-05-12_15-24-25",
+  "2026-05-14_18-31-37",
+  "2026-05-16_04-57-36",
+  "2026-05-17_02-25-59",
+  "2026-05-18_08-22-38",
+  "2026-05-18_23-42-36",
+  "2026-05-20_05-56-34",
+  "2026-05-20_14-58-27",
+  "2026-05-22_02-37-03",
+  "2026-05-22_23-18-17",
+  "2026-06-09_22-42-46",
+  "2026-06-22_02-01-30",
+  "2026-06-22_04-31-49",
+  "2026-06-23_18-31-13",
+  "2026-06-25_00-01-02",
+  "2026-07-21_03-11-08",
+  "2026-07-23_23-21-47",
+  "2026-08-30_10-10-01",
+  "2026-08-31_21-35-58",
+  "2026-09-01_06-15-57",
+  "2026-09-23_00-53-51"
+ ],
+ "funciones": [
+  {
+   "slug": "sin-lucha-no-hay-victoria-2",
+   "nombre": "Sin Lucha No Hay Victoria 2",
+   "promotora": "Sin Lucha",
+   "fecha": "2026-05-16",
+   "fechaTexto": "16 de mayo de 2026",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "sinluchamx"
+   ],
+   "fotos_sin_evento": true
+  },
+  {
+   "slug": "flow",
+   "nombre": "Flow",
+   "promotora": "Promociones Impacto",
+   "fecha": "2026-06-05",
+   "fechaTexto": "5 de junio de 2026",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "promocionesimpacto"
+   ]
+  },
+  {
+   "slug": "drong-brothers",
+   "nombre": "Función Drong Brothers",
+   "promotora": "Drong Brothers",
+   "fecha": "2026-07-01",
+   "fechaTexto": "Fecha por confirmar",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "drongbrothers"
+   ]
+  },
+  {
+   "slug": "bautizo-extremo",
+   "nombre": "Bautizo Extremo",
+   "promotora": "Por confirmar",
+   "fecha": "2026-08-01",
+   "fechaTexto": "Fecha por confirmar",
+   "arena": "Arena Roberto Paz",
+   "reconocer": [
+    "bautizo extremo"
+   ]
+  },
+  {
+   "slug": "promociones-chaman",
+   "nombre": "Función Promociones Chamán",
+   "promotora": "Promociones Chamán",
+   "fecha": "2026-08-22",
+   "fechaTexto": "22 de agosto de 2026",
+   "arena": "Por confirmar",
+   "reconocer": [
+    "promocioneschaman"
+   ]
+  }
+ ],
+ "luchadores": [
+  [
+   "prismx.lucha",
+   "Prism X",
+   "Tu único amor",
+   0
+  ],
+  [
+   "the_zigma",
+   "Zigma",
+   "El Niño Más Extremo",
+   0
+  ],
+  [
+   "tualienigenafavorito",
+   "Tromba",
+   "Tu alienígena favorito",
+   0
+  ],
+  [
+   "sunboy_santi",
+   "Sunboy Santi",
+   "El Rey",
+   0
+  ],
+  [
+   "yokai_nwg",
+   "Yokai",
+   "",
+   0
+  ],
+  [
+   "tiger_trueno_oficial6",
+   "Tiger Trueno",
+   "",
+   0
+  ],
+  [
+   "gravity_luchador",
+   "Gravity",
+   "El Astronauta de la Lucha Libre",
+   0
+  ],
+  [
+   "demencia_nwg",
+   "Demencia",
+   "",
+   0
+  ],
+  [
+   "hijodefishman",
+   "Hijo de Fishman",
+   "El Veneno Verde",
+   0
+  ],
+  [
+   "albatros.jr",
+   "Albatros Jr.",
+   "El Demonio Rojinegro",
+   0
+  ],
+  [
+   "aquiles91720",
+   "Aquiles",
+   "",
+   0
+  ],
+  [
+   "kumonga.wrestling",
+   "Kumonga",
+   "",
+   0
+  ],
+  [
+   "makabre_blasphemy",
+   "Makabre Blasphemy",
+   "",
+   0
+  ],
+  [
+   "paymonvera",
+   "Paymon Vera",
+   "El Más Extremo",
+   0
+  ],
+  [
+   "aeroboy_indy",
+   "Aeroboy",
+   "",
+   0
+  ],
+  [
+   "crazy_king_wrestler",
+   "Crazy King",
+   "",
+   0
+  ],
+  [
+   "hijodeabismonegro__fiscal",
+   "Hijo de Abismo Negro",
+   "",
+   1
+  ],
+  [
+   "moscoxflyjunior",
+   "Mosco X-Fly Jr.",
+   "",
+   0
+  ],
+  [
+   "onielbenditodg",
+   "Oni El Bendito",
+   "",
+   1
+  ],
+  [
+   "andy.blake4",
+   "Andy Blake",
+   "El Volador",
+   0
+  ],
+  [
+   "bombavilla33",
+   "Bomba Villa",
+   "Perro de Cadena Gruesa",
+   0
+  ],
+  [
+   "chriscarterprow",
+   "Chris Carter",
+   "",
+   0
+  ],
+  [
+   "ciber_oficial",
+   "Cibernético",
+   "",
+   1
+  ],
+  [
+   "adolfotapiaibarra",
+   "La Park",
+   "",
+   1
+  ],
+  [
+   "diama_ntenegrojr3",
+   "Diamante Negro Jr.",
+   "",
+   0
+  ],
+  [
+   "elcatrinwrestler",
+   "El Catrín",
+   "",
+   0
+  ],
+  [
+   "elmago_luchador",
+   "El Mago",
+   "",
+   0
+  ],
+  [
+   "elmesias_rickybanderas",
+   "El Mesías",
+   "",
+   1
+  ],
+  [
+   "flamitadg",
+   "Flamita",
+   "",
+   1
+  ],
+  [
+   "hadeshahastary",
+   "Hahastary",
+   "",
+   0
+  ],
+  [
+   "imperalguerrero",
+   "Imperial Guerrero",
+   "",
+   0
+  ],
+  [
+   "j.gomez156",
+   "J. Gómez",
+   "El Mofles",
+   0
+  ],
+  [
+   "king.charro",
+   "King Charro",
+   "",
+   0
+  ],
+  [
+   "kingcharrito",
+   "King Charrito",
+   "",
+   0
+  ],
+  [
+   "koda_wrestler",
+   "Koda",
+   "King Koda",
+   0
+  ],
+  [
+   "krampus_lu",
+   "Krampus",
+   "",
+   0
+  ],
+  [
+   "leviathamhomicida",
+   "Leviatham Homicida",
+   "La Bestia Marina",
+   0
+  ],
+  [
+   "lucifernwg",
+   "Lucifer",
+   "",
+   0
+  ],
+  [
+   "mackwrestler",
+   "Mack",
+   "Ninja Mack",
+   0
+  ],
+  [
+   "mafioso_ellider",
+   "Mafioso",
+   "",
+   0
+  ],
+  [
+   "nortenito_lomeli",
+   "Norteñito Lomelí",
+   "El Norteño",
+   0
+  ],
+  [
+   "simbolooo",
+   "Símbolo",
+   "",
+   0
+  ],
+  [
+   "aero_star1",
+   "Aero Star",
+   "",
+   1
+  ],
+  [
+   "187_antisocial",
+   "Antisocial 187",
+   "",
+   0
+  ],
+  [
+   "_azur_luchadornwg",
+   "Azur",
+   "",
+   0
+  ],
+  [
+   "_daimo",
+   "Daimo",
+   "",
+   0
+  ],
+  [
+   "_visionario_wt",
+   "Visionario",
+   "",
+   0
+  ],
+  [
+   "alish_p.w",
+   "Alish",
+   "",
+   0
+  ],
+  [
+   "belcegor.wrestler",
+   "Belcegor",
+   "",
+   0
+  ],
+  [
+   "billie_infierno_89",
+   "Billie Infierno",
+   "",
+   0
+  ],
+  [
+   "caosluchador",
+   "Caos",
+   "",
+   0
+  ],
+  [
+   "centellaaa_lucha",
+   "Centella",
+   "",
+   0
+  ],
+  [
+   "cosmico_unc",
+   "Cósmico",
+   "",
+   0
+  ],
+  [
+   "cuatrero_reyes",
+   "Cuatrero",
+   "",
+   1
+  ],
+  [
+   "darkkpower",
+   "Dark Power",
+   "",
+   0
+  ],
+  [
+   "demonioinfernal",
+   "Demonio Infernal",
+   "",
+   0
+  ],
+  [
+   "diosa_del.caos",
+   "Diosa del Caos",
+   "",
+   0
+  ],
+  [
+   "drago_aaa.wwe",
+   "Drago",
+   "",
+   1
+  ],
+  [
+   "escarlata.pimpi",
+   "Pimpinela Escarlata",
+   "",
+   1
+  ],
+  [
+   "halcon_furia_",
+   "Halcón Furia",
+   "",
+   0
+  ],
+  [
+   "hijodemascara2000",
+   "Hijo de Máscara 2000",
+   "",
+   1
+  ],
+  [
+   "iam_galaxy14",
+   "Galaxy Boy",
+   "",
+   0
+  ],
+  [
+   "infernuskmi1",
+   "Infernus",
+   "",
+   0
+  ],
+  [
+   "jr.ciencaras",
+   "Cien Caras Jr.",
+   "",
+   1
+  ],
+  [
+   "kalelnwg",
+   "Kal-El",
+   "",
+   0
+  ],
+  [
+   "kid.marciano",
+   "Kid Marciano",
+   "",
+   0
+  ],
+  [
+   "laredokidpro",
+   "Laredo Kid",
+   "",
+   1
+  ],
+  [
+   "magomisteriogdl",
+   "Mago Misterio",
+   "",
+   0
+  ],
+  [
+   "masterrcrazy",
+   "Master Crazy",
+   "",
+   0
+  ],
+  [
+   "masterterror69",
+   "Master Terror",
+   "",
+   0
+  ],
+  [
+   "metal_shadow_luchador",
+   "Metal Shadow",
+   "",
+   0
+  ],
+  [
+   "metalikoriginal",
+   "Metalik",
+   "",
+   0
+  ],
+  [
+   "miedo_xtremo771",
+   "Miedo Extremo",
+   "",
+   0
+  ],
+  [
+   "mimoluchador",
+   "Mimo",
+   "",
+   0
+  ],
+  [
+   "mini_psychoclown_aaa",
+   "Mini Psycho Clown",
+   "",
+   1
+  ],
+  [
+   "miztli_lion_oficial",
+   "Miztli Lion",
+   "",
+   0
+  ],
+  [
+   "monsterclownaaa",
+   "Monster Clown",
+   "",
+   1
+  ],
+  [
+   "murder_grande",
+   "Murder",
+   "",
+   0
+  ],
+  [
+   "noisy_boy_ind",
+   "Noisy Boy",
+   "",
+   0
+  ],
+  [
+   "polarnwg",
+   "Polar",
+   "",
+   0
+  ],
+  [
+   "principe_centauro1",
+   "Príncipe Centauro",
+   "",
+   0
+  ],
+  [
+   "principeblack12",
+   "Príncipe Black",
+   "",
+   0
+  ],
+  [
+   "resplandorluchador",
+   "Resplandor",
+   "",
+   0
+  ],
+  [
+   "reyna_zahori",
+   "Reyna Zahori",
+   "",
+   0
+  ],
+  [
+   "skayler_gc",
+   "Skayler",
+   "",
+   0
+  ],
+  [
+   "sobeknwg",
+   "Sobek",
+   "",
+   0
+  ],
+  [
+   "sussylove__",
+   "Sussy Love",
+   "",
+   0
+  ],
+  [
+   "balamarenajalisco",
+   "Balam",
+   "",
+   0
+  ],
+  [
+   "amnesia_lokote",
+   "Amnesia Lokote",
+   "",
+   0
+  ],
+  [
+   "saturnosuicida",
+   "Saturno Suicida",
+   "",
+   0
+  ],
+  [
+   "osiris_oficial97",
+   "Osiris",
+   "",
+   0
+  ],
+  [
+   "spiderfly_indy",
+   "Spider Fly",
+   "",
+   0
+  ],
+  [
+   "musicboyluchador",
+   "Music Boy",
+   "",
+   0
+  ],
+  [
+   "alacrangalactico",
+   "Alacrán Galáctico",
+   "",
+   0
+  ],
+  [
+   "junichienelring",
+   "Junichi",
+   "",
+   0
+  ],
+  [
+   "theactionman_",
+   "The Action Man",
+   "",
+   0
+  ],
+  [
+   "mzt_reyeclipse",
+   "Rey Eclipse",
+   "",
+   0
+  ],
+  [
+   "infernusz1",
+   "Infernus Z",
+   "",
+   0
+  ],
+  [
+   "elgrandeamericanowwe",
+   "El Grande Americano",
+   "",
+   1
+  ]
+ ],
+ "alias": {
+  "_tigertrueno_gg": "tiger_trueno_oficial6",
+  "minipsycho_aaa": "mini_psychoclown_aaa"
+ },
+ "excluir_fotos": [
+  "2026-01-27_00-51-31-1",
+  "2026-01-29_15-28-02-1",
+  "2026-02-11_19-56-09-1",
+  "2026-02-19_00-45-41-1",
+  "2026-02-25_14-51-59-1",
+  "2026-03-02_03-42-57-1",
+  "2026-04-14_02-13-15-11",
+  "2026-05-02_19-44-59-1",
+  "2026-05-11_17-01-37-1",
+  "2026-06-20_21-15-57-1",
+  "2026-06-22_15-53-19-2",
+  "2026-07-16_04-08-51-1",
+  "2026-09-01_06-23-19-2",
+  "2026-09-01_06-23-19-3",
+  "2026-09-25_17-23-34-1"
+ ]
+}

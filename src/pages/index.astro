@@ -1,0 +1,91 @@
+---
+import { url } from '../lib/rutas.js';
+import Base from '../layouts/Base.astro';
+import Escenario from '../components/Escenario.astro';
+import Collage from '../components/Collage.astro';
+import TarjetaLuchador from '../components/TarjetaLuchador.astro';
+import { locales, pasadas, proximas, productos, grande, chica, FOTOS_CLAVE as F } from '../lib/acervo.js';
+
+const ultima = pasadas[0];
+const secciones = [
+  ['/cartelera/', 'La Cartelera', 'Todas las funciones de las promotoras locales en un solo lugar.'],
+  ['/luchadores/', 'Los Nuestros', 'Perfiles, biografías y redes de quienes suben al ring.'],
+  ['/mano-a-mano/', 'Mano a Mano', 'Entrevistas con la gente que hace la lucha en Guadalajara.'],
+  ['/puesto/', 'El Puesto', 'Merch y arte con comisión para quienes participan.'],
+  ['/la-ruta/', 'La Ruta', 'Tours por las arenas independientes de la ciudad.'],
+  ['/el-lente/', 'El Lente Enmascarado', 'La mirada de Benigno Mata sobre el ring.'],
+];
+---
+<Base>
+  <Escenario />
+
+  <section class="bloque"><div class="ancho dos">
+    <div>
+      <p class="acto">La siguiente función</p>
+      {proximas.length ? (
+        <h2>{proximas[0].nombre}</h2>
+      ) : (
+        <div class="aviso">
+          <h3>Pronto se anuncia</h3>
+          <p>Las promotoras todavía no cargan sus próximas funciones. Mientras tanto, revive la más reciente.</p>
+        </div>
+      )}
+    </div>
+    <a class="funcion" href={url(`/cartelera/${ultima.slug}/`)}>
+      <img src={chica(ultima.fotos[0])} alt={`Fotografía de la función ${ultima.nombre}`} loading="lazy" />
+      <span><small>{ultima.promotora} · {ultima.fechaTexto}</small><b>{ultima.nombre}</b><small>{ultima.fotos.length} fotografías</small></span>
+    </a>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <div class="cabecera">
+      <div><p class="acto">Los Nuestros</p><h2>Suben al ring</h2></div>
+      <a class="boton claro" href={url('/luchadores/')}>Ver a todos</a>
+    </div>
+    <div class="tira">
+      {locales.slice(0, 14).map((l) => <TarjetaLuchador l={l} />)}
+    </div>
+  </div></section>
+
+  <section class="escena">
+    <img src={grande(F.vuelo)} alt="Luchador en pleno vuelo sobre el ring, iluminado por reflectores entre humo" loading="lazy" />
+    <div><div class="ancho"><q>Cada función se cuenta como un estreno</q></div></div>
+  </section>
+
+  <section class="bloque"><div class="ancho dos">
+    <div>
+      <p class="acto">La casa común</p>
+      <h2>Toda la lucha, un solo lugar</h2>
+      <p>La Tapatía presenta a todas las promotoras y a quienes hacen posible cada función. Cada luchador recibe crédito, seguidores y comisión por lo que se venda con su imagen.</p>
+    </div>
+    <Collage />
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <div class="casas">
+      {secciones.map(([href, nombre, texto]) => (
+        <a href={url(href)}><h3>{nombre}</h3><p>{texto}</p></a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="bloque"><div class="ancho">
+    <div class="cabecera">
+      <div><p class="acto">El Puesto</p><h2>Llévate la arena</h2></div>
+      <a class="boton claro" href={url('/puesto/')}>Ver todo</a>
+    </div>
+    <div class="productos">
+      {productos.slice(0, 3).map((p) => (
+        <a class="producto" href={url(`/puesto/${p.id}/`)}>
+          <span class="producto-foto"><img src={chica(p.foto)} alt="" loading="lazy" /><span class="etiqueta">{p.tipo}</span></span>
+          <h3>{p.nombre}</h3>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="bloque voz"><div class="ancho">
+    <p class="grande">Aquí la máscara se respeta.</p>
+    <p class="grande">Trae tu grito.</p>
+  </div></section>
+</Base>

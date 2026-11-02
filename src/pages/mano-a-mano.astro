@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import TarjetaLuchador from '../components/TarjetaLuchador.astro';
+import { locales } from '../lib/acervo.js';
+
+const temas = [
+  ['El origen', 'Quién te enseñó, en qué arena empezaste y qué te hizo quedarte.'],
+  ['La máscara', 'Lo que representa tu personaje y lo que eliges mantener en secreto.'],
+  ['La rivalidad', 'La lucha que más te marcó y la que todavía te falta.'],
+  ['Guadalajara', 'Qué hace distinta a la lucha de aquí y qué necesita para crecer.'],
+];
+---
+<Base titulo="Mano a Mano" papel descripcion="Entrevistas con luchadores de Guadalajara.">
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Mano a Mano</p>
+    <h1>Las historias detrás del ring</h1>
+    <p>Las primeras entrevistas están en preparación. Cada conversación respetará lo que el luchador quiera proteger de su identidad.</p>
+    <div class="casas" style="margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      {temas.map(([t, d]) => <div><h3>{t}</h3><p>{d}</p></div>)}
+    </div>
+  </div></section>
+  <section class="bloque" style="padding-top:0"><div class="ancho">
+    <h2>Primeras candidaturas</h2>
+    <p class="nota" style="margin-bottom:22px">Propuesta inicial, según su presencia en el acervo.</p>
+    <div class="rejilla">{locales.slice(0, 4).map((l) => <TarjetaLuchador l={l} />)}</div>
+  </div></section>
+</Base>

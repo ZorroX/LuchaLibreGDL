@@ -1,0 +1,36 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import { pasadas, proximas, chica } from '../../lib/acervo.js';
+---
+<Base titulo="La Cartelera" descripcion="Funciones de lucha libre independiente en Guadalajara.">
+  <section class="bloque"><div class="ancho">
+    <p class="acto">La Cartelera</p>
+    <h1>Próximas funciones</h1>
+    {proximas.length ? (
+      <div class="funciones">
+        {proximas.map((f) => (
+          <a class="funcion" href={url(`/cartelera/${f.slug}/`)}><span><small>{f.fechaTexto}</small><b>{f.nombre}</b><small>{f.arena}</small></span></a>
+        ))}
+      </div>
+    ) : (
+      <div class="aviso">
+        <h3>Sin funciones capturadas</h3>
+        <p>Aquí aparecerán fecha, cartelera, arena y boletos cuando cada promotora comparta sus próximas funciones.</p>
+      </div>
+    )}
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <p class="acto">Archivo</p>
+    <h2>Funciones que ya se lucharon</h2>
+    <div class="funciones">
+      {pasadas.map((f) => (
+        <a class="funcion" href={url(`/cartelera/${f.slug}/`)}>
+          <img src={chica(f.fotos[0])} alt={`Fotografía de la función ${f.nombre}`} loading="lazy" />
+          <span><small>{f.promotora} · {f.fechaTexto}</small><b>{f.nombre}</b><small>{f.fotos.length} fotografías</small></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+</Base>

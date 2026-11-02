@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { grande, FOTOS_CLAVE as F } from '../lib/acervo.js';
+
+const paradas = [
+  ['Llegada a la arena', 'Una persona de la comunidad te recibe y te explica cómo se vive una función.'],
+  ['Conoce la escena', 'Aprendes de rudos, técnicos, máscaras e historia local antes de la primera campana.'],
+  ['La función', 'Vives las luchas desde un lugar reservado para el grupo.'],
+  ['Al terminar', 'Conoces El Puesto y te llevas un recuerdo de la noche.'],
+];
+---
+<Base titulo="La Ruta" descripcion="Tours por la lucha libre independiente de Guadalajara.">
+  <section class="portada" style="min-height:min(78vh,720px)">
+    <img src={grande(F.calle)} alt="Luchador con traje plateado caminando por una calle de noche" />
+    <div class="ancho">
+      <p class="acto">La Ruta</p>
+      <h1>Conoce la lucha desde adentro</h1>
+      <p>Una experiencia guiada por las arenas independientes de Guadalajara.</p>
+    </div>
+  </section>
+  <section class="bloque"><div class="ancho">
+    <h2>Cómo sería la noche</h2>
+    <dl class="tabla">{paradas.map(([t, d]) => <div><dt>{t}</dt><dd>{d}</dd></div>)}</dl>
+    <p class="nota" style="margin-top:20px">Concepto en desarrollo. Fechas, precios e itinerario dependen de los acuerdos con arenas y promotoras.</p>
+  </div></section>
+</Base>

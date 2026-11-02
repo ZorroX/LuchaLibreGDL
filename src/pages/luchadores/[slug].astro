@@ -1,0 +1,43 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Muro from '../../components/Muro.astro';
+import { luchadores, funciones, foto, grande, instagram } from '../../lib/acervo.js';
+
+export function getStaticPaths() {
+  return luchadores.map((l) => ({ params: { slug: l.slug }, props: { l } }));
+}
+const { l } = Astro.props;
+const portada = foto(l.fotos[0]);
+const sus = funciones.filter((f) => l.fotos.some((id) => foto(id).funcion === f.slug));
+---
+<Base titulo={l.nombre} descripcion={`${l.nombre}: fotografías y perfil en La Tapatía.`}>
+  <section class:list={['portada', { retrato: portada.alto >= portada.ancho }]} style="min-height:min(82vh,780px)">
+    <img src={grande(l.fotos[0])} alt={`Fotografía de ${l.nombre}`} />
+    <div class="ancho">
+      {l.apodo && <p class="acto">{l.apodo}</p>}
+      <h1>{l.nombre}</h1>
+      <div class="redes">
+        <a class="boton" href={instagram(l.handle)} target="_blank" rel="noreferrer">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque lona"><div class="ancho perfil-datos">
+    <div>
+      <h2>Biografía</h2>
+      <p>Estamos preparando esta biografía con {l.nombre}. Aquí vivirán su historia, su estilo y sus mejores luchas.</p>
+    </div>
+    <dl class="tabla" style="margin:0">
+      <div><dt>Instagram</dt><dd>@{l.handle}</dd></div>
+      <div><dt>Fotografías</dt><dd>{l.fotos.length}</dd></div>
+      <div><dt>Funciones</dt><dd>{sus.length ? sus.map((f, i) => <>{i > 0 && ', '}<a href={url(`/cartelera/${f.slug}/`)}>{f.nombre}</a></>) : 'Por confirmar'}</dd></div>
+      <div><dt>Su merch</dt><dd>{l.marcaExterna ? 'No disponible' : 'Cuando exista acuerdo con su participación'}</dd></div>
+    </dl>
+  </div></section>
+
+  <section class="bloque"><div class="ancho">
+    <h2>En el ring</h2>
+    <Muro ids={l.fotos} />
+  </div></section>
+</Base>

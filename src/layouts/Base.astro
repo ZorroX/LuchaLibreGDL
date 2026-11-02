@@ -1,0 +1,79 @@
+---
+import { url } from '../lib/rutas.js';
+import { ClientRouter } from 'astro:transitions';
+import '@fontsource/rye/400.css';
+import '@fontsource/anton/400.css';
+import '@fontsource/archivo/400.css';
+import '@fontsource/archivo/500.css';
+import '@fontsource/archivo/700.css';
+import '../styles/global.css';
+
+const { titulo, descripcion = 'La casa de la lucha libre independiente de Guadalajara.', papel = false } = Astro.props;
+const ruta = Astro.url.pathname;
+const enlaces = [
+  ['/cartelera/', 'La Cartelera'],
+  ['/luchadores/', 'Los Nuestros'],
+  ['/galeria/', 'Galería'],
+  ['/mano-a-mano/', 'Mano a Mano'],
+  ['/puesto/', 'El Puesto'],
+  ['/la-ruta/', 'La Ruta'],
+];
+---
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#08080a" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <meta name="description" content={descripcion} />
+    <title>{titulo ? `${titulo} · La Tapatía` : 'La Tapatía · Guadalajara contra el mundo'}</title>
+    <ClientRouter />
+  </head>
+  <body class={papel ? 'papel' : ''}>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <linearGradient id="franja" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" /><stop offset=".44" stop-color="#fff" />
+        <stop offset=".44" stop-color="#fbc913" /><stop offset=".6" stop-color="#fbc913" />
+        <stop offset=".6" stop-color="#f3701c" /><stop offset=".74" stop-color="#f3701c" />
+        <stop offset=".74" stop-color="#e0291e" /><stop offset="1" stop-color="#e0291e" />
+      </linearGradient>
+    </defs></svg>
+
+    <header class="barra" transition:persist>
+      <a class="marca" href={url('/')}>La Tapatía</a>
+      <input id="menu" class="menu-check" type="checkbox" aria-label="Abrir menú" />
+      <label for="menu" class="menu-boton" aria-hidden="true"><span></span><span></span></label>
+      <nav aria-label="Principal">
+        {enlaces.map(([href, texto]) => <a href={url(href)} aria-current={ruta.startsWith(url(href)) ? 'page' : undefined}>{texto}</a>)}
+        <a class="nav-apartado" href={url('/puesto/apartado/')}>Apartado <span data-apartado-total>0</span></a>
+      </nav>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="pie-sitio"><div class="ancho">
+      <div>
+        <p class="pie-marca">La Tapatía</p>
+        <p>Guadalajara contra el mundo. Un esfuerzo comunitario de luchadores, promotoras, artistas y aficionados.</p>
+      </div>
+      <div class="pie-datos">
+        <p>Fotografía: <a href={url('/el-lente/')}>Benigno Mata / El Lente Enmascarado</a></p>
+        <p>Prototipo. Nombres, biografías y productos están por confirmar con cada persona.</p>
+        <p><a href={url('/creditos/')}>Créditos de imágenes</a></p>
+      </div>
+    </div></footer>
+
+    <dialog class="visor" aria-label="Fotografía ampliada">
+      <button class="visor-cerrar" type="button">Cerrar</button>
+      <img alt="" />
+      <p></p>
+    </dialog>
+
+    <script>
+      import { iniciar } from '../lib/cliente.js';
+      document.addEventListener('astro:page-load', iniciar);
+    </script>
+  </body>
+</html>
