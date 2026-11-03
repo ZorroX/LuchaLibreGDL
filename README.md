@@ -28,6 +28,8 @@ npm run publicar  # compila y sube el sitio a GitHub Pages
   Con `ajuste="titulo"`, `Rotulo` pinta un título de sección del tamaño de su letra en CSS y lo reparte en líneas.
 - `src/styles/papel.css`: recortes rasgados de tarjetas y fotos, bordes de sección y transición entre páginas.
   Se genera con `node scripts/papel.mjs src/styles/papel.css`; un contenedor con la clase `pegados` reparte recortes y giros a sus hijos.
+- `src/lib/reparto.js`: reparto de ejemplo del dinero (productos, boletos y aportaciones) y la barra de desglose.
+  Los precios de ejemplo de cada producto están en `src/lib/acervo.js`. Nada cobra todavía.
 - `src/data/collage.json`: frases, notas e imágenes que usa el collage. Cada imagen externa debe registrarse en `src/data/creditos.json`.
 - `scripts/recortes.py`: genera recortes de luchadores (requiere `rembg` y `scipy`). Los elegidos viven en `public/collage/recortes/`.
 

@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import Cartel from '../components/Cartel.astro';
+import Rotulo from '../components/Rotulo.astro';
+import Desglose from '../components/Desglose.astro';
+import { FOTOS_CLAVE as F } from '../lib/acervo.js';
+import { desgloseDonacion, pesos } from '../lib/reparto.js';
+
+// Metas de ejemplo: el avance real se publica cuando se abran las aportaciones.
+const metas = [
+  ['Próxima entrevista de Mano a Mano', 2500, 'Traslado, audio, edición y subtítulos de una conversación.'],
+  ['Cobertura de una función', 3000, 'Fotografía y video de una noche completa en una arena local.'],
+  ['Micrófonos para entrevistas', 6000, 'Equipo de audio propio para que se escuche bien a cada luchador.'],
+];
+const destinos = [
+  ['entrevistas', 'Entrevistas de Mano a Mano', 'las entrevistas'],
+  ['funciones', 'Cobertura de funciones', 'la cobertura de funciones'],
+  ['falta', 'Lo que más haga falta', 'lo que más haga falta'],
+];
+const montos = [50, 100, 200, 500];
+---
+<Base titulo="Apoya" descripcion="Apoya la cobertura de la lucha libre independiente de Guadalajara.">
+  <Cartel rotulo="Apoya" titulo="Que siga la cobertura" lema="Con tu aportación seguimos haciendo entrevistas y cubriendo funciones. Cada peso se publica." fotos={[F.vuelo, F.apertura, F.grito]} plantillas={['portada', 'retablo', 'tira', 'cartel']} />
+
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Metas de ejemplo</p>
+    <Rotulo as="h2" ajuste="titulo" texto="En qué se usa" />
+    <div class="metas pegados">
+      {metas.map(([t, meta, d]) => (
+        <article class="meta">
+          <h3>{t}</h3>
+          <p>{d}</p>
+          <div class="meta-avance" role="img" aria-label={`Avance: 0 de ${pesos(meta)}`}><span style="width:0%"></span></div>
+          <p class="meta-cifras"><b>$0</b> de {pesos(meta)}</p>
+        </article>
+      ))}
+    </div>
+    <p class="nota" style="margin-top:20px">El avance real aparecerá cuando se abran las aportaciones.</p>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Maqueta</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Tu aportación" />
+      <p>Eliges cuánto y para qué. Lo único que se descuenta es la comisión del cobro; el resto se usa en lo que elegiste y se reporta abajo.</p>
+      <p class="nota" style="margin-top:14px">Antes de abrir las aportaciones definiremos quién las recibe y cómo se declaran.</p>
+    </div>
+    <form class="tablero" data-donar>
+      <fieldset>
+        <legend>¿Cuánto?</legend>
+        <div class="fichas">
+          {montos.map((n) => <label><input type="radio" name="monto" value={n} checked={n === 100} /><span>{pesos(n)}</span></label>)}
+          <label><input type="radio" name="monto" value="otro" /><span>Otro</span></label>
+        </div>
+        <input class="campo" type="number" name="monto-otro" min="0" step="10" placeholder="¿Cuánto?" aria-label="Otro monto, en pesos" hidden />
+      </fieldset>
+      <fieldset>
+        <legend>¿Para qué?</legend>
+        {destinos.map(([v, t, texto], i) => <label class="opcion"><input type="radio" name="para" value={v} data-texto={`Para ${texto}`} checked={i === 0} /> {t}</label>)}
+      </fieldset>
+      <Desglose desglose={desgloseDonacion({ monto: 100, para: `Para ${destinos[0][2]}` })} titulo="A dónde va tu aportación" />
+      <button class="boton" type="button" disabled>Aportaciones aún no disponibles</button>
+    </form>
+  </div></section>
+
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Cuentas claras</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Cada peso, publicado" />
+    <p style="margin-bottom:20px">Aquí se publicará lo que entra y lo que sale, con su comprobante o el video que salió de ese gasto.</p>
+    <div class="cuentas">
+      <div class="cuentas-fila cuentas-cabeza"><span>Fecha</span><span>Concepto</span><span>Monto</span><span>Evidencia</span></div>
+      <p class="cuentas-vacio">Todavía no hay movimientos.</p>
+    </div>
+  </div></section>
+</Base>

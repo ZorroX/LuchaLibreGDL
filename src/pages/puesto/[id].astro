@@ -2,12 +2,21 @@
 import { url } from '../../lib/rutas.js';
 import Base from '../../layouts/Base.astro';
 import Rotulo from '../../components/Rotulo.astro';
+import Desglose from '../../components/Desglose.astro';
 import { productos, grande } from '../../lib/acervo.js';
+import { desgloseProducto, pesos, MARGEN } from '../../lib/reparto.js';
 
 export function getStaticPaths() {
   return productos.map((p) => ({ params: { id: p.id }, props: { p } }));
 }
 const { p } = Astro.props;
+const margen = p.margen ?? MARGEN;
+const destinos = [
+  ['luchador', p.beneficiario],
+  ['fotografo', 'Benigno Mata, por la foto'],
+  ['casa', 'La Tapatía, para seguir cubriendo la escena'],
+].filter(([k]) => margen[k] > 0);
+const reparto = Object.fromEntries(destinos.map(([k]) => [k, Math.round(margen[k] * 100)]));
 ---
 <Base titulo={p.nombre} descripcion={p.texto}>
   <section class="bloque"><div class="ancho dos">
@@ -16,8 +25,42 @@ const { p } = Astro.props;
       <p class="acto"><a href={url('/puesto/')}>El Puesto</a></p>
       <Rotulo as="h1" ajuste="titulo" texto={p.nombre} />
       <p>{p.texto}</p>
-      <p class="precio" style="margin-block:14px 18px">Precio por definir. Foto de muestra: el producto final depende del acuerdo con cada luchador.</p>
-      <button class="boton" type="button" data-apartar={p.id}>Agregar al apartado</button>
+      <p class="precio-ejemplo"><b>{pesos(p.precio)}</b> precio de ejemplo</p>
+      <p class="precio" style="margin-bottom:18px">Foto de muestra: el producto final y su precio dependen del acuerdo con cada luchador.</p>
+      <div class="acciones">
+        <button class="boton" type="button" data-apartar={p.id}>Agregar al apartado</button>
+        <a class="boton claro" href="#paga-mas">Ver a dónde va tu dinero</a>
+      </div>
     </div>
+  </div></section>
+
+  <section class="bloque lona" id="paga-mas"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Sin letra chiquita</p>
+      <Rotulo as="h2" ajuste="titulo" texto="A dónde va tu dinero" />
+      <p>Cada compra muestra cuánto recibe el luchador, cuánto cuesta fabricar y cuánto se queda La Tapatía. Si quieres, paga más y decide tú a quién le llega.</p>
+    </div>
+    <form class="tablero" data-paga-mas={JSON.stringify({ producto: p })}>
+      <Desglose desglose={desgloseProducto(p)} />
+      <fieldset class="extra">
+        <legend>Paga más si quieres</legend>
+        <label class="deslizador">
+          <span>Le agrego</span>
+          <output name="extra-texto">$0</output>
+          <input type="range" name="extra" min="0" max="1000" step="10" value="0" />
+        </label>
+        <div class="repartir" data-repartir hidden>
+          <p class="nota">¿A quién le das tu extra? Al mover una barra, las otras se ajustan.</p>
+          {destinos.map(([k, nombre]) => (
+            <label class="deslizador">
+              <span>{nombre}</span>
+              <output name={`${k}-texto`}>{reparto[k]}%</output>
+              <input type="range" name={k} min="0" max="100" step="1" value={reparto[k]} />
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <button class="boton" type="button" data-apartar={p.id}>Agregar al apartado</button>
+    </form>
   </div></section>
 </Base>

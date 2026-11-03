@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/rutas.js';
 import Base from '../layouts/Base.astro';
 import Cartel from '../components/Cartel.astro';
 import Muro from '../components/Muro.astro';
@@ -7,6 +8,7 @@ import { fotos, instagram } from '../lib/acervo.js';
 <Base titulo="El Lente Enmascarado" papel descripcion="El proyecto fotográfico de Benigno Mata sobre la lucha libre de Guadalajara.">
   <Cartel rotulo={['EL LENTE', 'ENMASCARADO']} titulo="El Lente Enmascarado" ocultarTitulo acto="Fotografía" lema="La lucha libre de Guadalajara vista por Benigno Mata." fotos={fotos.slice(0, 6).map((f) => f.id)}>
     <a class="boton" href={instagram('bngno.mta')} target="_blank" rel="noreferrer">Seguir a Benigno</a>
+    <a class="boton oscuro" href={url('/apoya/')}>Apoya la cobertura</a>
   </Cartel>
 
   <section class="bloque"><div class="ancho">

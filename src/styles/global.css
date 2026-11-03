@@ -188,6 +188,58 @@ p { margin: 0; max-width: 62ch; }
 .casas p { font-size: 16px; }
 .voz { background: var(--rojo); color: #fff; }
 
+/* Dinero claro: tableros de papel donde se ve a dónde va cada peso */
+.precio-ejemplo { display: flex; align-items: baseline; gap: 10px; margin-top: 18px; color: var(--suave); font-size: 15px; }
+.precio-ejemplo b { font: 400 40px/1 var(--cartel); color: var(--tinta); }
+.dinero { align-items: start; }
+.tablero { position: relative; display: grid; gap: 22px; padding: 28px 26px; background: var(--papel); color: #111; rotate: .4deg; box-shadow: 8px 8px 0 var(--rojo); color-scheme: light; --linea: #cfc9ba; --suave: #55524b; }
+.tablero::before { content: ''; position: absolute; top: -12px; left: 50%; width: 96px; height: 26px; translate: -50% 0; rotate: 3deg; background: rgba(236, 229, 207, .72); box-shadow: 0 1px 3px rgba(0, 0, 0, .25); pointer-events: none; }
+.tablero fieldset { margin: 0; padding: 0; border: 0; display: grid; gap: 10px; min-width: 0; }
+.tablero legend { padding: 0; margin-bottom: 10px; font: 400 22px/1.1 var(--cartel); text-transform: uppercase; color: var(--rojo); }
+.tablero .campo { color: #111; max-width: 100%; }
+.tablero .boton[disabled] { width: 100%; }
+.desglose { display: grid; gap: 12px; }
+.desglose-titulo { font: 400 22px/1.1 var(--cartel); text-transform: uppercase; }
+.desglose-barra { display: flex; gap: 3px; height: 38px; clip-path: var(--rasgo-fino); background: var(--papel); }
+.desglose-barra span { min-width: 4px; transition: flex .25s; }
+.desglose-lista { list-style: none; margin: 0; padding: 0; border-top: 1px solid #cfc9ba; }
+.desglose-lista li { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid #cfc9ba; font-size: 16px; line-height: 1.3; }
+.desglose-lista i { width: 14px; height: 14px; border-radius: 50%; }
+.desglose-lista b, .desglose-total b { font: 400 22px/1 var(--cartel); }
+.desglose-total { display: flex; justify-content: space-between; align-items: baseline; font: 400 18px/1 var(--cartel); text-transform: uppercase; max-width: none; }
+.desglose-total b { font-size: 30px; color: var(--rojo); }
+.deslizador { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; font-size: 16px; }
+.deslizador output { font: 400 22px/1 var(--cartel); }
+.deslizador input { grid-column: 1 / -1; width: 100%; accent-color: var(--rojo); }
+.repartir { display: grid; gap: 12px; padding: 14px; background: #ece5cf; }
+.fichas { display: flex; flex-wrap: wrap; gap: 8px; }
+.fichas input, .opcion input { accent-color: var(--rojo); }
+.fichas input { position: absolute; opacity: 0; pointer-events: none; }
+.fichas span { display: block; padding: 9px 14px; border: 2px solid #111; font: 400 18px/1 var(--cartel); cursor: pointer; }
+.fichas input:checked + span { background: var(--amarillo); }
+.fichas input:focus-visible + span { outline: 3px solid var(--rojo); outline-offset: 2px; }
+.opcion { display: flex; align-items: center; gap: 8px; font-size: 16px; cursor: pointer; }
+.cantidad { display: flex; align-items: stretch; width: max-content; border: 2px solid #111; }
+.cantidad button { width: 46px; background: none; border: 0; font: 400 26px/1 var(--cartel); cursor: pointer; color: #111; }
+.cantidad input { width: 64px; border: 0; border-inline: 2px solid #111; background: transparent; color: #111; text-align: center; font: 400 24px/1 var(--cartel); -moz-appearance: textfield; }
+.cantidad input::-webkit-inner-spin-button { appearance: none; }
+.metas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.meta { display: grid; gap: 10px; align-content: start; padding: 24px; background: var(--papel); color: #111; clip-path: var(--rasgo); rotate: var(--giro); }
+.meta h3 { color: var(--rojo); }
+.meta p { font-size: 16px; }
+.meta-avance { height: 14px; background: #ddd5c0; }
+.meta-avance span { display: block; height: 100%; background: var(--rojo); }
+.meta-cifras b { font: 400 24px/1 var(--cartel); }
+.cuentas { border-top: 2px solid var(--linea); }
+.cuentas-fila { display: grid; grid-template-columns: 120px 1fr 120px 140px; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
+.cuentas-cabeza { font: 400 16px/1.2 var(--cartel); letter-spacing: .06em; text-transform: uppercase; color: var(--acento); }
+.cuentas-vacio { padding: 26px 0; color: var(--suave); }
+.nombres { display: flex; flex-wrap: wrap; gap: 10px; }
+.nombres a { padding: 8px 14px; background: var(--papel); color: #111; text-decoration: none; font: 400 20px/1 var(--cartel); text-transform: uppercase; clip-path: var(--rasgo-fino); }
+.nombres a:hover { background: var(--amarillo); }
+.apartado-suma { justify-content: flex-end; margin-top: 18px; }
+.barra nav a[href$='/apoya/'] { color: var(--amarillo); }
+
 .campo { display: block; width: 100%; max-width: 440px; padding: 13px 14px; background: transparent; color: var(--tinta); border: 1px solid var(--linea); font: inherit; }
 
 .pie-sitio { padding-block: 48px 40px; color: var(--suave); font-size: 15px; }
@@ -226,6 +278,8 @@ p { margin: 0; max-width: 62ch; }
   .escenario-pie .boton { font-size: 14px; padding: 10px 9px; white-space: nowrap; }
   .casas { grid-template-columns: 1fr; }
   .tabla div { grid-template-columns: 1fr; gap: 2px; }
+  .tablero { padding: 24px 18px; rotate: 0deg; }
+  .cuentas-cabeza { display: none; }
   .rejilla { grid-template-columns: 1fr 1fr; }
   .funciones { grid-template-columns: 1fr; }
   .apartado-fila { grid-template-columns: 64px 1fr; }

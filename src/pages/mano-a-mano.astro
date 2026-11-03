@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/rutas.js';
 import Base from '../layouts/Base.astro';
 import Cartel from '../components/Cartel.astro';
 import Rotulo from '../components/Rotulo.astro';
@@ -25,5 +26,10 @@ const temas = [
     <Rotulo as="h2" ajuste="titulo" texto="Primeras candidaturas" />
     <p class="nota" style="margin-bottom:22px">Propuesta inicial, según su presencia en el acervo.</p>
     <div class="rejilla pegados">{locales.slice(0, 4).map((l) => <TarjetaLuchador l={l} />)}</div>
+    <div class="aviso" style="margin-top:44px">
+      <h3>Que sigan las entrevistas</h3>
+      <p style="margin-bottom:16px">Cada conversación cuesta traslado, audio y edición. Si quieres que haya más, apóyalas.</p>
+      <a class="boton" href={url('/apoya/')}>Apoya las entrevistas</a>
+    </div>
   </div></section>
 </Base>

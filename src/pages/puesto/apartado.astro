@@ -3,6 +3,7 @@ import { url } from '../../lib/rutas.js';
 import Base from '../../layouts/Base.astro';
 import Rotulo from '../../components/Rotulo.astro';
 import { productos, chica } from '../../lib/acervo.js';
+import { pesos } from '../../lib/reparto.js';
 ---
 <Base titulo="Tu apartado">
   <section class="bloque"><div class="ancho" style="max-width:820px">
@@ -11,13 +12,14 @@ import { productos, chica } from '../../lib/acervo.js';
     <p data-apartado-vacio>Todavía no agregas nada. <a href={url('/puesto/')}>Ver El Puesto</a></p>
     <div data-apartado-lista>
       {productos.map((p) => (
-        <div class="apartado-fila" data-producto={p.id} hidden>
+        <div class="apartado-fila" data-producto={p.id} data-precio={p.precio} hidden>
           <img src={chica(p.foto)} alt="" loading="lazy" />
-          <div><h3>{p.nombre}</h3><p class="precio">Cantidad: <span data-cuantos>0</span></p></div>
+          <div><h3>{p.nombre}</h3><p class="precio">{pesos(p.precio)} de ejemplo · Cantidad: <span data-cuantos>0</span><span data-extra></span></p></div>
           <button class="quitar" type="button" data-quitar={p.id}>Quitar uno</button>
         </div>
       ))}
     </div>
+    <p class="precio-ejemplo apartado-suma"><span>Total de ejemplo</span> <b data-apartado-suma>$0</b></p>
     <p class="nota" style="margin-block:24px 12px">El pago se activará cuando existan precios y acuerdos. Tu apartado se guarda solo en este navegador.</p>
     <button class="boton" type="button" disabled>Pago no disponible</button>
   </div></section>

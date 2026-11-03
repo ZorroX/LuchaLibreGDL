@@ -27,14 +27,17 @@ export const FOTOS_CLAVE = {
   cuernos: '2026-10-13_20-00-40-1',
   charro: '2026-05-28_15-10-55-1',
   calle: '2026-10-31_00-55-50-1',
+  mascara: '2026-06-08_23-54-52-1',
 };
 
+// precio y fabricacion son cifras de ejemplo para mostrar el reparto (ver reparto.js); nada está a la venta.
+// beneficiario: quién recibe la parte del luchador; margen, si el reparto no es el general.
 export const productos = [
-  { id: 'impresion-firmada', nombre: 'Impresión firmada', tipo: 'Edición numerada', foto: FOTOS_CLAVE.plata, texto: 'Fotografía de Benigno Mata en papel Hahnemühle Matt Fibre, tamaño 8.5 × 11, numerada y firmada por el luchador.' },
-  { id: 'foto-autografiada', nombre: 'Fotografía autografiada', tipo: 'Se firma en la arena', foto: FOTOS_CLAVE.grito, texto: 'Elige a tu luchador y recoge tu foto firmada el día de la función.' },
-  { id: 'playera', nombre: 'Playera La Tapatía', tipo: 'Lote corto', foto: FOTOS_CLAVE.monstruo, texto: 'Collage rotulado al frente y crédito del luchador y del fotógrafo.' },
-  { id: 'stickers', nombre: 'Paquete de stickers', tipo: 'Coleccionable', foto: FOTOS_CLAVE.cuernos, texto: 'Máscaras recortadas de la escena local, listas para la laptop o el casco.' },
-  { id: 'gorra', nombre: 'Gorra Los Nuestros', tipo: 'Bordada', foto: FOTOS_CLAVE.charro, texto: 'Bordado de la marca, pensado para sobrevivir a la tercera caída.' },
-  { id: 'art-toy', nombre: 'Art toy', tipo: 'Preventa futura', foto: FOTOS_CLAVE.calle, texto: 'Figura de edición limitada con un luchador piloto. Se fabricará solo si la preventa lo justifica.' },
+  { id: 'impresion-firmada', nombre: 'Impresión firmada', tipo: 'Edición numerada', foto: FOTOS_CLAVE.plata, precio: 650, fabricacion: 180, beneficiario: 'Gravity, que la firma', texto: 'Fotografía de Benigno Mata en papel Hahnemühle Matt Fibre, tamaño 8.5 × 11, numerada y firmada por el luchador.' },
+  { id: 'foto-autografiada', nombre: 'Fotografía autografiada', tipo: 'Se firma en la arena', foto: FOTOS_CLAVE.mascara, precio: 250, fabricacion: 40, beneficiario: 'El luchador que elijas', texto: 'Elige a tu luchador y recoge tu foto firmada el día de la función.' },
+  { id: 'playera', nombre: 'Playera La Tapatía', tipo: 'Lote corto', foto: FOTOS_CLAVE.monstruo, precio: 500, fabricacion: 200, beneficiario: 'Murder, el de la foto', texto: 'Collage rotulado al frente y crédito del luchador y del fotógrafo.' },
+  { id: 'stickers', nombre: 'Paquete de stickers', tipo: 'Coleccionable', foto: FOTOS_CLAVE.cuernos, precio: 120, fabricacion: 35, beneficiario: 'Los luchadores de la plancha, en partes iguales', texto: 'Máscaras recortadas de la escena local, listas para la laptop o el casco.' },
+  { id: 'gorra', nombre: 'Gorra Los Nuestros', tipo: 'Bordada', foto: FOTOS_CLAVE.charro, precio: 380, fabricacion: 150, beneficiario: 'Fondo de Los Nuestros, para los luchadores', margen: { luchador: 0.6, fotografo: 0, casa: 0.4 }, texto: 'Bordado de la marca, pensado para sobrevivir a la tercera caída.' },
+  { id: 'art-toy', nombre: 'Art toy', tipo: 'Preventa futura', foto: FOTOS_CLAVE.calle, precio: 1200, fabricacion: 600, beneficiario: 'El luchador piloto', texto: 'Figura de edición limitada con un luchador piloto. Se fabricará solo si la preventa lo justifica.' },
 ];
 export const producto = (id) => productos.find((p) => p.id === id);

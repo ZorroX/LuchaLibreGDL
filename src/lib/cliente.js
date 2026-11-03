@@ -1,10 +1,13 @@
 import { crearRotulo, cargarFuentes, repartir } from './rotulo-pincel.js';
+import { iniciarDinero, extraElegido } from './dinero.js';
+import { pesos } from './reparto.js';
 
 const CLAVE = 'tapatia-apartado';
 
+// Cada pieza apartada es { id, extra, destino }; las de versiones anteriores eran solo el id.
 function leer() {
   try {
-    return JSON.parse(localStorage.getItem(CLAVE)) ?? [];
+    return (JSON.parse(localStorage.getItem(CLAVE)) ?? []).map((x) => (typeof x === 'string' ? { id: x, extra: 0 } : x));
   } catch {
     return [];
   }
@@ -26,8 +29,9 @@ function pintarTotal(lista = leer()) {
 function iniciarApartado() {
   document.querySelectorAll('[data-apartar]').forEach((boton) => {
     boton.addEventListener('click', () => {
-      guardar([...leer(), boton.dataset.apartar]);
-      boton.textContent = 'Agregado al apartado';
+      const elegido = extraElegido();
+      guardar([...leer(), { id: boton.dataset.apartar, extra: elegido?.extra ?? 0, destino: elegido?.destino }]);
+      boton.textContent = elegido ? `Agregado con ${pesos(elegido.extra)} extra` : 'Agregado al apartado';
     });
   });
 
@@ -37,16 +41,21 @@ function iniciarApartado() {
   const pintar = () => {
     const lista = leer();
     vacio.hidden = lista.length > 0;
+    let suma = 0;
     contenedor.querySelectorAll('[data-producto]').forEach((fila) => {
-      const cuantos = lista.filter((id) => id === fila.dataset.producto).length;
-      fila.hidden = cuantos === 0;
-      fila.querySelector('[data-cuantos]').textContent = cuantos;
+      const suyos = lista.filter((x) => x.id === fila.dataset.producto);
+      const extra = suyos.reduce((s, x) => s + (x.extra || 0), 0);
+      suma += suyos.length * Number(fila.dataset.precio) + extra;
+      fila.hidden = suyos.length === 0;
+      fila.querySelector('[data-cuantos]').textContent = suyos.length;
+      fila.querySelector('[data-extra]').textContent = extra ? ` · ${pesos(extra)} extra que tú repartiste` : '';
     });
+    document.querySelector('[data-apartado-suma]').textContent = pesos(suma);
   };
   contenedor.querySelectorAll('[data-quitar]').forEach((boton) => {
     boton.addEventListener('click', () => {
       const lista = leer();
-      lista.splice(lista.indexOf(boton.dataset.quitar), 1);
+      lista.splice(lista.findIndex((x) => x.id === boton.dataset.quitar), 1);
       guardar(lista);
       pintar();
     });
@@ -138,5 +147,6 @@ export function iniciar() {
   iniciarApartado();
   iniciarVisor();
   iniciarFiltros();
+  iniciarDinero();
   pintarRotulos();
 }

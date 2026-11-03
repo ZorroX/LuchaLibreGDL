@@ -1,0 +1,10 @@
+---
+// Barra y lista de a dónde va cada peso. El navegador la repinta si hay un formulario que la mueve.
+import { htmlDesglose } from '../lib/reparto.js';
+const { desglose, titulo = 'A dónde va cada peso' } = Astro.props;
+---
+<div class="desglose" aria-live="polite">
+  <p class="desglose-titulo">{titulo}</p>
+  <div data-desglose set:html={htmlDesglose(desglose)} />
+  <p class="nota">Cifras de ejemplo. Los porcentajes reales se acuerdan con cada persona antes de vender.</p>
+</div>
