@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cartel from '../components/Cartel.astro';
+import Rotulo from '../components/Rotulo.astro';
 import TarjetaLuchador from '../components/TarjetaLuchador.astro';
 import { locales } from '../lib/acervo.js';
 
@@ -11,17 +13,17 @@ const temas = [
 ];
 ---
 <Base titulo="Mano a Mano" papel descripcion="Entrevistas con luchadores de Guadalajara.">
+  <Cartel rotulo="Mano a Mano" titulo="Las historias detrás del ring" lema="Entrevistas con la gente que hace la lucha en Guadalajara." fotos={locales.slice(0, 4).map((l) => l.fotos[0])} />
+
   <section class="bloque"><div class="ancho">
-    <p class="acto">Mano a Mano</p>
-    <h1>Las historias detrás del ring</h1>
     <p>Las primeras entrevistas están en preparación. Cada conversación respetará lo que el luchador quiera proteger de su identidad.</p>
-    <div class="casas" style="margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    <div class="casas pegados" style="margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
       {temas.map(([t, d]) => <div><h3>{t}</h3><p>{d}</p></div>)}
     </div>
   </div></section>
   <section class="bloque" style="padding-top:0"><div class="ancho">
-    <h2>Primeras candidaturas</h2>
+    <Rotulo as="h2" ajuste="titulo" texto="Primeras candidaturas" />
     <p class="nota" style="margin-bottom:22px">Propuesta inicial, según su presencia en el acervo.</p>
-    <div class="rejilla">{locales.slice(0, 4).map((l) => <TarjetaLuchador l={l} />)}</div>
+    <div class="rejilla pegados">{locales.slice(0, 4).map((l) => <TarjetaLuchador l={l} />)}</div>
   </div></section>
 </Base>

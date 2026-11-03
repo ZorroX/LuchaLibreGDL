@@ -1,5 +1,6 @@
 // Collage generativo: compone una escena al azar, la rasga en papel y la mezcla con la siguiente.
-const TEAL = '#0f97a3';
+import { pintarRotulo, cargarFuentes } from './rotulo-pincel.js';
+
 const PAPEL = '#f6f2e8';
 const COLORES = ['#e0291e', '#fbc913', '#0f97a3', '#a63c7e', '#7c9bd8', '#f3701c'];
 const TINTES = ['#fbc913', '#f3701c', '#0f97a3', '#a63c7e', '#7c9bd8'];
@@ -109,8 +110,10 @@ function contornosCompartidos(polis, W, H, amplitud) {
   }));
 }
 
-async function trocear(escena, W, H, u, cuantos, opciones) {
-  const polis = contornosCompartidos(celdas(W, H, cuantos, opciones.angulo, opciones.estirar), W, H, 26 * u);
+// El molde de cortes: se calcula una vez y puede servir para trocear dos escenas con las mismas formas.
+const cortes = (W, H, u, cuantos, opciones) => contornosCompartidos(celdas(W, H, cuantos, opciones.angulo, opciones.estirar), W, H, 26 * u);
+
+async function trocear(escena, polis, u) {
   const trozos = [];
   const pad = Math.ceil(22 * u);
   for (const [i, poli] of polis.entries()) {
@@ -143,11 +146,11 @@ async function trocear(escena, W, H, u, cuantos, opciones) {
 }
 
 /* Piezas del collage */
-function cubrir(ctx, im, x, y, w, h, foco = 0.5) {
+function cubrir(ctx, im, x, y, w, h, foco = 0.5, focoY = 0.5) {
   const e = Math.max(w / im.naturalWidth, h / im.naturalHeight);
   const iw = im.naturalWidth * e;
   const ih = im.naturalHeight * e;
-  ctx.drawImage(im, x + (w - iw) * foco, y + (h - ih) * 0.5, iw, ih);
+  ctx.drawImage(im, x + (w - iw) * foco, y + (h - ih) * focoY, iw, ih);
 }
 
 function tratar(ctx, x, y, w, h, modo) {
@@ -238,36 +241,7 @@ function oro(ctx, textura, x, y, w, h) {
 }
 
 function rotulo(ctx, lineas, x, y, ancho, { giro = 0, centrar = false } = {}) {
-  ctx.save();
-  ctx.font = '100px Rye';
-  const masAncha = Math.max(...lineas.map((l) => ctx.measureText(l).width));
-  const fs = Math.min(100 * (ancho / masAncha), (ctx.canvas.height * 0.34) / (lineas.length * 1.08));
-  const paso = fs * 1.08;
-  ctx.translate(x, (centrar ? y - (paso * lineas.length) / 2 : y) + fs * 0.82);
-  ctx.rotate(giro);
-  ctx.font = `${fs}px Rye`;
-  ctx.textAlign = 'center';
-  ctx.lineJoin = 'round';
-  lineas.forEach((linea, i) => {
-    const by = i * paso;
-    for (let k = 8; k >= 1; k--) {
-      const d = k * fs * 0.012;
-      ctx.lineWidth = fs * 0.05;
-      ctx.strokeStyle = TEAL;
-      ctx.fillStyle = TEAL;
-      ctx.strokeText(linea, d, by + d);
-      ctx.fillText(linea, d, by + d);
-    }
-    ctx.lineWidth = fs * 0.075;
-    ctx.strokeStyle = '#08080a';
-    ctx.strokeText(linea, 0, by);
-    const g = ctx.createLinearGradient(0, by - fs * 0.72, 0, by + fs * 0.03);
-    [['#fff', 0], ['#fff', 0.44], ['#fbc913', 0.44], ['#fbc913', 0.6], ['#f3701c', 0.6], ['#f3701c', 0.74], ['#e0291e', 0.74], ['#e0291e', 1]]
-      .forEach(([c, s]) => g.addColorStop(s, c));
-    ctx.fillStyle = g;
-    ctx.fillText(linea, 0, by);
-  });
-  ctx.restore();
+  pintarRotulo(ctx, lineas, { x, y, ancho, alto: ctx.canvas.height * 0.36, giro, centrar });
 }
 
 function nota(ctx, texto, x, y, u) {
@@ -289,11 +263,102 @@ function nota(ctx, texto, x, y, u) {
   ctx.restore();
 }
 
+/* Papel arrugado: una malla de triángulos que se dobla hacia una bola */
+function malla(W, H, centro, radio, vertical) {
+  const cols = vertical ? 8 : 12;
+  const filas = vertical ? 12 : 8;
+  const m = 0.04;
+  const cw = (W * (1 + 2 * m)) / cols;
+  const ch = (H * (1 + 2 * m)) / filas;
+  const pts = [];
+  for (let j = 0; j <= filas; j++) {
+    for (let i = 0; i <= cols; i++) {
+      // Los vértices interiores se mueven un poco para que los pliegues no formen cuadrícula.
+      const interior = i > 0 && j > 0 && i < cols && j < filas;
+      const x = -W * m + i * cw + (interior ? azar(-0.35, 0.35) * cw : 0);
+      const y = -H * m + j * ch + (interior ? azar(-0.35, 0.35) * ch : 0);
+      const ang = Math.atan2(y - centro[1], x - centro[0]) + azar(-0.9, 0.9);
+      const r = radio * azar(0.2, 1);
+      pts.push({ x, y, z: azar(-1, 1), bx: centro[0] + Math.cos(ang) * r, by: centro[1] + Math.sin(ang) * r, nx: azar(-1, 1), ny: azar(-1, 1) });
+    }
+  }
+  // Cada cara recibe luz según su inclinación, como papel arrugado alumbrado desde arriba a la izquierda.
+  const alto = Math.min(cw, ch) * 0.45;
+  const L = [-0.45, -0.6, 0.66];
+  const luzDe = ([a, b, c]) => {
+    const e1 = [b.x - a.x, b.y - a.y, (b.z - a.z) * alto];
+    const e2 = [c.x - a.x, c.y - a.y, (c.z - a.z) * alto];
+    let n = [e1[1] * e2[2] - e1[2] * e2[1], e1[2] * e2[0] - e1[0] * e2[2], e1[0] * e2[1] - e1[1] * e2[0]];
+    const l = Math.hypot(...n) || 1;
+    n = n.map((v) => (v / l) * Math.sign(n[2] || 1));
+    return limitar((n[0] * L[0] + n[1] * L[1] + n[2] * L[2] - L[2]) * 3, -1, 1);
+  };
+  const tris = [];
+  for (let j = 0; j < filas; j++) {
+    for (let i = 0; i < cols; i++) {
+      const a = j * (cols + 1) + i;
+      const c = a + cols + 1;
+      const pares = (i + j) % 2 ? [[a, a + 1, c + 1], [a, c + 1, c]] : [[a, a + 1, c], [a + 1, c + 1, c]];
+      pares.forEach((v) => tris.push({ v, luz: luzDe(v.map((k) => pts[k])) }));
+    }
+  }
+  return { pts, tris };
+}
+
+// Pinta un triángulo de la imagen deformado a su nueva posición. Si quedó volteado se ve el revés del papel.
+function triangulo(ctx, img, [a, b, c], d, luz) {
+  const [[u0, v0], [u1, v1], [u2, v2]] = d;
+  const den = (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y);
+  const area = (u1 - u0) * (v2 - v0) - (u2 - u0) * (v1 - v0);
+  if (!den || Math.abs(area) < 0.5) return;
+  const cx = (u0 + u1 + u2) / 3;
+  const cy = (v0 + v1 + v2) / 3;
+  ctx.save();
+  ctx.beginPath();
+  d.forEach(([x, y], i) => {
+    const l = Math.hypot(x - cx, y - cy) || 1;
+    const px = x + ((x - cx) / l) * 0.9;
+    const py = y + ((y - cy) / l) * 0.9;
+    if (i) ctx.lineTo(px, py);
+    else ctx.moveTo(px, py);
+  });
+  ctx.closePath();
+  ctx.clip();
+  if (Math.sign(den) !== Math.sign(area)) {
+    ctx.fillStyle = PAPEL;
+    ctx.fill();
+    luz = -0.12 - Math.abs(luz) * 0.5;
+  } else {
+    const ma = ((u1 - u0) * (c.y - a.y) - (u2 - u0) * (b.y - a.y)) / den;
+    const mb = ((v1 - v0) * (c.y - a.y) - (v2 - v0) * (b.y - a.y)) / den;
+    const mc = ((u2 - u0) * (b.x - a.x) - (u1 - u0) * (c.x - a.x)) / den;
+    const md = ((v2 - v0) * (b.x - a.x) - (v1 - v0) * (c.x - a.x)) / den;
+    ctx.save();
+    ctx.transform(ma, mb, mc, md, u0 - ma * a.x - mc * a.y, v0 - mb * a.x - md * a.y);
+    ctx.drawImage(img, 0, 0);
+    ctx.restore();
+  }
+  if (luz) {
+    ctx.fillStyle = luz > 0 ? `rgba(255,250,235,${luz * 0.6})` : `rgba(0,0,0,${-luz})`;
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+// k: cuánto se ha hecho bola (0 plano, 1 bola). ruido: arrugas en píxeles. luz: fuerza de los pliegues.
+function pintarMalla(ctx, img, { pts, tris }, k, ruido, luz) {
+  const e = k * k * (3 - 2 * k);
+  const pos = pts.map((p) => [p.x + (p.bx - p.x) * e + p.nx * ruido, p.y + (p.by - p.y) * e + p.ny * ruido]);
+  for (const t of tris) triangulo(ctx, img, t.v.map((i) => pts[i]), t.v.map((i) => pos[i]), t.luz * luz);
+}
+
 /* Motor */
-export function iniciarCollage(canvas, material, { alCambiar } = {}) {
+// plantillas: cuáles se usan (la primera abre); espera: cuánto dura cada escena quieta, en ms.
+// Las imágenes de tipo foto son las de la página: se pegan completas, sin recortar la figura.
+export function iniciarCollage(canvas, material, { alCambiar, plantillas: elegidas, espera = [3400, 5000] } = {}) {
   const ctx = canvas.getContext('2d');
   const reposo = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const pool = { ciudad: [], tequila: [], naturaleza: [], espacio: [], galaxia: [], astro: [], cuerpo: [], cabeza: [] };
+  const pool = { ciudad: [], tequila: [], naturaleza: [], espacio: [], galaxia: [], astro: [], cuerpo: [], cabeza: [], foto: [] };
   let W, H, u, vertical, dpr;
   let oroTextura, grano;
   let actual, trozos, siguiente;
@@ -308,9 +373,14 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
   let sacudida = 0;
   let papelitos = [];
   let cuantas = 0;
+  let proximoTipo = null;
+  const siguienteTipo = baraja(['rasgar', 'rasgar', 'arrugar', 'extender', 'pegar', 'pegar', 'estallar', 'mezcla', 'barrer', 'deshojar']);
   const siguienteFrase = baraja(material.frases);
   const siguienteNota = baraja(material.notas);
-  const siguientePlantilla = baraja(['retablo', 'duelo', 'cosmos', 'muro', 'cartel']);
+  const siguientePlantilla = baraja(elegidas ?? ['retablo', 'duelo', 'cosmos', 'muro', 'cartel']);
+  let visible = true;
+  const vigia = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
+  vigia.observe(canvas);
 
   const recientes = [];
   const fresco = (lista) => {
@@ -342,8 +412,8 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
   }
 
   const panel = (c, x, y, w, h, relleno, giro = azar(-0.04, 0.04)) => papelRasgado(c, rectangulo(x, y, w, h, giro), u, relleno);
-  const imagenEn = (x, y, w, h, im, modo = 'natural') => (c) => {
-    cubrir(c, im, x - 20, y - 20, w + 40, h + 40, azar(0.3, 0.7));
+  const imagenEn = (x, y, w, h, im, modo = 'natural', focoY = 0.5) => (c) => {
+    cubrir(c, im, x - 20, y - 20, w + 40, h + 40, azar(0.3, 0.7), focoY);
     tratar(c, x - 20, y - 20, w + 40, h + 40, modo);
   };
   const conFigura = (x, y, w, h, color, rec) => (c) => {
@@ -409,7 +479,9 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
           const y = H * 0.04 + fila * ch + ch * azar(0.02, 0.08);
           const w = cw * azar(0.84, 0.98);
           const h = ch * azar(0.84, 0.98);
-          const lleno = azar() > 0.55 ? imagenEn(x, y, w, h, (azar() > 0.5 ? lugar() : cualquiera()).im, uno(['natural', 'bn'])) : conFigura(x, y, w, h, uno(COLORES), fig(azar() > 0.45 ? 'cabeza' : 'cuerpo'));
+          const lleno = pool.foto.length && azar() < 0.55
+            ? imagenEn(x, y, w, h, f('foto').im, uno(['natural', 'natural', 'bn']), 0.3)
+            : azar() > 0.55 ? imagenEn(x, y, w, h, (azar() > 0.5 ? lugar() : cualquiera()).im, uno(['natural', 'bn'])) : conFigura(x, y, w, h, uno(COLORES), fig(azar() > 0.45 ? 'cabeza' : 'cuerpo'));
           panel(c, x, y, w, h, lleno, azar(-0.05, 0.05));
         }
         await respiro();
@@ -431,12 +503,50 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
       rotulo(c, lineas, W / 2, H * 0.05, W * (vertical ? 0.9 : 0.6));
       nota(c, siguienteNota(), W * 0.82, H * 0.74, u);
     },
+    // La foto de la página al frente, enmarcada en oro y rayos; el rótulo a un lado.
+    async portada(c, lineas) {
+      cielo(c, uno(['bn', 'bn', ...TINTES]));
+      const px = vertical ? W * 0.12 : W * 0.53;
+      const pw = vertical ? W * 0.76 : W * 0.38;
+      const py = vertical ? H * 0.3 : H * 0.08;
+      const ph = vertical ? H * 0.52 : H * 0.84;
+      await rayos(c, px + pw / 2, py + ph * 0.42, 90 * u, Math.max(pw, ph) * 0.78, u, f(uno(['naturaleza', 'espacio'])).im, 12);
+      panel(c, px - pw * 0.07, py - ph * 0.05, pw * 1.14, ph * 1.1, (k) => oro(k, oroTextura, px - pw * 0.12, py - ph * 0.1, pw * 1.24, ph * 1.2), azar(-0.06, 0.06));
+      await respiro();
+      panel(c, px, py, pw, ph, imagenEn(px, py, pw, ph, f('foto').im, 'natural', 0.25), azar(-0.03, 0.03));
+      if (pool.foto.length > 1) {
+        const sx = vertical ? W * 0.04 : W * 0.38;
+        const sy = vertical ? H * 0.6 : H * 0.48;
+        const sw = vertical ? W * 0.4 : W * 0.19;
+        const sh = vertical ? H * 0.26 : H * 0.44;
+        panel(c, sx, sy, sw, sh, imagenEn(sx, sy, sw, sh, f('foto').im, 'bn', 0.25), azar(-0.09, 0.09));
+      }
+      await respiro();
+      rotulo(c, lineas, vertical ? W / 2 : W * 0.27, H * (vertical ? 0.09 : 0.12), W * (vertical ? 0.9 : 0.46), { giro: azar(-0.04, 0.02) });
+      if (!vertical) nota(c, siguienteNota(), W * 0.84, H * 0.74, u);
+    },
+    // Tiras verticales: fotos de la página alternadas con oro y ciudad entintada.
+    async tira(c, lineas) {
+      cielo(c, 'bn');
+      const n = vertical ? 3 : 5;
+      const w = W / n;
+      for (let i = 0; i < n; i++) {
+        const x = i * w - w * 0.03;
+        const foto = i % 2 || !pool.foto.length ? null : f('foto');
+        const lleno = foto
+          ? imagenEn(x, -40, w * 1.06, H + 80, foto.im, uno(['natural', 'natural', 'bn']), 0.3)
+          : azar() < 0.5 ? (k) => oro(k, oroTextura, x - 30, -60, w + 60, H + 120) : imagenEn(x, -40, w * 1.06, H + 80, lugar().im, uno(TINTES));
+        panel(c, x, -40, w * 1.06, H + 80, lleno, azar(-0.035, 0.035));
+        if (i % 2) await respiro();
+      }
+      rotulo(c, lineas, W / 2, H * (vertical ? 0.09 : 0.08), W * (vertical ? 0.9 : 0.62), { giro: azar(-0.03, 0.03) });
+    },
   };
 
   async function componer(primera) {
     const hoja = lienzo(W, H);
     const c = hoja.getContext('2d');
-    const nombre = primera ? 'retablo' : siguientePlantilla();
+    const nombre = primera ? elegidas?.[0] ?? 'retablo' : siguientePlantilla();
     await plantillas[nombre](c, primera ? material.frases[0] : siguienteFrase(), primera);
     c.save();
     c.globalCompositeOperation = 'overlay';
@@ -447,23 +557,102 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     return hoja;
   }
 
+  // Los trozos de la escena actual vuelan. En pegar, ambas escenas se cortan con el mismo molde:
+  // cada trozo viejo se arranca y en su hueco cae el trozo nuevo de la misma forma.
+  const RELEVO = 260;
+  const VUELAN = new Set(['estallar', 'mezcla', 'barrer', 'deshojar']);
+  const conTrozos = (tipo) => VUELAN.has(tipo) || tipo === 'pegar';
+
   async function preparar() {
     const turno = ++generacion;
     await respiro();
-    const modo = azar() > 0.68 ? { angulo: azar(Math.PI), estirar: azar(2.6, 3.8) } : { angulo: azar(Math.PI), estirar: azar(1, 1.6) };
-    const nuevos = await trocear(actual, W, H, u, vertical ? 18 : 30, modo);
-    await respiro();
+    const tipo = siguienteTipo();
     const proxima = await componer(false);
+    await respiro();
+    let nuevos = null;
+    if (conTrozos(tipo)) {
+      const largos = azar() > 0.68;
+      const modo = { angulo: azar(Math.PI), estirar: largos ? azar(2.6, 3.8) : azar(1, 1.6) };
+      const cuantos = tipo === 'pegar' ? (vertical ? 12 : 20) : (vertical ? 18 : 30);
+      const molde = cortes(W, H, u, cuantos, modo);
+      nuevos = await trocear(tipo === 'pegar' ? proxima : actual, molde, u);
+      if (tipo === 'pegar') {
+        const viejos = await trocear(actual, molde, u);
+        nuevos.forEach((t, i) => (t.viejo = viejos[i]));
+      }
+    }
     if (turno !== generacion) return;
     trozos = nuevos;
     siguiente = proxima;
+    proximoTipo = tipo;
+  }
+
+  const listo = () => siguiente && (trozos || !conTrozos(proximoTipo));
+
+  function planRasgado(o) {
+    const diag = Math.hypot(W, H);
+    const ang = azar() < 0.7 ? Math.PI / 2 + azar(-0.45, 0.45) : azar(-0.35, 0.35);
+    const d = [Math.cos(ang), Math.sin(ang)];
+    const n = [-d[1], d[0]];
+    const a = [o[0] - d[0] * diag, o[1] - d[1] * diag];
+    const b = [o[0] + d[0] * diag, o[1] + d[1] * diag];
+    const camino = quebrar(a, b, 60 * u, 9);
+    camino.push(b);
+    const dentro = camino.map((p, i) => (p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= H ? i : -1)).filter((i) => i >= 0);
+    const lejos = (s) => [[b[0] + n[0] * diag * 2 * s, b[1] + n[1] * diag * 2 * s], [a[0] + n[0] * diag * 2 * s, a[1] + n[1] * diag * 2 * s]];
+    const mitad = (s, fibra) => {
+      const hoja = lienzo(W, H);
+      const c = hoja.getContext('2d');
+      trazar(c, [...camino, ...lejos(s)]);
+      c.clip();
+      c.drawImage(actual, 0, 0);
+      // El alma blanca del papel asoma por el borde roto.
+      c.strokeStyle = PAPEL;
+      c.lineJoin = 'round';
+      c.lineWidth = fibra * u;
+      c.beginPath();
+      camino.forEach((p, i) => (i ? c.lineTo(p[0], p[1]) : c.moveTo(p[0], p[1])));
+      c.stroke();
+      c.lineWidth = 1.2 * u;
+      for (let i = 0; i < camino.length - 1; i += 2) {
+        const [x, y] = camino[i];
+        c.beginPath();
+        c.moveTo(x, y);
+        c.lineTo(x + n[0] * s * azar(2, 8) * u + azar(-3, 3) * u, y + n[1] * s * azar(2, 8) * u + azar(-3, 3) * u);
+        c.stroke();
+      }
+      return hoja;
+    };
+    return {
+      camino, n, desde: dentro[0] ?? 0, hasta: dentro[dentro.length - 1] ?? camino.length - 1,
+      mitades: [mitad(1, 11), mitad(-1, 5)], fin: 1650, giro: azar(0.25, 0.6) * (azar() < 0.5 ? -1 : 1),
+    };
   }
 
   function planear(origen) {
-    const tipo = origen ? 'estallar' : uno(['estallar', 'mezcla', 'mezcla', 'barrer', 'pegar']);
+    const ahora = performance.now();
+    const zoom = zoomDe(ahora - inicioEscena);
+    let tipo = proximoTipo;
+    if (origen && (tipo === 'mezcla' || tipo === 'barrer' || tipo === 'deshojar')) tipo = 'estallar';
+    const centro = [azar(W * 0.25, W * 0.75), azar(H * 0.25, H * 0.75)];
+    const radio = Math.min(W, H) * azar(0.12, 0.17);
+    const fuera = () => {
+      const a = azar(Math.PI * 2);
+      return [Math.cos(a), Math.sin(a) - 0.3];
+    };
+    if (tipo === 'rasgar') return { tipo, inicio: ahora, zoom, ...planRasgado(origen ?? centro) };
+    if (tipo === 'arrugar') {
+      const o = origen ?? centro;
+      return { tipo, inicio: ahora, zoom, o, fin: 1900, vieja: malla(W, H, o, radio, vertical), nueva: malla(W, H, o, 0, vertical), lanza: fuera(), giro: azar(-5, 5) };
+    }
+    if (tipo === 'extender') {
+      const o = origen ?? [W / 2 + azar(-0.15, 0.15) * W, H / 2 + azar(-0.15, 0.15) * H];
+      return { tipo, inicio: ahora, zoom, o, radio, fin: 2100, malla: malla(W, H, o, radio, vertical), desde: fuera(), giro: azar(-4, 4) };
+    }
+
     const o = origen ?? [azar(W), azar(H)];
     const diag = Math.hypot(W, H);
-    const fin = { estallar: 0, mezcla: 0, barrer: 0, pegar: 0 };
+    let fin = 0;
     const anguloBarrido = azar(Math.PI * 2);
     trozos.forEach((t) => {
       const dx = t.cx - o[0];
@@ -474,15 +663,19 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
       t.volteos = azar(0.5, 2);
       t.lejos = diag * azar(0.9, 1.5);
       t.dura = azar(900, 1500);
-      if (tipo === 'mezcla') t.espera = azar() > 0.45 ? (d / diag) * 1000 : 2500 + azar(1000);
+      if (tipo === 'pegar') {
+        t.giro = azar(-0.45, 0.45);
+        t.lejos = azar(60, 170) * u;
+        t.dura = azar(420, 640);
+        t.espera = (d / diag) * 1400 + azar(260);
+      } else if (tipo === 'mezcla') t.espera = azar() > 0.45 ? (d / diag) * 1000 : 2500 + azar(1000);
       else if (tipo === 'barrer') t.espera = ((t.cx * Math.cos(anguloBarrido) + t.cy * Math.sin(anguloBarrido)) / diag + 1) * 900 - 450 + azar(160);
-      else if (tipo === 'pegar') t.espera = azar(1500);
+      else if (tipo === 'deshojar') t.espera = azar(1500);
       else t.espera = (d / diag) * 1300 + azar(200);
-      fin[tipo] = Math.max(fin[tipo], t.espera + t.dura);
+      fin = Math.max(fin, t.espera + t.dura);
     });
     const orden = [...trozos].sort((a, b) => a.espera - b.espera);
-    const ahora = performance.now();
-    return { tipo, origen: o, inicio: ahora, fin: fin[tipo] + 240, orden, grietas: 240, pegados: new Set(), zoom: zoomDe(ahora - inicioEscena) };
+    return { tipo, origen: o, inicio: ahora, fin: fin + (tipo === 'pegar' ? 450 + RELEVO + 240 : 240), orden, grietas: 240, pegados: new Set(), zoom };
   }
 
   function soltarPapelitos(t, cuantos) {
@@ -514,14 +707,16 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     });
   }
 
-  function pintarEscena(hoja, zoom) {
+  function conZoom(zoom, pintar) {
     ctx.save();
     ctx.translate(W / 2, H / 2);
     ctx.scale(zoom, zoom);
     ctx.translate(-W / 2, -H / 2);
-    ctx.drawImage(hoja, 0, 0);
+    pintar();
     ctx.restore();
   }
+
+  const pintarEscena = (hoja, zoom) => conZoom(zoom, () => ctx.drawImage(hoja, 0, 0));
 
   const zoomDe = (t) => 1 + 0.03 * limitar(t / 9000);
 
@@ -538,31 +733,22 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     ctx.restore();
   }
 
-  function pintarTransicion(plan, ahora, dt) {
-    const t = ahora - plan.inicio;
+  // Cada pintor dibuja su cuadro y devuelve true cuando la escena nueva ya quedó completa.
+  function pintarVuelo(plan, t) {
     const trasGrietas = t - plan.grietas;
     pintarEscena(siguiente, 1);
     if (t < plan.grietas) {
       pintarEscena(actual, plan.zoom);
       const diag = Math.hypot(W, H);
       plan.orden.forEach((p) => { p.grieta = Math.hypot(p.cx - plan.origen[0], p.cy - plan.origen[1]) / diag; });
-      ctx.save();
-      ctx.translate(W / 2, H / 2);
-      ctx.scale(plan.zoom, plan.zoom);
-      ctx.translate(-W / 2, -H / 2);
-      pintarGrietas(plan, t / plan.grietas);
-      ctx.restore();
-      return;
+      conZoom(plan.zoom, () => pintarGrietas(plan, t / plan.grietas));
+      return false;
     }
     if (!plan.golpe) {
       plan.golpe = true;
       sacudida = 13 * u;
     }
-    ctx.save();
-    ctx.translate(W / 2, H / 2);
-    ctx.scale(plan.zoom, plan.zoom);
-    ctx.translate(-W / 2, -H / 2);
-    plan.orden.forEach((p) => {
+    conZoom(plan.zoom, () => plan.orden.forEach((p) => {
       const q = limitar((trasGrietas - p.espera) / p.dura);
       if (q >= 1) return;
       if (q > 0 && !plan.pegados.has(p)) {
@@ -578,14 +764,193 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
       ctx.scale(esc, esc * Math.abs(Math.cos(e * p.volteos * Math.PI)) + 0.0001);
       ctx.drawImage(p.hoja, -p.w / 2, -p.h / 2);
       ctx.restore();
+    }));
+    return trasGrietas >= plan.fin;
+  }
+
+  // Primero se marcan los cortes. Luego cada trozo viejo se despega y sale volando, y RELEVO ms después
+  // baja el trozo nuevo con la misma forma y se asienta en el hueco con un golpe.
+  function pintarPegado(plan, t) {
+    const tt = t - plan.grietas;
+    if (tt < 0) {
+      pintarEscena(actual, plan.zoom);
+      const diag = Math.hypot(W, H);
+      plan.orden.forEach((p) => { p.grieta = Math.hypot(p.cx - plan.origen[0], p.cy - plan.origen[1]) / diag; });
+      conZoom(plan.zoom, () => pintarGrietas(plan, t / plan.grietas));
+      return false;
+    }
+    // El zoom de la escena vieja regresa a 1 durante la transición, para que los moldes embonen con la nueva.
+    const zoom = 1 + (plan.zoom - 1) * (1 - limitar(tt / (plan.fin - plan.grietas)));
+    conZoom(zoom, () => {
+      ctx.fillStyle = '#0d0c10';
+      ctx.fillRect(0, 0, W, H);
+      const quietos = [];
+      const arrancados = [];
+      const pegados = [];
+      const bajando = [];
+      for (const p of plan.orden) {
+        const qv = (tt - p.espera) / 650;
+        const qn = limitar((tt - p.espera - RELEVO) / p.dura);
+        if (qv <= 0) quietos.push(p.viejo);
+        else if (qv < 1) arrancados.push([p.viejo, qv, p]);
+        if (qn >= 1) pegados.push(p);
+        else if (qn > 0) bajando.push([p, qn]);
+      }
+      quietos.forEach((v) => ctx.drawImage(v.hoja, v.x0, v.y0));
+      pegados.forEach((p) => {
+        if (!plan.pegados.has(p)) {
+          plan.pegados.add(p);
+          sacudida = Math.max(sacudida, 4 * u);
+          soltarPapelitos(p, 2);
+        }
+        ctx.drawImage(p.hoja, p.x0, p.y0);
+      });
+      arrancados.forEach(([v, q, p]) => {
+        const e = q * q;
+        ctx.save();
+        ctx.globalAlpha = limitar((1 - q) * 5);
+        ctx.translate(v.cx + p.dir[0] * p.lejos * 6 * e, v.cy + p.dir[1] * p.lejos * 6 * e + 260 * u * e - 30 * u * Math.sin(q * Math.PI));
+        ctx.rotate(-p.giro * 2.5 * e);
+        const esc = 1 + 0.25 * Math.sin(Math.min(q * 2, 1) * Math.PI * 0.5);
+        ctx.scale(esc, esc * Math.abs(Math.cos(e * 1.4)) + 0.0001);
+        ctx.shadowColor = 'rgba(0,0,0,.45)';
+        ctx.shadowBlur = 30 * u * q;
+        ctx.shadowOffsetY = 24 * u * q;
+        ctx.drawImage(v.hoja, -v.w / 2, -v.h / 2);
+        ctx.restore();
+      });
+      bajando.forEach(([p, q]) => {
+        const alto = (1 - q) ** 2;
+        ctx.save();
+        ctx.globalAlpha = limitar(q * 12);
+        ctx.translate(p.cx - p.dir[0] * p.lejos * alto, p.cy - p.dir[1] * p.lejos * alto - 40 * u * alto);
+        ctx.rotate(p.giro * alto);
+        const esc = 1 + 0.45 * alto;
+        ctx.scale(esc, esc);
+        ctx.shadowColor = 'rgba(0,0,0,.45)';
+        ctx.shadowBlur = 40 * u * alto;
+        ctx.shadowOffsetX = 26 * u * alto;
+        ctx.shadowOffsetY = 34 * u * alto;
+        ctx.drawImage(p.hoja, -p.w / 2, -p.h / 2);
+        ctx.restore();
+      });
     });
-    ctx.restore();
+    const fundido = limitar((t - (plan.fin - 420)) / 420);
+    if (fundido > 0) {
+      ctx.save();
+      ctx.globalAlpha = fundido;
+      ctx.drawImage(siguiente, 0, 0);
+      ctx.restore();
+    }
+    return t >= plan.fin;
+  }
+
+  // El papel se rompe a lo largo de una línea quebrada y las dos mitades se abren y caen.
+  function pintarRasgado(plan, t) {
+    pintarEscena(siguiente, 1);
+    const T1 = 700;
+    const avance = limitar(t / T1);
+    const i = Math.round(plan.desde + (plan.hasta - plan.desde) * avance);
+    const frente = plan.camino[Math.min(i, plan.camino.length - 1)];
+    const abre = 0.05 * avance ** 1.6;
+    const q = limitar((t - T1) / (plan.fin - T1));
+    const e = q * q;
+    if (q > 0 && !plan.golpe) {
+      plan.golpe = true;
+      sacudida = 9 * u;
+      for (let k = plan.desde; k <= plan.hasta; k += Math.ceil((plan.hasta - plan.desde) / 14) || 1) {
+        const [x, y] = plan.camino[k];
+        soltarPapelitos({ cx: x, cy: y, w: 30 * u, h: 30 * u, dir: [plan.n[0] * (k % 2 ? 1 : -1), plan.n[1]] }, 1);
+      }
+    }
+    const [nx, ny] = plan.n;
+    const diag = Math.hypot(W, H);
+    conZoom(plan.zoom, () => plan.mitades.forEach((hoja, k) => {
+      const s = k ? -1 : 1;
+      ctx.save();
+      ctx.translate(frente[0] + nx * s * diag * 0.75 * e, frente[1] + ny * s * diag * 0.75 * e + H * 0.35 * e);
+      ctx.rotate(-s * abre - s * plan.giro * e * (k ? 0.6 : 1));
+      if (!k && q > 0) {
+        // La mitad grande se enrosca un poco al despegarse.
+        const a = Math.atan2(ny, nx);
+        ctx.rotate(a);
+        ctx.scale(1 - 0.35 * e, 1);
+        ctx.rotate(-a);
+      }
+      ctx.translate(-frente[0], -frente[1]);
+      ctx.drawImage(hoja, 0, 0);
+      ctx.restore();
+    }));
+    return t >= plan.fin;
+  }
+
+  // La hoja se hace bola y sale volando; debajo, la nueva se alisa como papel recién extendido.
+  function pintarArrugado(plan, t) {
+    const T1 = 950;
+    const arrugas = 1 - limitar((t - 450) / (plan.fin - 450));
+    if (arrugas > 0) pintarMalla(ctx, siguiente, plan.nueva, 0, Math.min(W, H) * 0.012 * arrugas, 0.32 * arrugas);
+    else pintarEscena(siguiente, 1);
+    const k = limitar(t / T1);
+    const q = limitar((t - T1) / (plan.fin - 150 - T1));
+    if (q >= 1) return t >= plan.fin;
+    const diag = Math.hypot(W, H);
+    const [ox, oy] = plan.o;
+    conZoom(plan.zoom, () => {
+      ctx.translate(ox + plan.lanza[0] * diag * q, oy + plan.lanza[1] * diag * q + H * 0.9 * q * q);
+      ctx.rotate(plan.giro * q);
+      ctx.scale(1 - 0.3 * q, 1 - 0.3 * q);
+      ctx.translate(-ox, -oy);
+      pintarMalla(ctx, actual, plan.vieja, k, Math.min(W, H) * 0.035 * k, 0.42 * k);
+    });
+    return false;
+  }
+
+  // Una bola de papel entra rodando y se extiende sobre la escena hasta cubrirla.
+  function pintarExtendido(plan, t) {
+    pintarEscena(actual, plan.zoom);
+    const T0 = 450;
+    const T1 = 1600;
+    const [ox, oy] = plan.o;
+    const diag = Math.hypot(W, H);
+    let k = 1;
+    if (t < T0) {
+      const q = 1 - (1 - t / T0) ** 3;
+      ctx.save();
+      ctx.translate(ox + plan.desde[0] * diag * 0.7 * (1 - q), oy + plan.desde[1] * diag * 0.7 * (1 - q));
+      ctx.rotate(plan.giro * (1 - q));
+      ctx.translate(-ox, -oy);
+    } else {
+      const q = limitar((t - T0) / (T1 - T0));
+      k = 1 - (1 - (1 - q) ** 3);
+      if (!plan.golpe) {
+        plan.golpe = true;
+        sacudida = 6 * u;
+      }
+    }
+    if (k > 0.4) {
+      const g = ctx.createRadialGradient(ox + 10 * u, oy + plan.radio * 0.9, 0, ox + 10 * u, oy + plan.radio * 0.9, plan.radio * 1.3);
+      g.addColorStop(0, `rgba(0,0,0,${0.45 * k})`);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(ox - plan.radio * 2, oy - plan.radio, plan.radio * 4, plan.radio * 3);
+    }
+    const arrugas = Math.max(k, 0.55 * (1 - limitar((t - T0) / (plan.fin - T0))));
+    pintarMalla(ctx, siguiente, plan.malla, k, Math.min(W, H) * (0.035 * k + 0.012 * arrugas), 0.42 * arrugas);
+    if (t < T0) ctx.restore();
+    return t >= plan.fin;
+  }
+
+  const PINTORES = { pegar: pintarPegado, rasgar: pintarRasgado, arrugar: pintarArrugado, extender: pintarExtendido };
+
+  function pintarTransicion(plan, ahora, dt) {
+    const terminada = (PINTORES[plan.tipo] ?? pintarVuelo)(plan, ahora - plan.inicio);
     pintarPapelitos(dt);
-    if (trasGrietas >= plan.fin) {
+    if (terminada) {
       actual = siguiente;
       siguiente = null;
       trozos = null;
       transicion = null;
+      delete canvas.dataset.transicion;
       nuevaEspera(ahora);
       preparar();
       cuantas += 1;
@@ -595,7 +960,7 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
 
   function nuevaEspera(ahora) {
     inicioEscena = ahora;
-    duracionEscena = azar(3400, 5000);
+    duracionEscena = azar(espera[0], espera[1]);
   }
 
   let previo = 0;
@@ -604,6 +969,11 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     raf = requestAnimationFrame(cuadro);
     const dt = Math.min(ahora - previo, 50);
     previo = ahora;
+    // Fuera de la pantalla no se pinta, y la escena quieta no gasta su turno.
+    if (!visible && !transicion) {
+      inicioEscena += dt;
+      return;
+    }
     ctx.save();
     if (sacudida > 0.2) {
       ctx.translate(azar(-sacudida, sacudida), azar(-sacudida, sacudida));
@@ -614,9 +984,9 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     } else {
       pintarEscena(actual, zoomDe(ahora - inicioEscena));
       pintarPapelitos(dt);
-      const listo = trozos && siguiente;
-      if (listo && (forzar || (!pausado && ahora - inicioEscena > duracionEscena))) {
+      if (listo() && (forzar || (!pausado && ahora - inicioEscena > duracionEscena))) {
         transicion = planear(forzar);
+        canvas.dataset.transicion = transicion.tipo;
         forzar = null;
       }
     }
@@ -627,7 +997,7 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     medir();
     const base = await Promise.all([cargar(material.oro), cargar(material.grano)]);
     [oroTextura, grano] = base;
-    await document.fonts.load('100px Rye', 'LA TAPATÍA');
+    await cargarFuentes();
     await document.fonts.load('500 25px Archivo', 'Guadalajara');
     const entra = (lista) => Promise.all(lista.map(async (m) => {
       const im = await cargar(m.src);
@@ -637,7 +1007,7 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     }));
     const porTipo = (t) => material.imagenes.filter((m) => m.tipo === t);
     const mezcla = (l) => [...l].sort(() => Math.random() - 0.5);
-    const primeras = ['ciudad', 'tequila', 'naturaleza', 'galaxia', 'astro'].flatMap((t) => mezcla(porTipo(t)).slice(0, 2));
+    const primeras = [...porTipo('foto').slice(0, 3), ...['ciudad', 'tequila', 'naturaleza', 'galaxia', 'astro'].flatMap((t) => mezcla(porTipo(t)).slice(0, 2))];
     const figuras = [...mezcla(porTipo('cuerpo')).slice(0, 4), ...mezcla(porTipo('cabeza')).slice(0, 4)];
     const iniciales = new Set([...primeras, ...figuras]);
     await entra([...iniciales]);
@@ -693,6 +1063,7 @@ export function iniciarCollage(canvas, material, { alCambiar } = {}) {
     destruir() {
       vivo = false;
       cancelAnimationFrame(raf);
+      vigia.disconnect();
       clearTimeout(esperaTam);
       window.removeEventListener('resize', alCambiarTam);
     },

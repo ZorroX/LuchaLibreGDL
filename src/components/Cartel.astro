@@ -1,0 +1,89 @@
+---
+// Cabecera de collage vivo. En la portada rota todas las frases; en cada página, el rótulo es su nombre
+// y las fotos de la página se pegan al frente.
+import { grande } from '../lib/acervo.js';
+
+// Un nombre largo se parte en dos renglones parejos, como en un letrero.
+function renglones(texto) {
+  if (Array.isArray(texto)) return texto;
+  const t = texto.toLocaleUpperCase('es-MX');
+  const p = t.split(' ');
+  if (t.length <= 13 || p.length < 2) return [t];
+  return p.slice(1).map((_, i) => [p.slice(0, i + 1).join(' '), p.slice(i + 1).join(' ')])
+    .sort((a, b) => Math.max(...a.map((s) => s.length)) - Math.max(...b.map((s) => s.length)))[0];
+}
+
+const {
+  titulo,
+  rotulo: texto,
+  acto,
+  lema,
+  fotos = [],
+  respaldo = fotos[0],
+  plantillas = ['portada', 'tira', 'muro', 'retablo', 'duelo', 'cartel'],
+  inicio = false,
+  ocultarTitulo = false,
+  id,
+} = Astro.props;
+const rotulo = texto && renglones(texto);
+const datos = {
+  frases: rotulo && [rotulo],
+  fotos: fotos.slice(0, 6).map(grande),
+  plantillas: inicio ? undefined : plantillas,
+  espera: inicio ? undefined : [5200, 7600],
+};
+---
+<section class:list={['escenario', { cartel: !inicio }]} aria-label={`Collage animado: ${titulo}`}>
+  {respaldo && <img class="escenario-respaldo" src={grande(respaldo)} alt="" fetchpriority="high" />}
+  {rotulo && <p class="escenario-letrero" aria-hidden="true">{rotulo.join(' ')}</p>}
+  <canvas id={id} data-collage={JSON.stringify(datos)} aria-hidden="true"></canvas>
+  <div class="escenario-pie">
+    {acto && <p class="acto">{acto}</p>}
+    <h1 class:list={[{ oculto: ocultarTitulo }]}>{titulo}</h1>
+    {lema && <p class="escenario-lema">{lema}</p>}
+    {Astro.slots.has('default') && <div class="acciones"><slot /></div>}
+  </div>
+  <div class="escenario-control">
+    <span>Toca el collage para rasgarlo</span>
+    <button type="button" data-collage-pausa aria-pressed="false">Pausar</button>
+  </div>
+</section>
+
+<script>
+  import { iniciarCollage } from '../lib/collage-vivo.js';
+  import material from '../data/collage.json';
+  import { url } from '../lib/rutas.js';
+
+  let motores = [];
+
+  function montar() {
+    motores = [...document.querySelectorAll('canvas[data-collage]')].map((canvas) => {
+      const { frases, fotos, plantillas, espera } = JSON.parse(canvas.dataset.collage);
+      const motor = iniciarCollage(canvas, {
+        ...material,
+        frases: frases ?? material.frases,
+        oro: url(material.oro),
+        grano: url(material.grano),
+        imagenes: [...fotos.map((src) => ({ src, tipo: 'foto' })), ...material.imagenes.map((m) => ({ ...m, src: url(m.src) }))],
+      }, { plantillas, espera });
+      canvas.addEventListener('click', (e) => motor.rasgar(e.clientX, e.clientY));
+      const pausa = canvas.parentElement.querySelector('[data-collage-pausa]');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        pausa.parentElement.hidden = true;
+      } else {
+        pausa.addEventListener('click', () => {
+          const detenido = motor.pausar();
+          pausa.textContent = detenido ? 'Reanudar' : 'Pausar';
+          pausa.setAttribute('aria-pressed', detenido);
+        });
+      }
+      return motor;
+    });
+  }
+
+  document.addEventListener('astro:page-load', montar);
+  document.addEventListener('astro:before-swap', () => {
+    motores.forEach((m) => m.destruir());
+    motores = [];
+  });
+</script>

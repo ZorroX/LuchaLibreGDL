@@ -1,14 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cartel from '../components/Cartel.astro';
 import Muro from '../components/Muro.astro';
 import { fotos, instagram } from '../lib/acervo.js';
 ---
 <Base titulo="El Lente Enmascarado" papel descripcion="El proyecto fotográfico de Benigno Mata sobre la lucha libre de Guadalajara.">
+  <Cartel rotulo={['EL LENTE', 'ENMASCARADO']} titulo="El Lente Enmascarado" ocultarTitulo acto="Fotografía" lema="La lucha libre de Guadalajara vista por Benigno Mata." fotos={fotos.slice(0, 6).map((f) => f.id)}>
+    <a class="boton" href={instagram('bngno.mta')} target="_blank" rel="noreferrer">Seguir a Benigno</a>
+  </Cartel>
+
   <section class="bloque"><div class="ancho">
-    <p class="acto">Fotografía</p>
-    <h1>El Lente Enmascarado</h1>
-    <p>Benigno Mata creó El Lente Enmascarado, un proyecto enfocado en la lucha libre. A través de la fotografía busca destacar la crudeza y la esencia del ring, documentando funciones en las arenas locales de Guadalajara.</p>
-    <p style="margin-block:22px 40px"><a class="boton" href={instagram('bngno.mta')} target="_blank" rel="noreferrer">Seguir a Benigno</a></p>
+    <p style="margin-bottom:40px">Benigno Mata creó El Lente Enmascarado, un proyecto enfocado en la lucha libre. A través de la fotografía busca destacar la crudeza y la esencia del ring, documentando funciones en las arenas locales de Guadalajara.</p>
     <Muro ids={fotos.slice(0, 16).map((f) => f.id)} />
   </div></section>
 </Base>

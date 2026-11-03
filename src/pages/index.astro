@@ -3,6 +3,7 @@ import { url } from '../lib/rutas.js';
 import Base from '../layouts/Base.astro';
 import Escenario from '../components/Escenario.astro';
 import Collage from '../components/Collage.astro';
+import Rotulo from '../components/Rotulo.astro';
 import TarjetaLuchador from '../components/TarjetaLuchador.astro';
 import { locales, pasadas, proximas, productos, grande, chica, FOTOS_CLAVE as F } from '../lib/acervo.js';
 
@@ -23,7 +24,7 @@ const secciones = [
     <div>
       <p class="acto">La siguiente función</p>
       {proximas.length ? (
-        <h2>{proximas[0].nombre}</h2>
+        <Rotulo as="h2" ajuste="titulo" texto={proximas[0].nombre} />
       ) : (
         <div class="aviso">
           <h3>Pronto se anuncia</h3>
@@ -31,18 +32,18 @@ const secciones = [
         </div>
       )}
     </div>
-    <a class="funcion" href={url(`/cartelera/${ultima.slug}/`)}>
+    <a class="funcion" href={url(`/cartelera/${ultima.slug}/`)} style="--giro:1deg"><span class="recorte">
       <img src={chica(ultima.fotos[0])} alt={`Fotografía de la función ${ultima.nombre}`} loading="lazy" />
       <span><small>{ultima.promotora} · {ultima.fechaTexto}</small><b>{ultima.nombre}</b><small>{ultima.fotos.length} fotografías</small></span>
-    </a>
+    </span></a>
   </div></section>
 
   <section class="bloque lona"><div class="ancho">
     <div class="cabecera">
-      <div><p class="acto">Los Nuestros</p><h2>Suben al ring</h2></div>
+      <div><p class="acto">Los Nuestros</p><Rotulo as="h2" ajuste="titulo" texto="Suben al ring" /></div>
       <a class="boton claro" href={url('/luchadores/')}>Ver a todos</a>
     </div>
-    <div class="tira">
+    <div class="tira pegados">
       {locales.slice(0, 14).map((l) => <TarjetaLuchador l={l} />)}
     </div>
   </div></section>
@@ -55,14 +56,14 @@ const secciones = [
   <section class="bloque"><div class="ancho dos">
     <div>
       <p class="acto">La casa común</p>
-      <h2>Toda la lucha, un solo lugar</h2>
+      <Rotulo as="h2" ajuste="titulo" texto="Toda la lucha, un solo lugar" />
       <p>La Tapatía presenta a todas las promotoras y a quienes hacen posible cada función. Cada luchador recibe crédito, seguidores y comisión por lo que se venda con su imagen.</p>
     </div>
     <Collage />
   </div></section>
 
   <section class="bloque lona"><div class="ancho">
-    <div class="casas">
+    <div class="casas pegados">
       {secciones.map(([href, nombre, texto]) => (
         <a href={url(href)}><h3>{nombre}</h3><p>{texto}</p></a>
       ))}
@@ -71,10 +72,10 @@ const secciones = [
 
   <section class="bloque"><div class="ancho">
     <div class="cabecera">
-      <div><p class="acto">El Puesto</p><h2>Llévate la arena</h2></div>
+      <div><p class="acto">El Puesto</p><Rotulo as="h2" ajuste="titulo" texto="Llévate la arena" /></div>
       <a class="boton claro" href={url('/puesto/')}>Ver todo</a>
     </div>
-    <div class="productos">
+    <div class="productos pegados">
       {productos.slice(0, 3).map((p) => (
         <a class="producto" href={url(`/puesto/${p.id}/`)}>
           <span class="producto-foto"><img src={chica(p.foto)} alt="" loading="lazy" /><span class="etiqueta">{p.tipo}</span></span>
@@ -85,7 +86,6 @@ const secciones = [
   </div></section>
 
   <section class="bloque voz"><div class="ancho">
-    <p class="grande">Aquí la máscara se respeta.</p>
-    <p class="grande">Trae tu grito.</p>
+    <Rotulo lineas={['AQUÍ LA MÁSCARA', 'SE RESPETA', 'TRAE TU GRITO']} estilo="grito" class="voz-rotulo" />
   </div></section>
 </Base>

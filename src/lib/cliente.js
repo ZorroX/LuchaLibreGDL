@@ -1,3 +1,5 @@
+import { crearRotulo, cargarFuentes, repartir } from './rotulo-pincel.js';
+
 const CLAVE = 'tapatia-apartado';
 
 function leer() {
@@ -94,10 +96,47 @@ function iniciarFiltros() {
   });
 }
 
+// Los títulos de sección toman el tamaño de su letra en CSS y se reparten en líneas;
+// el estilo, si no viene dado, depende del fondo.
+function medidasTitulo(el, dpr) {
+  const ancho = el.clientWidth * dpr * 0.94;
+  const tam = Math.max(parseFloat(getComputedStyle(el).fontSize) * 0.86, 54) * dpr;
+  const texto = JSON.parse(el.dataset.rotulo).join(' ').toLocaleUpperCase('es-MX');
+  const tintas = el.closest('.papel') ? ['letrero'] : ['barrio', 'brasa', 'barrio'];
+  return { lineas: repartir(texto, { ancho, tam }), ancho, alto: tam * 4, tam, estilo: el.dataset.estilo || tintas[Math.floor(Math.random() * tintas.length)] };
+}
+
+async function pintarRotulos() {
+  const rotulos = [...document.querySelectorAll('[data-rotulo]:not([data-pintado])')];
+  if (!rotulos.length) return;
+  await cargarFuentes();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  for (const el of rotulos) {
+    const canvas = el.querySelector('canvas');
+    let r;
+    if (el.dataset.ajuste === 'titulo') {
+      const { lineas, ...medidas } = medidasTitulo(el, dpr);
+      r = crearRotulo(lineas, medidas);
+      // El lienzo trae margen para sombra y destellos: se recorre para que la letra quede al ras del texto.
+      const m = r.pad / dpr;
+      canvas.style.width = `${r.lienzo.width / dpr}px`;
+      canvas.style.margin = `${-m * 0.75}px 0 ${-m * 0.55}px ${-m * 0.85}px`;
+    } else {
+      const ancho = el.clientWidth * dpr;
+      r = crearRotulo(JSON.parse(el.dataset.rotulo), { ancho: ancho * 0.8, alto: ancho * 0.45, estilo: el.dataset.estilo });
+    }
+    canvas.width = r.lienzo.width;
+    canvas.height = r.lienzo.height;
+    canvas.getContext('2d').drawImage(r.lienzo, 0, 0);
+    el.dataset.pintado = '';
+  }
+}
+
 export function iniciar() {
   document.querySelector('#menu') && (document.querySelector('#menu').checked = false);
   pintarTotal();
   iniciarApartado();
   iniciarVisor();
   iniciarFiltros();
+  pintarRotulos();
 }

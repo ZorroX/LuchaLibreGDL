@@ -6,7 +6,7 @@ const items = ids.map(foto).filter(Boolean).map((f) => ({
   nombres: f.luchadores.map((s) => luchador(s)?.nombre).filter(Boolean).join(', '),
 }));
 ---
-<div class="muro">
+<div class="muro pegados">
   {items.map((f) => (
     <button
       class="muro-foto"

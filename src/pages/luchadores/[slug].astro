@@ -1,31 +1,25 @@
 ---
 import { url } from '../../lib/rutas.js';
 import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
 import Muro from '../../components/Muro.astro';
-import { luchadores, funciones, foto, grande, instagram } from '../../lib/acervo.js';
+import { luchadores, funciones, foto, instagram } from '../../lib/acervo.js';
 
 export function getStaticPaths() {
   return luchadores.map((l) => ({ params: { slug: l.slug }, props: { l } }));
 }
 const { l } = Astro.props;
-const portada = foto(l.fotos[0]);
 const sus = funciones.filter((f) => l.fotos.some((id) => foto(id).funcion === f.slug));
 ---
 <Base titulo={l.nombre} descripcion={`${l.nombre}: fotografías y perfil en La Tapatía.`}>
-  <section class:list={['portada', { retrato: portada.alto >= portada.ancho }]} style="min-height:min(82vh,780px)">
-    <img src={grande(l.fotos[0])} alt={`Fotografía de ${l.nombre}`} />
-    <div class="ancho">
-      {l.apodo && <p class="acto">{l.apodo}</p>}
-      <h1>{l.nombre}</h1>
-      <div class="redes">
-        <a class="boton" href={instagram(l.handle)} target="_blank" rel="noreferrer">Seguir en Instagram</a>
-      </div>
-    </div>
-  </section>
+  <Cartel rotulo={l.nombre} titulo={l.nombre} ocultarTitulo acto={l.apodo || 'Los Nuestros'} lema={`${l.fotos.length} ${l.fotos.length === 1 ? 'fotografía' : 'fotografías'} de El Lente Enmascarado`} fotos={l.fotos} plantillas={['portada', 'tira', 'muro', 'portada']}>
+    <a class="boton" href={instagram(l.handle)} target="_blank" rel="noreferrer">Seguir en Instagram</a>
+  </Cartel>
 
   <section class="bloque lona"><div class="ancho perfil-datos">
     <div>
-      <h2>Biografía</h2>
+      <Rotulo as="h2" ajuste="titulo" texto="Biografía" />
       <p>Estamos preparando esta biografía con {l.nombre}. Aquí vivirán su historia, su estilo y sus mejores luchas.</p>
     </div>
     <dl class="tabla" style="margin:0">
@@ -37,7 +31,7 @@ const sus = funciones.filter((f) => l.fotos.some((id) => foto(id).funcion === f.
   </div></section>
 
   <section class="bloque"><div class="ancho">
-    <h2>En el ring</h2>
+    <Rotulo as="h2" ajuste="titulo" texto="En el ring" />
     <Muro ids={l.fotos} />
   </div></section>
 </Base>

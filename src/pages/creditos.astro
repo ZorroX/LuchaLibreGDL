@@ -1,11 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cartel from '../components/Cartel.astro';
 import creditos from '../data/creditos.json';
 ---
 <Base titulo="Créditos" papel descripcion="Créditos de las imágenes usadas en el collage de La Tapatía.">
+  <Cartel rotulo="Créditos" titulo="Quién hizo cada imagen" lema="Las piezas de Guadalajara, Jalisco y el espacio que se pegan en el collage." plantillas={['retablo', 'duelo', 'cosmos', 'muro', 'cartel']} />
+
   <section class="bloque"><div class="ancho">
-    <p class="acto">Créditos</p>
-    <h1>Quién hizo cada imagen</h1>
     <p style="margin-bottom:30px">Las fotografías de lucha libre son de Benigno Mata. Estas imágenes de Guadalajara, Jalisco y el espacio aparecen en el collage con recortes, color y ediciones hechas para este sitio.</p>
     <dl class="tabla">
       {creditos.map((c) => (

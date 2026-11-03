@@ -1,12 +1,13 @@
 ---
 import { url } from '../../lib/rutas.js';
 import Base from '../../layouts/Base.astro';
+import Rotulo from '../../components/Rotulo.astro';
 import { productos, chica } from '../../lib/acervo.js';
 ---
 <Base titulo="Tu apartado">
   <section class="bloque"><div class="ancho" style="max-width:820px">
     <p class="acto">El Puesto</p>
-    <h1>Tu apartado</h1>
+    <Rotulo as="h1" ajuste="titulo" texto="Tu apartado" />
     <p data-apartado-vacio>Todavía no agregas nada. <a href={url('/puesto/')}>Ver El Puesto</a></p>
     <div data-apartado-lista>
       {productos.map((p) => (

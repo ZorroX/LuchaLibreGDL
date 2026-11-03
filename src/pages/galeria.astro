@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cartel from '../components/Cartel.astro';
 import Muro from '../components/Muro.astro';
-import { fotos, pasadas } from '../lib/acervo.js';
+import { fotos, pasadas, FOTOS_CLAVE as F } from '../lib/acervo.js';
 ---
 <Base titulo="Galería" descripcion="Fotografías de lucha libre de Benigno Mata.">
+  <Cartel rotulo="La Galería" titulo="Galería" acto="Fotografía de Benigno Mata" lema={`${fotos.length} fotografías de las arenas de Guadalajara.`} fotos={[F.vuelo, F.grito, F.cuernos, F.monstruo, F.plata, F.charro]} />
+
   <section class="bloque"><div class="ancho">
-    <p class="acto">Fotografía de Benigno Mata</p>
-    <h1>Galería</h1>
     <div class="filtros" aria-label="Filtrar por función">
       <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
       {pasadas.map((f) => <button type="button" data-filtro={f.slug} aria-pressed="false">{f.nombre}</button>)}

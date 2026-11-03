@@ -1,11 +1,14 @@
 ---
 import { url } from '../lib/rutas.js';
 import { ClientRouter } from 'astro:transitions';
-import '@fontsource/rye/400.css';
+import '@fontsource/londrina-solid/400.css';
+import '@fontsource/londrina-solid/900.css';
+import '@fontsource/yellowtail/400.css';
 import '@fontsource/anton/400.css';
 import '@fontsource/archivo/400.css';
 import '@fontsource/archivo/500.css';
 import '@fontsource/archivo/700.css';
+import '../styles/papel.css';
 import '../styles/global.css';
 
 const { titulo, descripcion = 'La casa de la lucha libre independiente de Guadalajara.', papel = false } = Astro.props;
@@ -32,15 +35,6 @@ const enlaces = [
     <ClientRouter />
   </head>
   <body class={papel ? 'papel' : ''}>
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-      <linearGradient id="franja" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#fff" /><stop offset=".44" stop-color="#fff" />
-        <stop offset=".44" stop-color="#fbc913" /><stop offset=".6" stop-color="#fbc913" />
-        <stop offset=".6" stop-color="#f3701c" /><stop offset=".74" stop-color="#f3701c" />
-        <stop offset=".74" stop-color="#e0291e" /><stop offset="1" stop-color="#e0291e" />
-      </linearGradient>
-    </defs></svg>
-
     <header class="barra" transition:persist>
       <a class="marca" href={url('/')}>La Tapatía</a>
       <input id="menu" class="menu-check" type="checkbox" aria-label="Abrir menú" />

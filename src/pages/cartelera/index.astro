@@ -1,16 +1,20 @@
 ---
 import { url } from '../../lib/rutas.js';
 import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
 import { pasadas, proximas, chica } from '../../lib/acervo.js';
 ---
 <Base titulo="La Cartelera" descripcion="Funciones de lucha libre independiente en Guadalajara.">
+  <Cartel rotulo="La Cartelera" titulo="Todas las funciones de Guadalajara" lema="Fechas, arenas y boletos de las promotoras locales, en un solo lugar." fotos={pasadas.map((f) => f.fotos[0])} />
+
   <section class="bloque"><div class="ancho">
-    <p class="acto">La Cartelera</p>
-    <h1>Próximas funciones</h1>
+    <p class="acto">Lo que viene</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Próximas funciones" />
     {proximas.length ? (
-      <div class="funciones">
+      <div class="funciones pegados">
         {proximas.map((f) => (
-          <a class="funcion" href={url(`/cartelera/${f.slug}/`)}><span><small>{f.fechaTexto}</small><b>{f.nombre}</b><small>{f.arena}</small></span></a>
+          <a class="funcion" href={url(`/cartelera/${f.slug}/`)}><span class="recorte"><span><small>{f.fechaTexto}</small><b>{f.nombre}</b><small>{f.arena}</small></span></span></a>
         ))}
       </div>
     ) : (
@@ -23,13 +27,13 @@ import { pasadas, proximas, chica } from '../../lib/acervo.js';
 
   <section class="bloque lona"><div class="ancho">
     <p class="acto">Archivo</p>
-    <h2>Funciones que ya se lucharon</h2>
-    <div class="funciones">
+    <Rotulo as="h2" ajuste="titulo" texto="Funciones que ya se lucharon" />
+    <div class="funciones pegados">
       {pasadas.map((f) => (
-        <a class="funcion" href={url(`/cartelera/${f.slug}/`)}>
+        <a class="funcion" href={url(`/cartelera/${f.slug}/`)}><span class="recorte">
           <img src={chica(f.fotos[0])} alt={`Fotografía de la función ${f.nombre}`} loading="lazy" />
           <span><small>{f.promotora} · {f.fechaTexto}</small><b>{f.nombre}</b><small>{f.fotos.length} fotografías</small></span>
-        </a>
+        </span></a>
       ))}
     </div>
   </div></section>
