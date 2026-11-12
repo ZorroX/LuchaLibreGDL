@@ -1,0 +1,12 @@
+---
+// Envío gratis en Guadalajara; fuera se cobra según el destino. Las tarifas son de ejemplo (ver reparto.js).
+import { ENVIOS, pesos } from '../lib/reparto.js';
+const costos = Object.fromEntries(ENVIOS.map((e) => [e.id, e.costo]));
+---
+<fieldset class="envio" data-envio={JSON.stringify(costos)}>
+  <legend>Envío</legend>
+  <select class="campo" name="destino-envio" aria-label="¿A dónde lo mandamos?">
+    {ENVIOS.map((e) => <option value={e.id}>{e.nombre}{e.costo ? ` · ${pesos(e.costo)}` : ''}</option>)}
+  </select>
+  <p class="nota"><b data-envio-costo>Envío gratis</b>. Dentro de Guadalajara la entrega no cuesta. Fuera, se cobra al costo de la paquetería según el destino; la tarifa final se confirma al cotizar.</p>
+</fieldset>

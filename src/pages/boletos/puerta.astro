@@ -1,0 +1,51 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
+import { pasadas } from '../../lib/acervo.js';
+import { arena, funcion, ventasEjemplo, boletosDe, resumenTaquilla } from '../../lib/boletera.js';
+
+const f = pasadas.find((x) => x.arena === arena.nombre && x.fotos.length >= 6) ?? pasadas[0];
+const vendidos = ventasEjemplo.flatMap(boletosDe);
+const total = resumenTaquilla(ventasEjemplo).boletos;
+// Escaneos de ejemplo: dos que pasan, uno repetido, uno de otra función y vuelta a empezar.
+const pruebas = [
+  { ...vendidos[0], resultado: 'valido' },
+  { ...vendidos[5], resultado: 'valido' },
+  { ...vendidos[0], resultado: 'usado', nota: 'Este código entró a las 8:12 p. m.' },
+  { codigo: 'R0977-01', zona: 'General', detalle: 'Adulto', resultado: 'otra', nota: 'Es de la función del 27 de noviembre.' },
+  { ...vendidos[9], resultado: 'valido' },
+];
+const entraron = 0;
+---
+<Base titulo="La puerta" descripcion="Maqueta del escaneo de boletos en la puerta de la arena.">
+  <Cartel rotulo="La puerta" titulo="Escanea y pasa" lema="El staff valida cada boleto con la cámara del celular. Si un código ya entró, sale en rojo." fotos={f.fotos} plantillas={['tira', 'muro', 'cartel']} />
+
+  <section class="bloque"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Maqueta · {funcion.nombre}</p>
+      <Rotulo as="h2" ajuste="titulo" texto="En la entrada" />
+      <ul class="pasos">
+        <li><b>Sin aparatos especiales.</b> Cualquier celular del staff abre esta página y usa su cámara.</li>
+        <li><b>Funciona sin señal.</b> Antes de abrir la puerta se descarga la lista de boletos; los escaneos se sincronizan al volver la señal.</li>
+        <li><b>Un código, una entrada.</b> Si alguien reenvía su boleto, el segundo sale como "ya entró".</li>
+        <li><b>Al final</b>, el panel muestra cuánta gente entró por zona.</li>
+      </ul>
+      <p class="nota" style="margin-top:20px">Esta maqueta no usa la cámara: el botón simula escaneos de ejemplo.</p>
+    </div>
+    <div class="tablero puerta" data-puerta={JSON.stringify(pruebas)}>
+      <div class="visor-camara" aria-hidden="true"><span>Aquí se ve la cámara</span></div>
+      <div class="escaneo" data-resultado role="status"><b>Listo para escanear</b><span>Apunta al código del boleto.</span></div>
+      <button class="boton" type="button" data-escanear>Simular escaneo</button>
+      <p class="desglose-total"><span>Han entrado</span><b><span data-entraron>{entraron}</span> de {total}</b></p>
+    </div>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <div class="acciones">
+      <a class="boton" href={url('/boletos/taquilla/')}>Ver el panel de la arena</a>
+      <a class="boton claro" href={url('/boletos/')}>Ver la compra</a>
+    </div>
+  </div></section>
+</Base>

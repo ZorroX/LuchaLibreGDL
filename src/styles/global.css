@@ -237,7 +237,7 @@ p { margin: 0; max-width: 62ch; }
 .nombres { display: flex; flex-wrap: wrap; gap: 10px; }
 .nombres a { padding: 8px 14px; background: var(--papel); color: #111; text-decoration: none; font: 400 20px/1 var(--cartel); text-transform: uppercase; clip-path: var(--rasgo-fino); }
 .nombres a:hover { background: var(--amarillo); }
-.apartado-suma { justify-content: flex-end; margin-top: 18px; }
+.apartado-suma, .apartado-envio { justify-content: flex-end; margin-top: 18px; }
 .barra nav a[href$='/apoya/'] { color: var(--amarillo); }
 
 .campo { display: block; width: 100%; max-width: 440px; padding: 13px 14px; background: transparent; color: var(--tinta); border: 1px solid var(--linea); font: inherit; }
@@ -296,3 +296,139 @@ p { margin: 0; max-width: 62ch; }
   ::view-transition-new(root) { animation: .62s cubic-bezier(.55, 0, .35, 1) both rasgar-pagina; }
 }
 @keyframes hundir { to { filter: brightness(.45); scale: .98; } }
+.envio { display: grid; gap: 8px; min-width: 0; margin: 28px 0 0; padding: 0; border: 0; }
+.envio legend { padding: 0; margin-bottom: 10px; font: 400 22px/1.1 var(--cartel); text-transform: uppercase; color: var(--rojo); }
+.tablero .envio { margin: 0; }
+
+/* Cuentas de los miembros: cifras grandes en papel y cada venta como recibo que se abre */
+.ver-como { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 14px; }
+.ver-como span { font: 400 15px/1 var(--cartel); letter-spacing: .1em; text-transform: uppercase; color: var(--suave); margin-right: 4px; }
+.ver-como a { padding: 9px 12px; font: 400 16px/1 var(--cartel); letter-spacing: .04em; text-transform: uppercase; color: var(--tinta); text-decoration: none; box-shadow: inset 0 0 0 2px var(--linea); }
+.ver-como a:hover { box-shadow: inset 0 0 0 2px var(--amarillo); }
+.ver-como a[aria-current] { background: var(--amarillo); color: #111; box-shadow: none; }
+.aviso-maqueta { margin-bottom: 34px; }
+.cifras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.cifra { display: grid; gap: 6px; padding: 22px 24px 26px; background: var(--papel); color: #111; clip-path: var(--rasgo-fino); }
+.cifra > span { font: 400 16px/1.1 var(--cartel); letter-spacing: .08em; text-transform: uppercase; color: #55524b; }
+.cifra b { font: 400 clamp(40px, 5vw, 58px)/1 var(--cartel); }
+.cifra small { font-size: 15px; color: #55524b; }
+.cifra.destacada { background: var(--amarillo); }
+.ventas { display: grid; gap: 12px; }
+.venta { background: var(--papel); color: #111; }
+.venta summary { display: grid; grid-template-columns: 76px 1fr auto 22px; gap: 4px 16px; align-items: center; padding: 16px 20px; cursor: pointer; list-style: none; }
+.venta summary::-webkit-details-marker { display: none; }
+.venta summary:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 3px; }
+.venta-fecha { font: 400 17px/1.1 var(--cartel); text-transform: uppercase; color: var(--rojo); }
+.venta-pieza, .venta-monto { display: grid; gap: 3px; min-width: 0; }
+.venta-pieza b { font: 400 21px/1.1 var(--cartel); text-transform: uppercase; }
+.venta small { font-size: 15px; line-height: 1.3; color: #55524b; }
+.venta-monto { justify-items: end; text-align: right; }
+.venta-monto b { font: 400 30px/1 var(--cartel); }
+.venta-abrir::before { content: '+'; font: 700 32px/1 var(--texto); color: var(--rojo); }
+.venta[open] .venta-abrir::before { content: '−'; }
+.venta-porque { grid-column: 2 / -1; font-size: 16px; line-height: 1.4; }
+.venta-cuerpo { display: grid; gap: 12px; padding: 0 20px 20px; }
+.venta-titulo { padding-top: 14px; border-top: 1px dashed #cfc9ba; font-size: 15px; color: #55524b; max-width: none; }
+.dos.alto { align-items: start; }
+.cuentas-fila.mes { grid-template-columns: 1fr auto 110px; align-items: baseline; }
+.cuentas-fila.pago { grid-template-columns: 80px 1fr auto; align-items: baseline; }
+.cuentas-fila b { font: 400 24px/1 var(--cartel); text-align: right; }
+.cuentas-fila small { display: block; font-size: 14px; color: var(--suave); }
+/* Cada fila es su propia rejilla: la última columna lleva ancho fijo para que la cabecera quede alineada */
+.socios .cuentas-fila { grid-template-columns: 1.4fr 1fr 1fr 1fr 150px; align-items: center; }
+.socios .cuentas-fila b { text-align: left; }
+.socios .boton { font-size: 15px; padding: 10px 12px; }
+.perfiles { grid-template-columns: repeat(4, 1fr); }
+.pasos { display: grid; gap: 14px; margin: 0; padding-left: 22px; max-width: 70ch; }
+@media (max-width: 980px) {
+  .perfiles { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 820px) {
+  .cifras { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .perfiles { grid-template-columns: 1fr; }
+  .venta summary { grid-template-columns: 1fr auto 18px; padding: 14px 16px; }
+  .venta-fecha, .venta-porque { grid-column: 1 / -1; }
+  .venta-cuerpo { padding: 0 16px 16px; }
+  .socios .cuentas-fila { grid-template-columns: 1fr 1fr 1fr; }
+  .socios .cuentas-fila > :first-child, .socios .boton { grid-column: 1 / -1; }
+  .socios [data-titulo]::before { content: attr(data-titulo); display: block; font: 400 13px/1.3 var(--texto); color: var(--suave); }
+}
+
+/* Boletera: el ring visto desde arriba con cuerdas amarillas como las de la Roberto Paz, boletos de papel y la puerta */
+.mapa-arena { aspect-ratio: 4 / 3; padding: 7px; background: var(--papel); clip-path: var(--rasgo-fino); rotate: -.6deg; }
+.mapa-arena iframe { display: block; width: 100%; height: 100%; border: 0; }
+.mapa-ring { --silla: clamp(26px, 7.2vw, 38px); display: grid; grid-template-columns: var(--silla) 1fr var(--silla); grid-template-areas: ". a ." "d ring b" ". c ." "g g g"; gap: 8px; max-width: 540px; }
+.fila-ring { display: flex; justify-content: space-between; gap: 4px; }
+.fila-ring.lado-a { grid-area: a; }
+.fila-ring.lado-c { grid-area: c; }
+.fila-ring.lado-b { grid-area: b; flex-direction: column; }
+.fila-ring.lado-d { grid-area: d; flex-direction: column; }
+.asiento { width: var(--silla); height: var(--silla); padding: 0; border: 2px solid var(--papel); background: transparent; color: var(--papel); font: 400 15px/1 var(--cartel); cursor: pointer; transition: background .15s; }
+.asiento:hover:not(:disabled) { background: rgba(251, 201, 19, .28); }
+.asiento:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+.asiento[aria-pressed="true"] { background: var(--amarillo); border-color: var(--amarillo); color: #111; }
+.asiento:disabled { background: var(--ocupado, #3b3940); border-color: var(--ocupado, #3b3940); color: rgba(255, 255, 255, .35); cursor: not-allowed; }
+[data-ver-canal] .asiento:disabled { color: rgba(0, 0, 0, .55); }
+/* En la taquilla el amarillo ya es un canal: lo elegido va en papel */
+[data-ver-canal] .asiento[aria-pressed="true"] { background: var(--papel); border-color: var(--papel); color: #111; }
+.leyenda .elegido { background: var(--papel); }
+.ring { grid-area: ring; position: relative; display: grid; place-items: center; min-height: 200px; background: #1b1a1f; box-shadow: inset 0 0 0 10px #1b1a1f, inset 0 0 0 13px var(--amarillo), inset 0 0 0 22px #1b1a1f, inset 0 0 0 25px var(--amarillo), inset 0 0 0 34px #1b1a1f, inset 0 0 0 37px var(--amarillo); }
+.ring span { font: 400 clamp(24px, 4vw, 36px)/1 var(--cartel); letter-spacing: .3em; text-transform: uppercase; color: var(--amarillo); }
+.ring-lado { position: absolute; font: 400 15px/1 var(--cartel); font-style: normal; color: var(--suave); }
+.ring-lado.lado-a { top: 46px; left: 50%; translate: -50% 0; }
+.ring-lado.lado-b { right: 46px; top: 50%; translate: 0 -50%; }
+.ring-lado.lado-c { bottom: 46px; left: 50%; translate: -50% 0; }
+.ring-lado.lado-d { left: 46px; top: 50%; translate: 0 -50%; }
+.zona-general { grid-area: g; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; max-width: none; margin-top: 10px; padding: 18px 20px; border: 2px dashed var(--linea); font-size: 15px; color: var(--suave); }
+.zona-general b { font: 400 22px/1 var(--cartel); text-transform: uppercase; color: var(--amarillo); }
+.leyenda { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 16px 0 0; padding: 0; list-style: none; font-size: 15px; color: var(--suave); }
+.leyenda li { display: flex; align-items: center; gap: 8px; }
+.leyenda i { width: 16px; height: 16px; border: 2px solid transparent; }
+.leyenda .libre { border-color: var(--papel); }
+.leyenda .tuyo { background: var(--amarillo); }
+.leyenda .ocupado { background: #3b3940; }
+.tarifa { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 16px; }
+.tablero .aviso { color: var(--rojo); font-weight: 700; }
+.tablero .resultado { color: #111; font-weight: 700; }
+.boletos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 20px; }
+.boleto { display: grid; grid-template-columns: 1fr 150px; background: var(--papel); color: #111; }
+.boleto-datos { display: grid; gap: 4px; align-content: start; padding: 20px 22px; }
+.boleto-marca { font: 400 13px/1.2 var(--cartel); letter-spacing: .12em; text-transform: uppercase; color: var(--rojo); }
+.boleto h3 { margin: 0; }
+.boleto p { font-size: 15px; }
+.boleto dl { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 8px 0 0; }
+.boleto dt { font: 400 12px/1.3 var(--cartel); letter-spacing: .1em; text-transform: uppercase; color: #55524b; }
+.boleto dd { margin: 0; font: 400 20px/1.1 var(--cartel); }
+.boleto-codigo { margin-top: 6px; font: 500 14px/1 ui-monospace, Consolas, monospace; letter-spacing: .08em; }
+.boleto-qr { display: grid; place-items: center; padding: 16px; border-left: 2px dashed #cfc9ba; }
+.boleto-qr svg { display: block; width: 100%; max-width: 120px; height: auto; shape-rendering: crispEdges; }
+.por-canal { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 0; padding: 0; list-style: none; font-size: 15px; color: var(--suave); }
+.por-canal li { display: flex; align-items: center; gap: 8px; }
+.por-canal i, .venta-taquilla i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; }
+.por-canal b { font-weight: 500; color: var(--tinta); }
+.cuentas-fila.venta-taquilla { grid-template-columns: 72px 120px 1fr auto; align-items: baseline; }
+.venta-taquilla i { margin-right: 8px; }
+.puerta { gap: 18px; }
+.visor-camara { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; background: #111; color: #8f8a7e; font-size: 15px; }
+.visor-camara::before { content: ''; position: absolute; inset: 16% 28%; border: 3px solid var(--amarillo); }
+.escaneo { display: grid; justify-items: center; gap: 6px; padding: 18px; background: #ece5cf; text-align: center; }
+.escaneo b { font: 400 30px/1 var(--cartel); text-transform: uppercase; }
+.escaneo span { font-size: 15px; }
+.escaneo small { font-size: 14px; color: #55524b; }
+.escaneo-icono { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; font: 700 24px/1 var(--texto); color: #fff; }
+.estado-valido { background: #d7efd9; }
+.estado-valido .escaneo-icono { background: #1f7a35; }
+.estado-usado { background: #f6d5d2; }
+.estado-usado .escaneo-icono { background: #c0231a; }
+.estado-otra { background: #fbe8b8; }
+.estado-otra .escaneo-icono { background: #9a5b00; }
+@media (max-width: 520px) {
+  .boleto { grid-template-columns: 1fr; }
+  .boleto-qr { border-left: 0; border-top: 2px dashed #cfc9ba; }
+  .boleto-qr svg { max-width: 160px; }
+  .cuentas-fila.venta-taquilla { grid-template-columns: 1fr auto; }
+  .ring { box-shadow: inset 0 0 0 8px #1b1a1f, inset 0 0 0 10px var(--amarillo), inset 0 0 0 17px #1b1a1f, inset 0 0 0 19px var(--amarillo), inset 0 0 0 26px #1b1a1f, inset 0 0 0 28px var(--amarillo); }
+  .ring-lado.lado-a { top: 34px; } .ring-lado.lado-b { right: 34px; } .ring-lado.lado-c { bottom: 34px; } .ring-lado.lado-d { left: 34px; }
+}

@@ -56,9 +56,22 @@ Arena negra, papel rasgado, hoja de oro y rótulo de barrio pintado a mano (refe
 
 El sitio muestra cómo se repartiría cada peso, pero **no cobra**. Todas las cifras (precios, fabricación, comisión de 4%,
 porcentajes) son ejemplos en `reparto.js` y `acervo.js`, y se rotulan como tales en pantalla.
-- El Puesto: desglose por producto y "paga más si quieres" con barras enlazadas; el apartado guarda `{ id, extra, destino }` en `localStorage`.
-- `/boletos/`: maqueta de compra con propina para un luchador, todo el cartel o la arena.
+- El Puesto: por ahora solo playera y fotografía enmarcada (con o sin firma), hechas con los luchadores piloto (`pilotos` en
+  `acervo.js`: Sunboy Santi y Yokai). Cada pieza tiene variantes (talla, firma) con su precio y fabricación.
+- Utilidad (precio − fabricación − comisión de 4%): 50% luchador, 50% Benigno por la foto; el proyecto no se queda con parte.
+- Envío: gratis en Guadalajara; fuera, según destino (`ENVIOS` en `reparto.js`, tarifas de ejemplo). Va aparte del reparto.
+- Desglose y "paga más si quieres" con barras enlazadas; el apartado guarda `{ id, luchador, variante, precio, extra, destino }`
+  en `localStorage` (clave `tapatia-apartado-2`).
+- `/boletos/`: maqueta de boletera para la Arena Roberto Paz (ubicación con mapa; dirección por confirmar). `boletera.js` define
+  arena, función de ejemplo, zonas (primera fila numerada por lado del ring, general con cupo) y tarifas (adulto, niño), y
+  corre también en el navegador. `MapaRing.astro` pinta el ring; `taquilla.js` mueve la compra (asientos, límites, propina,
+  boletos con QR de ejemplo que NO es legible), el panel de la arena (`/boletos/taquilla/`: ventas por canal en un solo mapa)
+  y la puerta (`/boletos/puerta/`: escaneo simulado). Nada se guarda: al recargar vuelven las ventas de ejemplo.
 - `/apoya/`: metas, aportación y tabla de cuentas públicas (vacía).
+- `/cuenta/`: maqueta de "Mi cuenta" para Benigno, Sunboy Santi, Yokai y La Tapatía (caja). Sin login: un selector "Ver como".
+  `src/lib/cuentas.js` pasa cada venta de `src/data/ventas-ejemplo.json` (inventadas) por `repartirProducto` de `reparto.js`,
+  así lo ganado y el "por qué" salen del mismo cálculo que el desglose. Saldo = ganado − pagos. Nunca pongas cifras reales aquí:
+  el sitio es público.
 
 Antes de cobrar dinero real falta: decidir quién recibe y factura (revisar con un contador), acuerdos por escrito con cada
 luchador, guardar en privado los datos de pago de los enmascarados y elegir pasarela con pago dividido. No conectes pagos

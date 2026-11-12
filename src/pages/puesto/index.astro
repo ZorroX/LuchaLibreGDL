@@ -4,20 +4,20 @@ import Base from '../../layouts/Base.astro';
 import Cartel from '../../components/Cartel.astro';
 import Rotulo from '../../components/Rotulo.astro';
 import Desglose from '../../components/Desglose.astro';
-import { productos, chica, producto } from '../../lib/acervo.js';
+import { productos, pilotos, luchador, chica, producto } from '../../lib/acervo.js';
 import { desgloseProducto, pesos } from '../../lib/reparto.js';
 ---
 <Base titulo="El Puesto" descripcion="Merch y arte de la lucha libre tapatía.">
-  <Cartel rotulo="El Puesto" titulo="Llévate la arena" lema="Cada compra deja comisión a quienes participan en la pieza." fotos={productos.map((p) => p.foto)} />
+  <Cartel rotulo="El Puesto" titulo="Llévate la arena" lema="Cada compra deja comisión a quienes participan en la pieza." fotos={pilotos.flatMap((l) => luchador(l.slug).fotos.slice(0, 3))} />
 
   <section class="bloque"><div class="ancho">
-    <p class="nota" style="margin-bottom:34px">Vista de prototipo: los productos y precios están por definir y todavía no hay ventas.</p>
+    <p class="nota" style="margin-bottom:34px">Vista de prototipo: los precios son de ejemplo y todavía no hay ventas.</p>
     <div class="productos pegados">
       {productos.map((p) => (
         <a class="producto" href={url(`/puesto/${p.id}/`)}>
           <span class="producto-foto"><img src={chica(p.foto)} alt="" loading="lazy" /><span class="etiqueta">{p.tipo}</span></span>
           <h3>{p.nombre}</h3>
-          <span class="precio">{pesos(p.precio)} de ejemplo</span>
+          <span class="precio">Desde {pesos(p.precio)} · {p.luchadores.map((l) => l.nombre).join(' o ')}</span>
         </a>
       ))}
     </div>
@@ -27,7 +27,7 @@ import { desgloseProducto, pesos } from '../../lib/reparto.js';
     <div>
       <p class="acto">Sin letra chiquita</p>
       <Rotulo as="h2" ajuste="titulo" texto="Así se reparte" />
-      <p>Cada producto muestra cuánto recibe el luchador, el fotógrafo, la fabricación y La Tapatía. En cada pieza puedes pagar más y decidir a quién le llega tu extra.</p>
+      <p>Cada producto muestra cuánto cuesta fabricarlo y cobrarlo, y cómo se reparte el resto: mitad para el luchador y mitad para Benigno Mata por la foto. En cada pieza puedes pagar más y decidir a quién le llega tu extra.</p>
       <p style="margin-top:18px"><a class="boton claro" href={url('/puesto/playera/#paga-mas')}>Probar con la playera</a></p>
     </div>
     <div class="tablero"><Desglose desglose={desgloseProducto(producto('playera'))} titulo={`Ejemplo: playera de ${pesos(producto('playera').precio)}`} /></div>

@@ -206,156 +206,44 @@
 "tipo": "astro"
 },
 {
-"src": "/collage/recortes/tromba-1.webp",
+"src": "/collage/recortes/daimo-m1.webp",
+"tipo": "cuerpo"
+},
+{
+"src": "/collage/recortes/aero-star-m1.webp",
+"tipo": "cuerpo"
+},
+{
+"src": "/collage/recortes/gravity-m1.webp",
+"tipo": "cuerpo"
+},
+{
+"src": "/collage/recortes/murder-m1.webp",
 "tipo": "cabeza"
 },
 {
-"src": "/collage/recortes/yokai-2.webp",
+"src": "/collage/recortes/belcegor-m1.webp",
+"tipo": "cuerpo"
+},
+{
+"src": "/collage/recortes/nortenito-lomeli-m1.webp",
 "tipo": "cabeza"
 },
 {
-"src": "/collage/recortes/zigma-2.webp",
+"src": "/collage/recortes/drong-brothers-m1.webp",
+"tipo": "cuerpo"
+},
+{
+"src": "/collage/recortes/miztli-lion-m1.webp",
 "tipo": "cabeza"
 },
 {
-"src": "/collage/recortes/albatros-jr-1.webp",
+"src": "/collage/recortes/hijo-de-abismo-negro-m1.webp",
 "tipo": "cabeza"
 },
 {
-"src": "/collage/recortes/noisy-boy-1.webp",
+"src": "/collage/recortes/reyna-zahori-m1.webp",
 "tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/tiger-trueno-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/hijo-de-fishman-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/kumonga-2.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/el-catrin-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/king-charro-2.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/azur-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/halcon-furia-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/krampus-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/miztli-lion-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/principe-black-1.webp",
-"tipo": "cabeza"
-},
-{
-"src": "/collage/recortes/leviatham-homicida-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/leviatham-homicida-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/sunboy-santi-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/sunboy-santi-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/gravity-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/mack-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/noisy-boy-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/el-mago-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/visionario-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/aquiles-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/diosa-del-caos-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/mafioso-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/mafioso-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/chris-carter-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/crazy-king-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/imperial-guerrero-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/imperial-guerrero-2.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/mago-misterio-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/master-terror-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/mimo-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/principe-centauro-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/rey-eclipse-1.webp",
-"tipo": "cuerpo"
-},
-{
-"src": "/collage/recortes/the-action-man-1.webp",
-"tipo": "cuerpo"
 }
 ]
 }

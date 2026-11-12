@@ -1,0 +1,25 @@
+---
+// Una venta en una cuenta. Cerrada dice cuánto te tocó y por qué; abierta muestra a dónde fue cada peso.
+// Con "parte", se lee desde la cuenta de un miembro; sin ella, desde la caja (todas las partes).
+import { htmlDesglose, pesos } from '../lib/reparto.js';
+import { dia } from '../lib/cuentas.js';
+const { venta: v, parte, verLuchador = true } = Astro.props;
+const detalle = [v.variante, verLuchador && v.quien, v.canal].filter(Boolean).join(' · ');
+const extra = v.extra ? ` + ${pesos(v.extra)} extra` : '';
+---
+<details class="venta">
+  <summary>
+    <span class="venta-fecha">{dia(v.fecha)}</span>
+    <span class="venta-pieza"><b>{v.pieza}</b><small>{detalle}</small></span>
+    <span class="venta-monto">
+      <b>{pesos(parte ? parte.monto : v.cobrado)}</b>
+      <small>{parte ? `de ${pesos(v.total)}` : v.envio ? `incluye ${pesos(v.envio)} de envío` : 'sin envío'}</small>
+    </span>
+    <span class="venta-abrir" aria-hidden="true"></span>
+    {parte && <span class="venta-porque">Por qué: {parte.motivos.join(' + ')}.</span>}
+  </summary>
+  <div class="venta-cuerpo">
+    <p class="venta-titulo">Venta de {pesos(v.precio)}{extra}{v.envio ? `, más ${pesos(v.envio)} de envío para la paquetería` : ''}</p>
+    <div set:html={htmlDesglose(v.desglose)} />
+  </div>
+</details>

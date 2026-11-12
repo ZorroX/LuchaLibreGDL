@@ -30,14 +30,30 @@ export const FOTOS_CLAVE = {
   mascara: '2026-06-08_23-54-52-1',
 };
 
+// Los primeros luchadores que se suman al proyecto: cada pieza de El Puesto se hace con uno de ellos.
+const PILOTOS = { 'sunboy-santi': '2026-06-22_15-53-19-1', yokai: '2026-07-07_17-23-44-1' };
+export const pilotos = Object.entries(PILOTOS).map(([slug, foto]) => ({ slug, nombre: luchador(slug).nombre, foto }));
+
 // precio y fabricacion son cifras de ejemplo para mostrar el reparto (ver reparto.js); nada está a la venta.
-// beneficiario: quién recibe la parte del luchador; margen, si el reparto no es el general.
-export const productos = [
-  { id: 'impresion-firmada', nombre: 'Impresión firmada', tipo: 'Edición numerada', foto: FOTOS_CLAVE.plata, precio: 650, fabricacion: 180, beneficiario: 'Gravity, que la firma', texto: 'Fotografía de Benigno Mata en papel Hahnemühle Matt Fibre, tamaño 8.5 × 11, numerada y firmada por el luchador.' },
-  { id: 'foto-autografiada', nombre: 'Fotografía autografiada', tipo: 'Se firma en la arena', foto: FOTOS_CLAVE.mascara, precio: 250, fabricacion: 40, beneficiario: 'El luchador que elijas', texto: 'Elige a tu luchador y recoge tu foto firmada el día de la función.' },
-  { id: 'playera', nombre: 'Playera La Tapatía', tipo: 'Lote corto', foto: FOTOS_CLAVE.monstruo, precio: 500, fabricacion: 200, beneficiario: 'Murder, el de la foto', texto: 'Collage rotulado al frente y crédito del luchador y del fotógrafo.' },
-  { id: 'stickers', nombre: 'Paquete de stickers', tipo: 'Coleccionable', foto: FOTOS_CLAVE.cuernos, precio: 120, fabricacion: 35, beneficiario: 'Los luchadores de la plancha, en partes iguales', texto: 'Máscaras recortadas de la escena local, listas para la laptop o el casco.' },
-  { id: 'gorra', nombre: 'Gorra Los Nuestros', tipo: 'Bordada', foto: FOTOS_CLAVE.charro, precio: 380, fabricacion: 150, beneficiario: 'Fondo de Los Nuestros, para los luchadores', margen: { luchador: 0.6, fotografo: 0, casa: 0.4 }, texto: 'Bordado de la marca, pensado para sobrevivir a la tercera caída.' },
-  { id: 'art-toy', nombre: 'Art toy', tipo: 'Preventa futura', foto: FOTOS_CLAVE.calle, precio: 1200, fabricacion: 600, beneficiario: 'El luchador piloto', texto: 'Figura de edición limitada con un luchador piloto. Se fabricará solo si la preventa lo justifica.' },
+// Cada variante (talla, firma) trae su precio y fabricación; la primera es la que se muestra de entrada.
+const PIEZAS = [
+  {
+    id: 'playera', nombre: 'Playera', tipo: 'Lote corto', variante: 'Talla',
+    texto: 'Playera con la foto que Benigno Mata le tomó al luchador que elijas, con crédito de los dos.',
+    variantes: [{ nombre: 'Chica a XL', precio: 320, fabricacion: 120 }, { nombre: 'XXL a XXXL', precio: 350, fabricacion: 150 }],
+  },
+  {
+    id: 'foto-enmarcada', nombre: 'Fotografía enmarcada', tipo: 'Con o sin firma', variante: 'Firma',
+    texto: 'Fotografía de Benigno Mata, enmarcada. Con firma, el luchador la autografía a mano y los $50 de la firma van completos al luchador.',
+    variantes: [{ nombre: 'Sin firma', precio: 200, fabricacion: 40 }, { nombre: 'Con firma del luchador', precio: 250, fabricacion: 40, firma: 50 }],
+  },
 ];
+
+// Cada pieza abre con un luchador distinto para que El Puesto no repita la misma foto.
+const rotar = (lista, i) => [...lista.slice(i % lista.length), ...lista.slice(0, i % lista.length)];
+export const productos = PIEZAS.map((p, i) => {
+  const luchadores = rotar(pilotos, i);
+  const { precio, fabricacion, firma = 0 } = p.variantes[0];
+  return { ...p, precio, fabricacion, firma, luchadores, foto: luchadores[0].foto, beneficiario: luchadores[0].nombre };
+});
 export const producto = (id) => productos.find((p) => p.id === id);

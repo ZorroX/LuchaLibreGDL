@@ -1,0 +1,34 @@
+---
+// El ring visto desde arriba: la primera fila numerada alrededor y la general detrás.
+// Los asientos son botones; el navegador los marca al elegirlos (compra) o al registrar una venta (taquilla).
+// Con verCanal, cada asiento ocupado se pinta del color del canal por el que se vendió.
+import { asientos, LADOS, CANALES, general } from '../lib/boletera.js';
+const { ocupados = {}, quedanGeneral, verCanal = false } = Astro.props;
+const etiqueta = (a) => `Lado ${a.lado}, asiento ${a.numero}`;
+const ocupado = (a) => {
+  const canal = ocupados[a.id];
+  return verCanal ? `${etiqueta(a)}, vendido por ${CANALES[canal].nombre}` : `${etiqueta(a)}, ocupado`;
+};
+---
+<div class="mapa-ring" data-mapa-ring data-ver-canal={verCanal ? '' : undefined}>
+  {LADOS.map((lado) => (
+    <div class={`fila-ring lado-${lado.toLowerCase()}`} role="group" aria-label={`Primera fila, lado ${lado}`}>
+      {asientos.filter((a) => a.lado === lado).map((a) => (
+        <button
+          type="button"
+          class="asiento"
+          data-asiento={a.id}
+          aria-pressed="false"
+          aria-label={ocupados[a.id] ? ocupado(a) : etiqueta(a)}
+          disabled={Boolean(ocupados[a.id])}
+          style={verCanal && ocupados[a.id] ? `--ocupado:${CANALES[ocupados[a.id]].color}` : undefined}
+        >{a.numero}</button>
+      ))}
+    </div>
+  ))}
+  <div class="ring" aria-hidden="true">
+    {LADOS.map((lado) => <i class={`ring-lado lado-${lado.toLowerCase()}`}>{lado}</i>)}
+    <span>Ring</span>
+  </div>
+  <p class="zona-general"><b>General</b><span>Sentado o de pie · quedan <span data-quedan-general>{quedanGeneral}</span> de {general.cupo}</span></p>
+</div>

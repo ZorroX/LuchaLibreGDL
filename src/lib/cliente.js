@@ -1,13 +1,15 @@
 import { crearRotulo, cargarFuentes, repartir } from './rotulo-pincel.js';
 import { iniciarDinero, extraElegido } from './dinero.js';
+import { iniciarBoletera } from './taquilla.js';
 import { pesos } from './reparto.js';
 
-const CLAVE = 'tapatia-apartado';
+// Clave nueva porque las piezas del apartado anterior ya no existen en El Puesto.
+const CLAVE = 'tapatia-apartado-2';
 
-// Cada pieza apartada es { id, extra, destino }; las de versiones anteriores eran solo el id.
+// Cada pieza apartada es { id, luchador, variante, precio, extra, destino }.
 function leer() {
   try {
-    return (JSON.parse(localStorage.getItem(CLAVE)) ?? []).map((x) => (typeof x === 'string' ? { id: x, extra: 0 } : x));
+    return JSON.parse(localStorage.getItem(CLAVE)) ?? [];
   } catch {
     return [];
   }
@@ -26,12 +28,22 @@ function pintarTotal(lista = leer()) {
   document.querySelectorAll('[data-apartado-total]').forEach((n) => (n.textContent = lista.length));
 }
 
+// "Sunboy Santi, Chica a XL ×2 · Yokai, XXL a XXXL": cuántas piezas hay de cada luchador y variante.
+function detallar(piezas) {
+  const cuenta = new Map();
+  piezas.forEach((x) => {
+    const clave = [x.luchador, x.variante].filter(Boolean).join(', ');
+    if (clave) cuenta.set(clave, (cuenta.get(clave) ?? 0) + 1);
+  });
+  return [...cuenta].map(([clave, n]) => (n > 1 ? `${clave} ×${n}` : clave)).join(' · ');
+}
+
 function iniciarApartado() {
   document.querySelectorAll('[data-apartar]').forEach((boton) => {
     boton.addEventListener('click', () => {
       const elegido = extraElegido();
-      guardar([...leer(), { id: boton.dataset.apartar, extra: elegido?.extra ?? 0, destino: elegido?.destino }]);
-      boton.textContent = elegido ? `Agregado con ${pesos(elegido.extra)} extra` : 'Agregado al apartado';
+      guardar([...leer(), { id: boton.dataset.apartar, ...elegido, extra: elegido?.extra ?? 0 }]);
+      boton.textContent = elegido?.extra ? `Agregado con ${pesos(elegido.extra)} extra` : 'Agregado al apartado';
     });
   });
 
@@ -45,13 +57,20 @@ function iniciarApartado() {
     contenedor.querySelectorAll('[data-producto]').forEach((fila) => {
       const suyos = lista.filter((x) => x.id === fila.dataset.producto);
       const extra = suyos.reduce((s, x) => s + (x.extra || 0), 0);
-      suma += suyos.length * Number(fila.dataset.precio) + extra;
+      const subtotal = suyos.reduce((t, x) => t + (x.precio ?? Number(fila.dataset.precio)), 0);
+      suma += subtotal + extra;
       fila.hidden = suyos.length === 0;
       fila.querySelector('[data-cuantos]').textContent = suyos.length;
+      fila.querySelector('[data-subtotal]').textContent = pesos(subtotal);
+      fila.querySelector('[data-detalle]').textContent = detallar(suyos);
       fila.querySelector('[data-extra]').textContent = extra ? ` · ${pesos(extra)} extra que tú repartiste` : '';
     });
-    document.querySelector('[data-apartado-suma]').textContent = pesos(suma);
+    const envio = document.querySelector('[data-envio]');
+    const costo = lista.length && envio ? JSON.parse(envio.dataset.envio)[envio.querySelector('select').value] ?? 0 : 0;
+    document.querySelector('[data-apartado-envio]').textContent = costo ? pesos(costo) : lista.length ? 'Gratis' : '$0';
+    document.querySelector('[data-apartado-suma]').textContent = pesos(suma + costo);
   };
+  document.querySelector('[data-envio] select')?.addEventListener('change', pintar);
   contenedor.querySelectorAll('[data-quitar]').forEach((boton) => {
     boton.addEventListener('click', () => {
       const lista = leer();
@@ -148,5 +167,6 @@ export function iniciar() {
   iniciarVisor();
   iniciarFiltros();
   iniciarDinero();
+  iniciarBoletera();
   pintarRotulos();
 }

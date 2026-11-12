@@ -1,0 +1,21 @@
+{
+  "nota": "Recortes hechos a mano en collageMag (colección Lucha Libre GDL de ZorroX). Los procesa scripts/recortes-manuales.py.",
+  "origen": "C:/codebase/collageMag/data/blobs/b98ef348a4",
+  "recortes": [
+    { "pieza": "qp1535ez", "foto": "2026-10-06_14-54-54-1", "nombre": "daimo-m1", "tipo": "cuerpo" },
+    { "pieza": "588g9wrr", "foto": "2026-10-07_18-27-15-1", "nombre": "aero-star-m1", "tipo": "cuerpo" },
+    { "pieza": "zkr00gr0", "foto": "2026-10-17_16-15-28-1", "nombre": "gravity-m1", "tipo": "cuerpo" },
+    { "pieza": "7qgjo5ko", "foto": "2026-10-09_17-37-39-1", "nombre": "murder-m1", "tipo": "cabeza" },
+    { "pieza": "pxy9f86n", "foto": "2026-10-13_20-00-40-1", "nombre": "belcegor-m1", "tipo": "cuerpo" },
+    { "pieza": "om3ojhzt", "foto": "2026-05-28_15-10-55-1", "nombre": "nortenito-lomeli-m1", "tipo": "cabeza" },
+    { "pieza": "53j4fh54", "foto": "2026-07-08_02-11-37-1", "nombre": "drong-brothers-m1", "tipo": "cuerpo" },
+    { "pieza": "yme1mbwq", "foto": "2026-06-14_02-57-37-1", "nombre": "miztli-lion-m1", "tipo": "cabeza" },
+    { "pieza": "3pibpotm", "foto": "2026-10-04_20-44-29-1", "nombre": "hijo-de-abismo-negro-m1", "tipo": "cabeza" },
+    { "pieza": "x0q5u1dv", "foto": "2026-10-05_20-24-10-2", "nombre": "reyna-zahori-m1", "tipo": "cabeza" }
+  ],
+  "pendientes": [
+    { "foto": "2026-10-09_01-55-03-1", "clave": "grito" },
+    { "foto": "2026-10-31_00-55-50-1", "clave": "calle" },
+    { "foto": "2026-06-08_23-54-52-1", "clave": "mascara" }
+  ]
+}

@@ -1,5 +1,5 @@
 // Formularios de la fase 0: muestran el reparto mientras la persona elige. No cobran nada.
-import { desgloseProducto, desgloseBoleto, desgloseDonacion, htmlDesglose, pesos } from './reparto.js';
+import { desgloseProducto, desgloseDonacion, htmlDesglose, pesos } from './reparto.js';
 
 const repintar = (form, d) => (form.querySelector('[data-desglose]').innerHTML = htmlDesglose(d));
 
@@ -16,52 +16,48 @@ function enlazar(barras, movida) {
   });
 }
 
-// Lo que eligió la persona en "paga más", para guardarlo con el apartado.
+// La variante (talla, firma) fija precio y fabricación; el luchador elegido recibe la parte del luchador.
+function elegir(form, producto) {
+  const variante = producto.variantes[form.elements.variante.selectedIndex];
+  // El select se llama "con" porque "luchador" ya es la barra del extra.
+  const luchador = producto.luchadores[form.elements.con.selectedIndex];
+  const pieza = { ...producto, precio: variante.precio, fabricacion: variante.fabricacion, firma: variante.firma ?? 0, beneficiario: luchador.nombre };
+  return { pieza, variante, luchador };
+}
+
+// Lo que eligió la persona (luchador, variante y "paga más"), para guardarlo con el apartado.
 export function extraElegido() {
   const form = document.querySelector('[data-paga-mas]');
   if (!form) return null;
+  const { variante, luchador } = elegir(form, JSON.parse(form.dataset.pagaMas).producto);
   const extra = Number(form.elements.extra.value);
-  if (!extra) return null;
-  const destino = Object.fromEntries([...form.querySelectorAll('[data-repartir] input')].map((b) => [b.name, Number(b.value)]));
-  return { extra, destino };
+  const destino = extra ? Object.fromEntries([...form.querySelectorAll('[data-repartir] input')].map((b) => [b.name, Number(b.value)])) : undefined;
+  return { extra, destino, variante: variante.nombre, precio: variante.precio, luchador: luchador.nombre };
 }
 
 function iniciarPagaMas(form) {
   const { producto } = JSON.parse(form.dataset.pagaMas);
+  const foto = document.querySelector('[data-foto-producto]');
   const barras = [...form.querySelectorAll('[data-repartir] input')];
   const pintar = () => {
+    const { pieza, luchador } = elegir(form, producto);
+    document.querySelectorAll('[data-nombre-luchador]').forEach((n) => (n.textContent = luchador.nombre));
+    if (foto && foto.getAttribute('src') !== luchador.imagen) {
+      foto.src = luchador.imagen;
+      foto.alt = `${luchador.nombre}, foto de Benigno Mata`;
+    }
     const extra = Number(form.elements.extra.value);
     form.querySelector('[name="extra-texto"]').value = pesos(extra);
-    form.querySelector('[data-repartir]').hidden = !extra || barras.length < 2;
+    form.querySelector('[data-repartir]').hidden = !extra;
     barras.forEach((b) => (form.querySelector(`[name="${b.name}-texto"]`).value = `${b.value}%`));
     const destino = Object.fromEntries(barras.map((b) => [b.name, Number(b.value) / 100]));
-    repintar(form, desgloseProducto(producto, { extra, destino: barras.length ? destino : producto.margen }));
+    repintar(form, desgloseProducto(pieza, { extra, destino }));
   };
   form.elements.extra.addEventListener('input', pintar);
+  form.elements.variante.addEventListener('change', pintar);
+  form.elements.con.addEventListener('change', pintar);
   barras.forEach((b) => b.addEventListener('input', () => {
     enlazar(barras, b);
-    pintar();
-  }));
-  pintar();
-}
-
-function iniciarBoletos(form) {
-  const { precio, promotora, cartel } = JSON.parse(form.dataset.boletos);
-  const otra = form.elements['propina-otra'];
-  const pintar = () => {
-    const cantidad = Math.min(10, Math.max(1, Number(form.elements.cantidad.value) || 1));
-    const elegida = form.elements.propina.value;
-    otra.hidden = elegida !== 'otra';
-    const propina = elegida === 'otra' ? Math.max(0, Number(otra.value) || 0) : Number(elegida);
-    const quien = form.elements.para.value;
-    form.elements.luchador.disabled = quien !== 'luchador';
-    const para = quien === 'arena' ? 'la arena' : quien === 'luchador' ? form.elements.luchador.value : `el cartel (${cartel} luchadores, parejo)`;
-    repintar(form, desgloseBoleto({ precio, cantidad, promotora, propina, para }));
-  };
-  form.addEventListener('input', pintar);
-  form.addEventListener('change', pintar);
-  form.querySelectorAll('[data-cantidad]').forEach((b) => b.addEventListener('click', () => {
-    form.elements.cantidad.value = Math.min(10, Math.max(1, Number(form.elements.cantidad.value) + Number(b.dataset.cantidad)));
     pintar();
   }));
   pintar();
@@ -81,8 +77,20 @@ function iniciarDonar(form) {
   pintar();
 }
 
+// Calculadora de envío: gratis en Guadalajara; si cambia el destino, muestra el costo.
+function iniciarEnvio(caja) {
+  const costos = JSON.parse(caja.dataset.envio);
+  const salida = caja.querySelector('[data-envio-costo]');
+  const pintar = () => {
+    const costo = costos[caja.querySelector('select').value] ?? 0;
+    salida.textContent = costo ? `${pesos(costo)} de envío (ejemplo)` : 'Envío gratis';
+  };
+  caja.querySelector('select').addEventListener('change', pintar);
+  pintar();
+}
+
 export function iniciarDinero() {
+  document.querySelectorAll('[data-envio]').forEach(iniciarEnvio);
   document.querySelectorAll('[data-paga-mas]').forEach(iniciarPagaMas);
-  document.querySelectorAll('[data-boletos]').forEach(iniciarBoletos);
   document.querySelectorAll('[data-donar]').forEach(iniciarDonar);
 }

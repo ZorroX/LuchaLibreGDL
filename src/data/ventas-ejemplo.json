@@ -1,0 +1,22 @@
+{
+  "nota": "Ventas y pagos INVENTADOS para la maqueta de /cuenta/. Cada venta guarda el precio y la fabricación del momento, como lo hará la cuenta real.",
+  "ventas": [
+    { "id": "v01", "fecha": "2026-10-04", "canal": "En persona", "producto": "playera", "variante": "Chica a XL", "luchador": "sunboy-santi", "precio": 320, "fabricacion": 120, "extra": 0, "envio": "guadalajara" },
+    { "id": "v02", "fecha": "2026-10-04", "canal": "En persona", "producto": "foto-enmarcada", "variante": "Con firma del luchador", "luchador": "sunboy-santi", "precio": 250, "fabricacion": 40, "firma": 50, "extra": 0, "envio": "guadalajara" },
+    { "id": "v03", "fecha": "2026-10-04", "canal": "En persona", "producto": "foto-enmarcada", "variante": "Sin firma", "luchador": "yokai", "precio": 200, "fabricacion": 40, "extra": 0, "envio": "guadalajara" },
+    { "id": "v04", "fecha": "2026-10-15", "canal": "En línea", "producto": "playera", "variante": "XXL a XXXL", "luchador": "yokai", "precio": 350, "fabricacion": 150, "extra": 0, "envio": "jalisco" },
+    { "id": "v05", "fecha": "2026-10-18", "canal": "En línea", "producto": "foto-enmarcada", "variante": "Con firma del luchador", "luchador": "yokai", "precio": 250, "fabricacion": 40, "firma": 50, "extra": 50, "destino": { "luchador": 1, "fotografo": 0 }, "envio": "republica" },
+    { "id": "v06", "fecha": "2026-10-25", "canal": "En persona", "producto": "playera", "variante": "Chica a XL", "luchador": "yokai", "precio": 320, "fabricacion": 120, "extra": 0, "envio": "guadalajara" },
+    { "id": "v07", "fecha": "2026-10-25", "canal": "En persona", "producto": "playera", "variante": "Chica a XL", "luchador": "sunboy-santi", "precio": 320, "fabricacion": 120, "extra": 100, "destino": { "luchador": 0.5, "fotografo": 0.5 }, "envio": "guadalajara" },
+    { "id": "v08", "fecha": "2026-11-01", "canal": "En línea", "producto": "foto-enmarcada", "variante": "Sin firma", "luchador": "sunboy-santi", "precio": 200, "fabricacion": 40, "extra": 0, "envio": "centro" },
+    { "id": "v09", "fecha": "2026-11-01", "canal": "En persona", "producto": "foto-enmarcada", "variante": "Con firma del luchador", "luchador": "yokai", "precio": 250, "fabricacion": 40, "firma": 50, "extra": 0, "envio": "guadalajara" },
+    { "id": "v10", "fecha": "2026-11-07", "canal": "En persona", "producto": "playera", "variante": "XXL a XXXL", "luchador": "sunboy-santi", "precio": 350, "fabricacion": 150, "extra": 0, "envio": "guadalajara" },
+    { "id": "v11", "fecha": "2026-11-07", "canal": "En persona", "producto": "foto-enmarcada", "variante": "Con firma del luchador", "luchador": "sunboy-santi", "precio": 250, "fabricacion": 40, "firma": 50, "extra": 0, "envio": "guadalajara" },
+    { "id": "v12", "fecha": "2026-11-09", "canal": "En línea", "producto": "playera", "variante": "Chica a XL", "luchador": "yokai", "precio": 320, "fabricacion": 120, "extra": 20, "destino": { "luchador": 0.5, "fotografo": 0.5 }, "envio": "guadalajara" }
+  ],
+  "pagos": [
+    { "miembro": "benigno", "fecha": "2026-11-05", "monto": 646, "concepto": "Corte de octubre", "referencia": "Transferencia (ejemplo)" },
+    { "miembro": "sunboy-santi", "fecha": "2026-11-05", "monto": 361, "concepto": "Corte de octubre", "referencia": "Transferencia (ejemplo)" },
+    { "miembro": "yokai", "fecha": "2026-11-05", "monto": 436, "concepto": "Corte de octubre", "referencia": "Transferencia (ejemplo)" }
+  ]
+}

@@ -1,0 +1,40 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
+import { miembros, cuenta, caja } from '../../lib/cuentas.js';
+import { pesos } from '../../lib/reparto.js';
+
+const resumen = (m) => (m.caja ? `${pesos(caja().porPagar)} por pagar a los miembros` : `${pesos(cuenta(m.id).ganado)} ganados`);
+---
+<Base titulo="Mi cuenta" descripcion="Cada miembro ve cuánto ha ganado y por qué.">
+  <Cartel rotulo="Mi cuenta" titulo="Cuentas claras" lema="Cada miembro ve cuánto ha ganado, por qué y cuánto se le ha pagado." fotos={miembros.map((m) => m.foto)} />
+
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Maqueta</p>
+    <Rotulo as="h2" ajuste="titulo" texto="¿Quién eres?" />
+    <p style="margin-bottom:30px">Elige un perfil para ver su cuenta. Las ventas son inventadas: sirven para enseñar cómo se verá.</p>
+    <div class="casas perfiles pegados">
+      {miembros.map((m) => (
+        <a href={url(`/cuenta/${m.id}/`)}>
+          <h3>{m.nombre}</h3>
+          <p>{m.papel}</p>
+          <p><b>{resumen(m)}</b> (ejemplo)</p>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <p class="acto">Cuando sea real</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Cómo va a funcionar" />
+    <ul class="pasos">
+      <li><b>Entras con tu correo.</b> Te llega un enlace para entrar, sin contraseña que recordar.</li>
+      <li><b>Solo ves lo tuyo.</b> Cada luchador ve sus ventas; Benigno ve las de sus fotos; La Tapatía ve todo para poder pagar.</li>
+      <li><b>Cada peso dice de dónde sale.</b> Las cuentas usan el mismo cálculo que el desglose que ve quien compra.</li>
+      <li><b>Lo ganado menos lo pagado es lo que se te debe.</b> Cada pago queda registrado con su fecha y referencia.</li>
+    </ul>
+    <p class="nota" style="margin-top:22px">Falta acordar quién recibe el dinero, cada cuánto se paga y cómo se registran las ventas en persona.</p>
+  </div></section>
+</Base>

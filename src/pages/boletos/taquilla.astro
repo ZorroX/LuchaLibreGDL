@@ -1,0 +1,109 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
+import MapaRing from '../../components/MapaRing.astro';
+import { pasadas } from '../../lib/acervo.js';
+import { pesos } from '../../lib/reparto.js';
+import { arena, funcion, primeraFila, general, asientos, CANALES, LADOS, ventasEjemplo, estado, resumenTaquilla, htmlVenta } from '../../lib/boletera.js';
+
+const f = pasadas.find((x) => x.arena === arena.nombre && x.fotos.length >= 6) ?? pasadas[0];
+const { ocupados, quedanGeneral } = estado(ventasEjemplo);
+const r = resumenTaquilla(ventasEjemplo);
+const canalesVenta = ['whatsapp', 'taquilla', 'cortesia'];
+const configuracion = [
+  ['Función', `${funcion.nombre}, ${funcion.fechaTexto}, ${funcion.hora}`],
+  ['Zonas abiertas', `${primeraFila.nombre} (numerada) y ${general.nombre}`],
+  [primeraFila.nombre, `${LADOS.length} lados × ${primeraFila.porLado} sillas = ${asientos.length} asientos · ${pesos(primeraFila.precio)}`],
+  [general.nombre, `Cupo de ${general.cupo} · ${general.tarifas.map((t) => `${t.nombre} ${pesos(t.precio)}`).join(' · ')}`],
+  ['Venta en línea', 'Cierra 2 horas antes de la función'],
+  ['Límite por compra', `${funcion.limite} boletos`],
+];
+---
+<Base titulo="Panel de la arena" descripcion="Maqueta del panel con el que la arena arma cada función y vende boletos.">
+  <Cartel rotulo="Taquilla" titulo="Panel de la arena" lema="Arma la función, ve lo vendido en vivo y vende por WhatsApp o en taquilla sobre el mismo mapa." fotos={f.fotos} plantillas={['tira', 'muro', 'cartel']} />
+
+  <section class="bloque"><div class="ancho">
+    <p class="acto">Maqueta · {arena.nombre}</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Cómo va la venta" />
+    <p class="nota aviso-maqueta">Lo que vería quien administra la arena después de entrar con su correo. Ventas inventadas: al recargar la página vuelven a empezar.</p>
+    <div class="cifras">
+      <div class="cifra"><span>{primeraFila.nombre}</span><b><span data-cifra="fila">{r.enFila}</span> de {asientos.length}</b><small>asientos vendidos</small></div>
+      <div class="cifra"><span>{general.nombre}</span><b><span data-cifra="general">{r.enGeneral}</span> de {general.cupo}</b><small>adultos y niños</small></div>
+      <div class="cifra destacada"><span>Cobrado</span><b data-cifra="cobrado">{pesos(r.cobrado)}</b><small><span data-cifra="boletos">{r.boletos}</span> boletos en total</small></div>
+    </div>
+    <ul class="por-canal">
+      {r.porCanal.map((c) => <li><i style={`background:${c.color}`}></i>{c.nombre}: <b data-cifra={`canal-${c.id}`}>{c.boletos} · {c.id === 'cortesia' ? 'sin cobro' : pesos(c.monto)}</b></li>)}
+    </ul>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Un solo mapa</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Vende sin encimar" />
+      <p style="margin-bottom:24px">Lo que se vende en línea, por WhatsApp o en taquilla ocupa el mismo lugar. Así nunca se vende dos veces la misma silla.</p>
+      <MapaRing ocupados={ocupados} quedanGeneral={quedanGeneral} verCanal />
+      <ul class="leyenda">
+        <li><i class="libre"></i>Libre</li>
+        <li><i class="elegido"></i>Elegido</li>
+        {Object.values(CANALES).map((c) => <li><i style={`background:${c.color}`}></i>{c.nombre}</li>)}
+      </ul>
+    </div>
+    <form class="tablero" data-taquilla>
+      <fieldset>
+        <legend>Registrar venta</legend>
+        <div class="fichas">
+          {canalesVenta.map((id, i) => <label><input type="radio" name="canal" value={id} checked={i === 0} /><span>{CANALES[id].nombre}</span></label>)}
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>{primeraFila.nombre} · {pesos(primeraFila.precio)}</legend>
+        <p class="nota" data-elegidos>Toca un asiento en el mapa.</p>
+      </fieldset>
+      <fieldset>
+        <legend>{general.nombre}</legend>
+        {general.tarifas.map((t) => (
+          <div class="tarifa">
+            <span>{t.nombre} · {pesos(t.precio)}</span>
+            <div class="cantidad">
+              <button type="button" data-sumar={t.id === 'nino' ? 'ninos' : 'adultos'} data-paso="-1" aria-label={`Un ${t.nombre.toLowerCase()} menos`}>−</button>
+              <input type="number" name={t.id === 'nino' ? 'ninos' : 'adultos'} min="0" value="0" aria-label={`Entradas de ${t.nombre.toLowerCase()} en general`} />
+              <button type="button" data-sumar={t.id === 'nino' ? 'ninos' : 'adultos'} data-paso="1" aria-label={`Un ${t.nombre.toLowerCase()} más`}>+</button>
+            </div>
+          </div>
+        ))}
+      </fieldset>
+      <p class="desglose-total"><span>A cobrar</span><b data-importe>$0</b></p>
+      <button class="boton" type="button" data-registrar>Registrar y generar boletos</button>
+      <p class="nota resultado" data-resultado role="status" hidden></p>
+    </form>
+  </div></section>
+
+  <section class="bloque"><div class="ancho dos alto">
+    <div>
+      <p class="acto">Ventas</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Lo más reciente" />
+      <div class="cuentas" data-ventas set:html={[...ventasEjemplo].reverse().map(htmlVenta).join('')} />
+    </div>
+    <div>
+      <p class="acto">La función</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Cómo está armada" />
+      <dl class="tabla">
+        {configuracion.map(([t, d]) => <div><dt>{t}</dt><dd>{d}</dd></div>)}
+      </dl>
+      <div class="acciones" style="margin-top:20px">
+        <button class="boton" type="button" disabled>Editar función</button>
+        <button class="boton" type="button" disabled>Copiar para la próxima</button>
+      </div>
+      <p class="nota" style="margin-top:12px">En la versión real, cada función se arma aquí: qué zonas abre, precios, cupo y cuántas sillas por lado.</p>
+    </div>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <div class="acciones">
+      <a class="boton" href={url('/boletos/puerta/')}>Ver la puerta</a>
+      <a class="boton claro" href={url('/boletos/')}>Ver la compra</a>
+    </div>
+  </div></section>
+</Base>

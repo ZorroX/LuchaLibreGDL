@@ -1,0 +1,130 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
+import Desglose from '../../components/Desglose.astro';
+import Venta from '../../components/Venta.astro';
+import { luchador, FOTOS_CLAVE as F } from '../../lib/acervo.js';
+import { miembros, cuenta, caja, ventas, dia } from '../../lib/cuentas.js';
+import { pesos } from '../../lib/reparto.js';
+
+export function getStaticPaths() {
+  return miembros.map((m) => ({ params: { miembro: m.id }, props: { m } }));
+}
+const { m } = Astro.props;
+const c = m.caja ? null : cuenta(m.id);
+const k = m.caja ? caja() : null;
+const piezas = (n) => `${n} ${n === 1 ? 'pieza' : 'piezas'}`;
+const fotos = m.clave === 'luchador' ? luchador(m.id).fotos : [m.foto, F.vuelo, F.grito, F.mascara];
+
+// Para la caja, lo cobrado se pinta con la misma barra del desglose de cada pieza.
+const destinoCaja = k && {
+  total: k.cobrado,
+  partes: [
+    ...k.socios.filter((s) => s.clave === 'luchador').map((s) => ({ clave: 'luchador', nombre: s.nombre, monto: s.ganado })),
+    ...k.socios.filter((s) => s.clave === 'fotografo').map((s) => ({ clave: 'fotografo', nombre: `${s.nombre}, por las fotos`, monto: s.ganado })),
+    { clave: 'fabricacion', nombre: 'Fabricación', monto: k.fabricacion },
+    { clave: 'comision', nombre: 'Comisión de cobro', monto: k.comision },
+    { clave: 'envio', nombre: 'Envíos, para la paquetería', monto: k.envios },
+  ].filter((x) => x.monto > 0),
+};
+---
+<Base titulo={`Cuenta de ${m.nombre}`} descripcion={`Lo que ${m.nombre} ha ganado y por qué.`}>
+  <Cartel rotulo={m.nombre} titulo="Mi cuenta" lema={m.caja ? 'Todo lo que entró y a quién se le debe.' : 'Lo que has ganado, por qué y cuánto se te ha pagado.'} fotos={fotos} />
+
+  <section class="bloque"><div class="ancho">
+    <nav class="ver-como" aria-label="Ver la cuenta de">
+      <span>Ver como</span>
+      {miembros.map((o) => <a href={url(`/cuenta/${o.id}/`)} aria-current={o.id === m.id ? 'page' : undefined}>{o.nombre}</a>)}
+    </nav>
+    <p class="nota aviso-maqueta">Maqueta con ventas inventadas. En la versión real entras con tu correo y solo ves lo tuyo.</p>
+
+    {c && (
+      <div class="cifras">
+        <div class="cifra"><span>Has ganado</span><b>{pesos(c.ganado)}</b><small>{piezas(c.ventas.length)}</small></div>
+        <div class="cifra"><span>Se te ha pagado</span><b>{pesos(c.pagado)}</b><small>{c.pagos.length ? `último pago: ${dia(c.pagos[0].fecha)}` : 'todavía nada'}</small></div>
+        <div class="cifra destacada"><span>Se te debe</span><b>{pesos(c.porPagar)}</b><small>se paga en el próximo corte</small></div>
+      </div>
+    )}
+    {k && (
+      <div class="cifras">
+        <div class="cifra"><span>Cobrado</span><b>{pesos(k.cobrado)}</b><small>{piezas(ventas.length)}, con envíos</small></div>
+        <div class="cifra destacada"><span>Por pagar a miembros</span><b>{pesos(k.porPagar)}</b><small>{k.socios.length} miembros</small></div>
+        <div class="cifra"><span>Para La Tapatía</span><b>{pesos(k.propia)}</b><small>por ahora no se queda con parte</small></div>
+      </div>
+    )}
+  </div></section>
+
+  {c && (
+    <section class="bloque lona"><div class="ancho">
+      <p class="acto">Tus ventas</p>
+      <Rotulo as="h2" ajuste="titulo" texto="De dónde sale" />
+      <p style="margin-bottom:24px">Cada pieza dice cuánto te tocó y por qué. Ábrela para ver a dónde fue el resto.</p>
+      <div class="ventas">
+        {c.ventas.map((v) => <Venta venta={v} parte={v.parte} verLuchador={m.clave !== 'luchador'} />)}
+      </div>
+    </div></section>
+  )}
+
+  {c && (
+    <section class="bloque"><div class="ancho dos alto">
+      <div>
+        <p class="acto">Por mes</p>
+        <Rotulo as="h2" ajuste="titulo" texto="Cómo vas" />
+        <div class="cuentas">
+          {c.meses.map((x) => <div class="cuentas-fila mes"><span>{x.mes}</span><span>{piezas(x.piezas)}</span><b>{pesos(x.monto)}</b></div>)}
+        </div>
+      </div>
+      <div>
+        <p class="acto">Pagos</p>
+        <Rotulo as="h2" ajuste="titulo" texto="Lo que se te pagó" />
+        <div class="cuentas">
+          {c.pagos.map((p) => <div class="cuentas-fila pago"><span>{dia(p.fecha)}</span><span>{p.concepto}<small>{p.referencia}</small></span><b>{pesos(p.monto)}</b></div>)}
+          {!c.pagos.length && <p class="cuentas-vacio">Todavía no hay pagos.</p>}
+        </div>
+      </div>
+    </div></section>
+  )}
+
+  {k && (
+    <section class="bloque lona"><div class="ancho dos dinero">
+      <div>
+        <p class="acto">Caja</p>
+        <Rotulo as="h2" ajuste="titulo" texto="A dónde va lo cobrado" />
+        <p>La Tapatía recibe el dinero, paga la fabricación, la comisión y los envíos, y reparte el resto a cada miembro en cada corte.</p>
+      </div>
+      <div class="tablero"><Desglose desglose={destinoCaja} titulo="Todo lo cobrado" /></div>
+    </div></section>
+  )}
+
+  {k && (
+    <section class="bloque"><div class="ancho">
+      <p class="acto">Miembros</p>
+      <Rotulo as="h2" ajuste="titulo" texto="A quién se le debe" />
+      <div class="cuentas socios">
+        <div class="cuentas-fila cuentas-cabeza"><span>Miembro</span><span>Ganado</span><span>Pagado</span><span>Por pagar</span><span></span></div>
+        {k.socios.map((s) => (
+          <div class="cuentas-fila">
+            <span><a href={url(`/cuenta/${s.id}/`)}>{s.nombre}</a><small>{s.papel}</small></span>
+            <span data-titulo="Ganado">{pesos(s.ganado)}</span>
+            <span data-titulo="Pagado">{pesos(s.pagado)}</span>
+            <b data-titulo="Por pagar">{pesos(s.porPagar)}</b>
+            <button class="boton" type="button" disabled>Registrar pago</button>
+          </div>
+        ))}
+      </div>
+      <p class="nota" style="margin-top:14px">En la versión real, al registrar un pago se guarda la fecha y la referencia, y el miembro lo ve en su cuenta.</p>
+    </div></section>
+  )}
+
+  {k && (
+    <section class="bloque lona"><div class="ancho">
+      <p class="acto">Todas las ventas</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Pieza por pieza" />
+      <div class="ventas">
+        {ventas.map((v) => <Venta venta={v} />)}
+      </div>
+    </div></section>
+  )}
+</Base>

@@ -1,0 +1,120 @@
+---
+import { url } from '../../lib/rutas.js';
+import Base from '../../layouts/Base.astro';
+import Cartel from '../../components/Cartel.astro';
+import Rotulo from '../../components/Rotulo.astro';
+import Desglose from '../../components/Desglose.astro';
+import MapaRing from '../../components/MapaRing.astro';
+import { pasadas, foto, luchador } from '../../lib/acervo.js';
+import { desgloseBoleto, pesos } from '../../lib/reparto.js';
+import { arena, funcion, primeraFila, general, ventasEjemplo, estado, lineasDe, boletosDe, htmlBoleto } from '../../lib/boletera.js';
+
+// Las fotos y el cartel para la propina salen de una función ya luchada en la misma arena.
+const f = pasadas.find((x) => x.arena === arena.nombre && x.fotos.length >= 6) ?? pasadas[0];
+const cartel = [...new Set(f.fotos.flatMap((id) => foto(id).luchadores))].map(luchador).filter(Boolean);
+const { ocupados, quedanGeneral } = estado(ventasEjemplo);
+const propinas = [0, 50, 100, 200];
+const [lat, lng] = arena.coordenadas;
+const mapaEmbebido = `https://maps.google.com/maps?q=${lat},${lng}&z=17&output=embed`;
+const inicial = { adultos: 1 };
+const muestra = boletosDe({ id: 'EJ-0001', asientos: ['A6'], adultos: 0, ninos: 0 })[0];
+const precios = `${primeraFila.nombre} ${pesos(primeraFila.precio)} · ${general.tarifas.map((t) => `${t.nombre === 'Adulto' ? general.nombre : 'Niños'} ${pesos(t.precio)}`).join(' · ')}`;
+---
+<Base titulo="Boletos" descripcion="Así se comprarán los boletos de las funciones independientes de Guadalajara.">
+  <Cartel rotulo="Boletos" titulo="Tu lugar junto al ring" lema="Elige tu asiento o entra a general. Tu boleto llega al celular con su código." fotos={f.fotos} plantillas={['portada', 'tira', 'muro']} />
+
+  <section class="bloque"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Maqueta · {funcion.nombre}</p>
+      <Rotulo as="h2" ajuste="titulo" texto={arena.nombre} />
+      <dl class="tabla">
+        <div><dt>Función</dt><dd>{funcion.nombre}: el cartel lo sube cada promotora.</dd></div>
+        <div><dt>Cuándo</dt><dd>{funcion.fechaTexto}, {funcion.hora}</dd></div>
+        <div><dt>Dónde</dt><dd>{arena.direccion} <span class="nota">(dirección por confirmar)</span></dd></div>
+        <div><dt>Precios</dt><dd>{precios} <span class="nota">(de ejemplo)</span></dd></div>
+        <div><dt>En la puerta</dt><dd>Muestras el código de tu boleto desde el celular.</dd></div>
+      </dl>
+      <div class="acciones" style="margin-top:22px">
+        <a class="boton" href={arena.mapa} target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="boton claro" href="#comprar">Elegir lugar</a>
+      </div>
+    </div>
+    <div class="mapa-arena"><iframe title={`Ubicación de la ${arena.nombre} en el mapa`} src={mapaEmbebido} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div></section>
+
+  <section class="bloque lona" id="comprar"><div class="ancho dos dinero">
+    <div>
+      <p class="acto">Elige tu lugar</p>
+      <Rotulo as="h2" ajuste="titulo" texto="Junto al ring o en general" />
+      <p style="margin-bottom:24px">Dinos cuántos van y dónde. En general se acomodan donde haya lugar; en primera fila eliges una silla por persona.</p>
+      <MapaRing ocupados={ocupados} quedanGeneral={quedanGeneral} />
+      <ul class="leyenda">
+        <li><i class="libre"></i>Libre</li>
+        <li><i class="tuyo"></i>Tu lugar</li>
+        <li><i class="ocupado"></i>Ocupado</li>
+      </ul>
+    </div>
+    <form class="tablero" data-boletos={JSON.stringify({ cartel: cartel.length, quedanGeneral })}>
+      <fieldset>
+        <legend>¿Cuántos van?</legend>
+        {general.tarifas.map((t) => (
+          <div class="tarifa">
+            <span>{t.nombre === 'Adulto' ? 'Adultos' : 'Niños'}</span>
+            <div class="cantidad">
+              <button type="button" data-sumar={t.id === 'nino' ? 'ninos' : 'adultos'} data-paso="-1" aria-label={`Un ${t.nombre.toLowerCase()} menos`}>−</button>
+              <input type="number" name={t.id === 'nino' ? 'ninos' : 'adultos'} min="0" max={funcion.limite} value={t.id === 'nino' ? 0 : inicial.adultos} aria-label={t.nombre === 'Adulto' ? 'Número de adultos' : 'Número de niños'} />
+              <button type="button" data-sumar={t.id === 'nino' ? 'ninos' : 'adultos'} data-paso="1" aria-label={`Un ${t.nombre.toLowerCase()} más`}>+</button>
+            </div>
+          </div>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>¿Dónde?</legend>
+        <div class="fichas">
+          <label><input type="radio" name="zona" value="general" checked /><span>{general.nombre} · {general.tarifas.map((t) => pesos(t.precio)).join(' / niño ')}</span></label>
+          <label><input type="radio" name="zona" value="primera-fila" /><span>{primeraFila.nombre} · {pesos(primeraFila.precio)}</span></label>
+        </div>
+        <p class="nota" data-elegidos>Te acomodas donde haya lugar.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Propina</legend>
+        <div class="fichas">
+          {propinas.map((n) => <label><input type="radio" name="propina" value={n} checked={n === 0} /><span>{n ? pesos(n) : 'Sin propina'}</span></label>)}
+          <label><input type="radio" name="propina" value="otra" /><span>Otra</span></label>
+        </div>
+        <input class="campo" type="number" name="propina-otra" min="0" step="10" placeholder="¿Cuánto?" aria-label="Otra propina, en pesos" hidden />
+      </fieldset>
+      <fieldset data-para hidden>
+        <legend>¿Para quién?</legend>
+        <label class="opcion"><input type="radio" name="para" value="cartel" checked /> Todo el cartel, parejo</label>
+        <label class="opcion"><input type="radio" name="para" value="luchador" /> Un luchador:</label>
+        <select class="campo" name="luchador" aria-label="Luchador que recibe la propina" disabled>
+          {cartel.map((l) => <option>{l.nombre}</option>)}
+        </select>
+        <label class="opcion"><input type="radio" name="para" value="arena" /> La arena</label>
+      </fieldset>
+      <Desglose desglose={desgloseBoleto({ lineas: lineasDe(inicial), organiza: funcion.organiza })} />
+      <p class="nota aviso" data-aviso hidden></p>
+      <button class="boton" type="button" data-comprar>Comprar (maqueta)</button>
+    </form>
+  </div></section>
+
+  <section class="bloque" id="tus-boletos"><div class="ancho">
+    <p class="acto">Tu boleto</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Llega a tu celular" />
+    <p style="margin-bottom:26px" data-boletos-texto>Cada persona tiene su propio código. En la puerta lo escanean; si alguien intenta entrar con el mismo, sale como ya usado.</p>
+    <div class="boletos" data-boletos-lista set:html={htmlBoleto(muestra)} />
+    <p class="nota" style="margin-top:18px">Boletos y códigos de ejemplo: no sirven para entrar.</p>
+  </div></section>
+
+  <section class="bloque lona"><div class="ancho">
+    <p class="acto">Para la arena</p>
+    <Rotulo as="h2" ajuste="titulo" texto="Del otro lado de la taquilla" />
+    <p style="margin-bottom:28px">Lo que vería quien administra la arena. También son maquetas.</p>
+    <div class="casas pegados">
+      <a href={url('/boletos/taquilla/')}><h3>Panel de la arena</h3><p>Arma la función, ve lo vendido en vivo y registra las ventas de WhatsApp y taquilla en el mismo mapa.</p></a>
+      <a href={url('/boletos/puerta/')}><h3>La puerta</h3><p>El día de la función, el staff escanea cada boleto con la cámara del celular.</p></a>
+      <a href={url(`/cartelera/${f.slug}/`)}><h3>La arena en fotos</h3><p>{f.nombre}, en la lente de Benigno Mata.</p></a>
+    </div>
+  </div></section>
+</Base>

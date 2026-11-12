@@ -2,12 +2,23 @@
 // los porcentajes reales se acuerdan con cada luchador, fotógrafo y promotora antes de cobrar.
 
 export const COMISION_COBRO = 0.04;
-// Cómo se divide lo que queda después de fabricar y cobrar, si el producto no dice otra cosa.
-export const MARGEN = { luchador: 0.6, fotografo: 0.1, casa: 0.3 };
+// Cómo se divide lo que queda después de fabricar y cobrar (la comisión la absorbe esta utilidad).
+// Por ahora va mitad al luchador y mitad a Benigno por la foto; el proyecto no se queda con parte.
+export const MARGEN = { luchador: 0.5, fotografo: 0.5 };
+
+// Envío: gratis dentro de Guadalajara; fuera se cobra al costo de la paquetería según el destino.
+// Va aparte del reparto (no es ingreso de nadie) y las tarifas son de ejemplo hasta cotizar con la paquetería.
+export const ENVIOS = [
+  { id: 'guadalajara', nombre: 'Guadalajara (entrega gratis)', costo: 0 },
+  { id: 'jalisco', nombre: 'Resto de Jalisco', costo: 90 },
+  { id: 'centro', nombre: 'Centro y Bajío', costo: 130 },
+  { id: 'republica', nombre: 'Resto de México', costo: 170 },
+];
+export const costoEnvio = (id) => ENVIOS.find((e) => e.id === id)?.costo ?? 0;
 
 export const COLORES = {
-  luchador: '#e0291e', fotografo: '#fbc913', casa: '#0f97a3', promotora: '#a63c7e',
-  fabricacion: '#8f8a7e', comision: '#4a4740', destino: '#e0291e',
+  luchador: '#e0291e', fotografo: '#fbc913', promotora: '#a63c7e',
+  fabricacion: '#8f8a7e', comision: '#4a4740', destino: '#e0291e', envio: '#0f97a3',
 };
 
 export const pesos = (n) => `$${Math.round(n).toLocaleString('es-MX')}`;
@@ -25,29 +36,38 @@ function dividir(monto, pesos) {
   return partes;
 }
 
-// p: { precio, fabricacion, margen?, beneficiario }. extra: lo que la persona agrega; destino: cómo lo reparte.
-export function desgloseProducto(p, { extra = 0, destino = p.margen ?? MARGEN } = {}) {
+// p: { precio, fabricacion, firma?, margen?, beneficiario }. extra: lo que la persona agrega; destino: cómo lo reparte.
+// firma: lo que cuesta de más la pieza firmada; va completo al luchador y no entra en el 50/50.
+// Devuelve cada parte por separado (utilidad, extra, firma) para que las cuentas expliquen de dónde sale cada peso.
+export function repartirProducto(p, { extra = 0, destino = p.margen ?? MARGEN } = {}) {
   const total = p.precio + extra;
   const comision = Math.round(total * COMISION_COBRO);
   const comisionBase = Math.round(p.precio * COMISION_COBRO);
-  const base = dividir(p.precio - p.fabricacion - comisionBase, p.margen ?? MARGEN);
-  const sobre = dividir(extra - (comision - comisionBase), destino);
-  const suma = (k) => (base[k] ?? 0) + (sobre[k] ?? 0);
+  const firma = p.firma ?? 0;
+  const base = dividir(p.precio - p.fabricacion - comisionBase - firma, p.margen ?? MARGEN);
+  const sobre = extra ? dividir(extra - (comision - comisionBase), destino) : {};
+  const suma = (k) => (base[k] ?? 0) + (sobre[k] ?? 0) + (k === 'luchador' ? firma : 0);
+  return { total, comision, firma, base, sobre, suma };
+}
+
+export function desgloseProducto(p, opciones) {
+  const { total, comision, firma, suma } = repartirProducto(p, opciones);
   return {
     total,
     partes: [
-      { clave: 'luchador', nombre: p.beneficiario, monto: suma('luchador') },
+      { clave: 'luchador', nombre: firma ? `${p.beneficiario} (incluye ${pesos(firma)} de la firma)` : p.beneficiario, monto: suma('luchador') },
       { clave: 'fotografo', nombre: 'Benigno Mata, por la foto', monto: suma('fotografo') },
-      { clave: 'casa', nombre: 'La Tapatía', monto: suma('casa') },
       { clave: 'fabricacion', nombre: 'Fabricación', monto: p.fabricacion },
       { clave: 'comision', nombre: 'Comisión de cobro', monto: comision },
     ].filter((x) => x.monto > 0),
   };
 }
 
-// La entrada es de la promotora; la propina va completa a quien se elija, menos la comisión de cobro.
-export function desgloseBoleto({ precio, cantidad, promotora, propina = 0, para }) {
-  const entradas = precio * cantidad;
+// lineas: [{ nombre, precio, cantidad }] de la compra. Las entradas son de quien organiza la función;
+// la propina va completa a quien se elija, menos la comisión de cobro.
+export function desgloseBoleto({ lineas, organiza, propina = 0, para }) {
+  const entradas = lineas.reduce((s, l) => s + l.precio * l.cantidad, 0);
+  const cantidad = lineas.reduce((s, l) => s + l.cantidad, 0);
   const total = entradas + propina;
   const comision = Math.round(total * COMISION_COBRO);
   const comisionEntradas = Math.round(entradas * COMISION_COBRO);
@@ -55,7 +75,7 @@ export function desgloseBoleto({ precio, cantidad, promotora, propina = 0, para 
   return {
     total,
     partes: [
-      { clave: 'promotora', nombre: `${promotora}, por ${cantidad === 1 ? 'la entrada' : `${cantidad} entradas`}`, monto: entradas - comisionEntradas },
+      { clave: 'promotora', nombre: `${cantidad === 1 ? 'La entrada' : `${cantidad} entradas`}, para ${organiza}`, monto: entradas - comisionEntradas },
       { clave: 'destino', nombre: `Propina para ${para}`, monto: neta },
       { clave: 'comision', nombre: 'Comisión de cobro', monto: comision },
     ].filter((x) => x.monto > 0),
